@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e17496d553bd42b084df454dc56f121e" Name="Diagram1" ZoomLevel="90">
+        <EntityTypeShape EntityType="csidbModel.associate_member" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.Conference" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.ConferenceUser" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.life_associate_member" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.life_member" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.logbook" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.MyConference" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.other_member" Width="1.5" PointX="6.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.tbl_CSI_69_Con_Accompanys" Width="1.875" PointX="8" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.tbl_CSI_69_Con_Transections" Width="1.75" PointX="8" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.tblAbstractCategory" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.tblAbstractSubmissionDetail" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.tblregid" Width="1.5" PointX="12.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.wbc_CsiMembersLoginDtls" Width="1.5" PointX="12.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.wbc_NonCsiLoginDtls" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.wbc_NonCsiMembers" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.wbc_WebcastMasters" Width="1.5" PointX="14.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.csi_mail_details" Width="1.5" PointX="8.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.csi_massmail_member" Width="1.5" PointX="14.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.tblBlog" Width="1.5" PointX="14.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.tblComment" Width="1.5" PointX="2.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.tblCountryCode" Width="1.5" PointX="10.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="csidbModel.tblLoginDetail" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="csidbModel.FK_tblAbstractSubmissionDetails_life_associate_member" ManuallyRouted="false" />
+        <AssociationConnector Association="csidbModel.FK_tblAbstractSubmissionDetails_associate_member" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="csidbModel.tbl_CSI_69_Con_RegistrationDetails" Width="1.5" PointX="5.75" PointY="1.875" />
+        <AssociationConnector Association="csidbModel.FK_tbl_CSI_69_Con_Accompanys_tbl_CSI_69_Con_RegistrationDetails" />
+        <AssociationConnector Association="csidbModel.FK_tbl_CSI_69_Con_Transections_tbl_CSI_69_Con_RegistrationDetails" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

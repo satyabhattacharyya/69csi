@@ -1,0 +1,890 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="csidbModelStoreContainer" CdmEntityContainer="csidbEntities">
+    <EntitySetMapping Name="associate_member">
+      <EntityTypeMapping TypeName="csidbModel.associate_member">
+        <MappingFragment StoreEntitySet="associate_member">
+          <ScalarProperty Name="slno" ColumnName="slno" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="memberno" ColumnName="memberno" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="phone1" ColumnName="phone1" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="spouse" ColumnName="spouse" />
+          <ScalarProperty Name="qualification" ColumnName="qualification" />
+          <ScalarProperty Name="answer" ColumnName="answer" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="last_date" ColumnName="last_date" />
+          <ScalarProperty Name="pin" ColumnName="pin" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conferences">
+      <EntityTypeMapping TypeName="csidbModel.Conference">
+        <MappingFragment StoreEntitySet="Conference">
+          <ScalarProperty Name="CId" ColumnName="CId" />
+          <ScalarProperty Name="Day" ColumnName="Day" />
+          <ScalarProperty Name="CDate" ColumnName="CDate" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="SubTitle" ColumnName="SubTitle" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="Hall" ColumnName="Hall" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConferenceUsers">
+      <EntityTypeMapping TypeName="csidbModel.ConferenceUser">
+        <MappingFragment StoreEntitySet="ConferenceUsers">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RegId" ColumnName="RegId" />
+          <ScalarProperty Name="IMEI" ColumnName="IMEI" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="life_associate_member">
+      <EntityTypeMapping TypeName="csidbModel.life_associate_member">
+        <MappingFragment StoreEntitySet="life_associate_member">
+          <ScalarProperty Name="slno" ColumnName="slno" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="memberno" ColumnName="memberno" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="phone1" ColumnName="phone1" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="spouse" ColumnName="spouse" />
+          <ScalarProperty Name="qualification" ColumnName="qualification" />
+          <ScalarProperty Name="answer" ColumnName="answer" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="last_date" ColumnName="last_date" />
+          <ScalarProperty Name="pin" ColumnName="pin" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="life_member">
+      <EntityTypeMapping TypeName="csidbModel.life_member">
+        <MappingFragment StoreEntitySet="life_member">
+          <ScalarProperty Name="slno" ColumnName="slno" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="memberno" ColumnName="memberno" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="phone1" ColumnName="phone1" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="spouse" ColumnName="spouse" />
+          <ScalarProperty Name="qualification" ColumnName="qualification" />
+          <ScalarProperty Name="answer" ColumnName="answer" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="last_date" ColumnName="last_date" />
+          <ScalarProperty Name="pin" ColumnName="pin" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="logbooks">
+      <EntityTypeMapping TypeName="csidbModel.logbook">
+        <MappingFragment StoreEntitySet="logbook">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MemberType" ColumnName="MemberType" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="Precess" ColumnName="Precess" />
+          <ScalarProperty Name="slno" ColumnName="slno" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="memberno" ColumnName="memberno" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="phone1" ColumnName="phone1" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="spouse" ColumnName="spouse" />
+          <ScalarProperty Name="qualification" ColumnName="qualification" />
+          <ScalarProperty Name="answer" ColumnName="answer" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="last_date" ColumnName="last_date" />
+          <ScalarProperty Name="pin" ColumnName="pin" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="country" ColumnName="country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MyConferences">
+      <EntityTypeMapping TypeName="csidbModel.MyConference">
+        <MappingFragment StoreEntitySet="MyConference">
+          <ScalarProperty Name="PId" ColumnName="PId" />
+          <ScalarProperty Name="IMEI" ColumnName="IMEI" />
+          <ScalarProperty Name="CId" ColumnName="CId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="other_member">
+      <EntityTypeMapping TypeName="csidbModel.other_member">
+        <MappingFragment StoreEntitySet="other_member">
+          <ScalarProperty Name="slno" ColumnName="slno" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="memberno" ColumnName="memberno" />
+          <ScalarProperty Name="designation" ColumnName="designation" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="phone1" ColumnName="phone1" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="spouse" ColumnName="spouse" />
+          <ScalarProperty Name="qualification" ColumnName="qualification" />
+          <ScalarProperty Name="answer" ColumnName="answer" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="last_date" ColumnName="last_date" />
+          <ScalarProperty Name="pin" ColumnName="pin" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_CSI_69_Con_Accompanys">
+      <EntityTypeMapping TypeName="csidbModel.tbl_CSI_69_Con_Accompanys">
+        <MappingFragment StoreEntitySet="tbl_CSI_69_Con_Accompanys">
+          <ScalarProperty Name="AccompanyId" ColumnName="AccompanyId" />
+          <ScalarProperty Name="RegId" ColumnName="RegId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Meal_Preference" ColumnName="Meal_Preference" />
+          <ScalarProperty Name="Accommodation" ColumnName="Accommodation" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="Check_in_Time" ColumnName="Check_in_Time" />
+          <ScalarProperty Name="Check_out_Time" ColumnName="Check_out_Time" />
+          <ScalarProperty Name="Extra1" ColumnName="Extra1" />
+          <ScalarProperty Name="Extra2" ColumnName="Extra2" />
+          <ScalarProperty Name="Extra3" ColumnName="Extra3" />
+          <ScalarProperty Name="Extra4" ColumnName="Extra4" />
+          <ScalarProperty Name="Extra5" ColumnName="Extra5" />
+          <ScalarProperty Name="Extra6" ColumnName="Extra6" />
+          <ScalarProperty Name="Extra7" ColumnName="Extra7" />
+          <ScalarProperty Name="Extra8" ColumnName="Extra8" />
+          <ScalarProperty Name="Extra9" ColumnName="Extra9" />
+          <ScalarProperty Name="Extra10" ColumnName="Extra10" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_CSI_69_Con_Transections">
+      <EntityTypeMapping TypeName="csidbModel.tbl_CSI_69_Con_Transections">
+        <MappingFragment StoreEntitySet="tbl_CSI_69_Con_Transections">
+          <ScalarProperty Name="TransId" ColumnName="TransId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="AmountToPay" ColumnName="AmountToPay" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Extra1" ColumnName="Extra1" />
+          <ScalarProperty Name="Extra2" ColumnName="Extra2" />
+          <ScalarProperty Name="Extra3" ColumnName="Extra3" />
+          <ScalarProperty Name="Extra4" ColumnName="Extra4" />
+          <ScalarProperty Name="Extra5" ColumnName="Extra5" />
+          <ScalarProperty Name="Extra6" ColumnName="Extra6" />
+          <ScalarProperty Name="Extra7" ColumnName="Extra7" />
+          <ScalarProperty Name="Extra8" ColumnName="Extra8" />
+          <ScalarProperty Name="Extra9" ColumnName="Extra9" />
+          <ScalarProperty Name="Extra10" ColumnName="Extra10" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="csidbModel.tbl_CSI_69_Con_Transections">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="csidbModel.Store.tbl_CSI_69_Con_TransectionInsertCommand">
+            <ScalarProperty Name="Extra10" ParameterName="Extra10" />
+            <ScalarProperty Name="Extra9" ParameterName="Extra9" />
+            <ScalarProperty Name="Extra8" ParameterName="Extra8" />
+            <ScalarProperty Name="Extra7" ParameterName="Extra7" />
+            <ScalarProperty Name="Extra6" ParameterName="Extra6" />
+            <ScalarProperty Name="Extra5" ParameterName="Extra5" />
+            <ScalarProperty Name="Extra4" ParameterName="Extra4" />
+            <ScalarProperty Name="Extra3" ParameterName="Extra3" />
+            <ScalarProperty Name="Extra2" ParameterName="Extra2" />
+            <ScalarProperty Name="Extra1" ParameterName="Extra1" />
+            <ScalarProperty Name="Remarks" ParameterName="Remarks" />
+            <ScalarProperty Name="Status" ParameterName="Status" />
+            <ScalarProperty Name="TransDate" ParameterName="TransDate" />
+            <ScalarProperty Name="AmountPaid" ParameterName="AmountPaid" />
+            <ScalarProperty Name="AmountToPay" ParameterName="AmountToPay" />
+            <ScalarProperty Name="UserId" ParameterName="UserId" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="csidbModel.Store.tbl_CSI_69_Con_TransectionUpdateCommand">
+            <ScalarProperty Name="TransId" ParameterName="Original_TransId" Version="Current" />
+            <ScalarProperty Name="TransId" ParameterName="TransId" Version="Current" />
+            <ScalarProperty Name="Extra10" ParameterName="Extra10" Version="Current" />
+            <ScalarProperty Name="Extra9" ParameterName="Extra9" Version="Current" />
+            <ScalarProperty Name="Extra8" ParameterName="Extra8" Version="Current" />
+            <ScalarProperty Name="Extra7" ParameterName="Extra7" Version="Current" />
+            <ScalarProperty Name="Extra6" ParameterName="Extra6" Version="Current" />
+            <ScalarProperty Name="Extra5" ParameterName="Extra5" Version="Current" />
+            <ScalarProperty Name="Extra4" ParameterName="Extra4" Version="Current" />
+            <ScalarProperty Name="Extra3" ParameterName="Extra3" Version="Current" />
+            <ScalarProperty Name="Extra2" ParameterName="Extra2" Version="Current" />
+            <ScalarProperty Name="Extra1" ParameterName="Extra1" Version="Current" />
+            <ScalarProperty Name="Remarks" ParameterName="Remarks" Version="Current" />
+            <ScalarProperty Name="Status" ParameterName="Status" Version="Current" />
+            <ScalarProperty Name="TransDate" ParameterName="TransDate" Version="Current" />
+            <ScalarProperty Name="AmountPaid" ParameterName="AmountPaid" Version="Current" />
+            <ScalarProperty Name="AmountToPay" ParameterName="AmountToPay" Version="Current" />
+            <ScalarProperty Name="UserId" ParameterName="UserId" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="csidbModel.Store.tbl_CSI_69_Con_TransectionDeleteCommand">
+            <ScalarProperty Name="TransId" ParameterName="Original_TransId" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAbstractCategories">
+      <EntityTypeMapping TypeName="csidbModel.tblAbstractCategory">
+        <MappingFragment StoreEntitySet="tblAbstractCategories">
+          <ScalarProperty Name="Catid" ColumnName="Catid" />
+          <ScalarProperty Name="AbstractCategory" ColumnName="AbstractCategory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblAbstractSubmissionDetails">
+      <EntityTypeMapping TypeName="csidbModel.tblAbstractSubmissionDetail">
+        <MappingFragment StoreEntitySet="tblAbstractSubmissionDetails">
+          <ScalarProperty Name="SubId" ColumnName="SubId" />
+          <ScalarProperty Name="catid" ColumnName="catid" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="MembershipNO" ColumnName="MembershipNO" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Authors" ColumnName="Authors" />
+          <ScalarProperty Name="PresentingAuthor" ColumnName="PresentingAuthor" />
+          <ScalarProperty Name="Institution" ColumnName="Institution" />
+          <ScalarProperty Name="Name_of_Corresponding_Author" ColumnName="Name_of_Corresponding_Author" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Address_for_Correspondence" ColumnName="Address_for_Correspondence" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Foldername" ColumnName="Foldername" />
+          <ScalarProperty Name="Filename" ColumnName="Filename" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblregids">
+      <EntityTypeMapping TypeName="csidbModel.tblregid">
+        <MappingFragment StoreEntitySet="tblregid">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="regid" ColumnName="regid" />
+          <ScalarProperty Name="imeino" ColumnName="imeino" />
+          <ScalarProperty Name="SENDER_ID" ColumnName="SENDER_ID" />
+          <ScalarProperty Name="membershipNo" ColumnName="membershipNo" />
+          <ScalarProperty Name="mobileNo" ColumnName="mobileNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wbc_CsiMembersLoginDtls">
+      <EntityTypeMapping TypeName="csidbModel.wbc_CsiMembersLoginDtls">
+        <MappingFragment StoreEntitySet="wbc_CsiMembersLoginDtls">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Memberno" ColumnName="Memberno" />
+          <ScalarProperty Name="WebcastName" ColumnName="WebcastName" />
+          <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+          <ScalarProperty Name="Mnth" ColumnName="Mnth" />
+          <ScalarProperty Name="Yr" ColumnName="Yr" />
+          <ScalarProperty Name="Extra1" ColumnName="Extra1" />
+          <ScalarProperty Name="Extra2" ColumnName="Extra2" />
+          <ScalarProperty Name="Extra3" ColumnName="Extra3" />
+          <ScalarProperty Name="Extra4" ColumnName="Extra4" />
+          <ScalarProperty Name="Extra5" ColumnName="Extra5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wbc_NonCsiLoginDtls">
+      <EntityTypeMapping TypeName="csidbModel.wbc_NonCsiLoginDtls">
+        <MappingFragment StoreEntitySet="wbc_NonCsiLoginDtls">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="WebcastName" ColumnName="WebcastName" />
+          <ScalarProperty Name="PharmaName" ColumnName="PharmaName" />
+          <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+          <ScalarProperty Name="Mnth" ColumnName="Mnth" />
+          <ScalarProperty Name="Yr" ColumnName="Yr" />
+          <ScalarProperty Name="Extra1" ColumnName="Extra1" />
+          <ScalarProperty Name="Extra2" ColumnName="Extra2" />
+          <ScalarProperty Name="Extra3" ColumnName="Extra3" />
+          <ScalarProperty Name="Extra4" ColumnName="Extra4" />
+          <ScalarProperty Name="Extra5" ColumnName="Extra5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wbc_NonCsiMembers">
+      <EntityTypeMapping TypeName="csidbModel.wbc_NonCsiMembers">
+        <MappingFragment StoreEntitySet="wbc_NonCsiMembers">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="PharmaName" ColumnName="PharmaName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="WebcastName" ColumnName="WebcastName" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Extra1" ColumnName="Extra1" />
+          <ScalarProperty Name="Extra2" ColumnName="Extra2" />
+          <ScalarProperty Name="Extra3" ColumnName="Extra3" />
+          <ScalarProperty Name="Extra4" ColumnName="Extra4" />
+          <ScalarProperty Name="Extra5" ColumnName="Extra5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="wbc_WebcastMasters">
+      <EntityTypeMapping TypeName="csidbModel.wbc_WebcastMasters">
+        <MappingFragment StoreEntitySet="wbc_WebcastMasters">
+          <ScalarProperty Name="WebcastId" ColumnName="WebcastId" />
+          <ScalarProperty Name="WebcastName" ColumnName="WebcastName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Extra1" ColumnName="Extra1" />
+          <ScalarProperty Name="Extra2" ColumnName="Extra2" />
+          <ScalarProperty Name="Extra3" ColumnName="Extra3" />
+          <ScalarProperty Name="Extra4" ColumnName="Extra4" />
+          <ScalarProperty Name="Extra5" ColumnName="Extra5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="csi_mail_details">
+      <EntityTypeMapping TypeName="csidbModel.csi_mail_details">
+        <MappingFragment StoreEntitySet="csi_mail_details">
+          <ScalarProperty Name="SL" ColumnName="SL" />
+          <ScalarProperty Name="Mail_Dt" ColumnName="Mail_Dt" />
+          <ScalarProperty Name="Mail_Sender" ColumnName="Mail_Sender" />
+          <ScalarProperty Name="Mail_Body" ColumnName="Mail_Body" />
+          <ScalarProperty Name="Mail_Sub" ColumnName="Mail_Sub" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="csi_massmail_member">
+      <EntityTypeMapping TypeName="csidbModel.csi_massmail_member">
+        <MappingFragment StoreEntitySet="csi_massmail_member">
+          <ScalarProperty Name="Sl" ColumnName="Sl" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="memberno" ColumnName="memberno" />
+          <ScalarProperty Name="emailid" ColumnName="emailid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBlogs">
+      <EntityTypeMapping TypeName="csidbModel.tblBlog">
+        <MappingFragment StoreEntitySet="tblBlog">
+          <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+          <ScalarProperty Name="BlogTitle" ColumnName="BlogTitle" />
+          <ScalarProperty Name="BlogDetails" ColumnName="BlogDetails" />
+          <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+          <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
+          <ScalarProperty Name="PostedDate" ColumnName="PostedDate" />
+          <ScalarProperty Name="Mnth" ColumnName="Mnth" />
+          <ScalarProperty Name="Yr" ColumnName="Yr" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblComments">
+      <EntityTypeMapping TypeName="csidbModel.tblComment">
+        <MappingFragment StoreEntitySet="tblComment">
+          <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+          <ScalarProperty Name="BlogId" ColumnName="BlogId" />
+          <ScalarProperty Name="CDetails" ColumnName="CDetails" />
+          <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+          <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
+          <ScalarProperty Name="PostedDate" ColumnName="PostedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCountryCodes">
+      <EntityTypeMapping TypeName="csidbModel.tblCountryCode">
+        <MappingFragment StoreEntitySet="tblCountryCode">
+          <ScalarProperty Name="CountryCodeId" ColumnName="CountryCodeId" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="stateId" ColumnName="stateId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLoginDetails">
+      <EntityTypeMapping TypeName="csidbModel.tblLoginDetail">
+        <MappingFragment StoreEntitySet="tblLoginDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="MemberId" ColumnName="MemberId" />
+          <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+          <ScalarProperty Name="LoginDate" ColumnName="LoginDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_Insert" FunctionName="csidbModel.Store.SP_Insert" />
+    <FunctionImportMapping FunctionImportName="tbl_CSI_69_Con_TransectionDeleteCommand" FunctionName="csidbModel.Store.tbl_CSI_69_Con_TransectionDeleteCommand" />
+    <FunctionImportMapping FunctionImportName="tbl_CSI_69_Con_TransectionInsertCommand" FunctionName="csidbModel.Store.tbl_CSI_69_Con_TransectionInsertCommand">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="csidbModel.tbl_CSI_69_Con_TransectionInsertCommand_Result">
+          <ScalarProperty Name="TransId" ColumnName="TransId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="AmountToPay" ColumnName="AmountToPay" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Extra1" ColumnName="Extra1" />
+          <ScalarProperty Name="Extra2" ColumnName="Extra2" />
+          <ScalarProperty Name="Extra3" ColumnName="Extra3" />
+          <ScalarProperty Name="Extra4" ColumnName="Extra4" />
+          <ScalarProperty Name="Extra5" ColumnName="Extra5" />
+          <ScalarProperty Name="Extra6" ColumnName="Extra6" />
+          <ScalarProperty Name="Extra7" ColumnName="Extra7" />
+          <ScalarProperty Name="Extra8" ColumnName="Extra8" />
+          <ScalarProperty Name="Extra9" ColumnName="Extra9" />
+          <ScalarProperty Name="Extra10" ColumnName="Extra10" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="tbl_CSI_69_Con_TransectionSelectCommand" FunctionName="csidbModel.Store.tbl_CSI_69_Con_TransectionSelectCommand">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="csidbModel.tbl_CSI_69_Con_TransectionSelectCommand_Result">
+          <ScalarProperty Name="TransId" ColumnName="TransId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="AmountToPay" ColumnName="AmountToPay" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Extra1" ColumnName="Extra1" />
+          <ScalarProperty Name="Extra2" ColumnName="Extra2" />
+          <ScalarProperty Name="Extra3" ColumnName="Extra3" />
+          <ScalarProperty Name="Extra4" ColumnName="Extra4" />
+          <ScalarProperty Name="Extra5" ColumnName="Extra5" />
+          <ScalarProperty Name="Extra6" ColumnName="Extra6" />
+          <ScalarProperty Name="Extra7" ColumnName="Extra7" />
+          <ScalarProperty Name="Extra8" ColumnName="Extra8" />
+          <ScalarProperty Name="Extra9" ColumnName="Extra9" />
+          <ScalarProperty Name="Extra10" ColumnName="Extra10" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="tbl_CSI_69_Con_TransectionUpdateCommand" FunctionName="csidbModel.Store.tbl_CSI_69_Con_TransectionUpdateCommand">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="csidbModel.tbl_CSI_69_Con_TransectionUpdateCommand_Result">
+          <ScalarProperty Name="TransId" ColumnName="TransId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="AmountToPay" ColumnName="AmountToPay" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+          <ScalarProperty Name="TransDate" ColumnName="TransDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Extra1" ColumnName="Extra1" />
+          <ScalarProperty Name="Extra2" ColumnName="Extra2" />
+          <ScalarProperty Name="Extra3" ColumnName="Extra3" />
+          <ScalarProperty Name="Extra4" ColumnName="Extra4" />
+          <ScalarProperty Name="Extra5" ColumnName="Extra5" />
+          <ScalarProperty Name="Extra6" ColumnName="Extra6" />
+          <ScalarProperty Name="Extra7" ColumnName="Extra7" />
+          <ScalarProperty Name="Extra8" ColumnName="Extra8" />
+          <ScalarProperty Name="Extra9" ColumnName="Extra9" />
+          <ScalarProperty Name="Extra10" ColumnName="Extra10" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="usp_AddBlog" FunctionName="csidbModel.Store.usp_AddBlog" />
+    <FunctionImportMapping FunctionImportName="usp_AddClientDetails" FunctionName="csidbModel.Store.usp_AddClientDetails" />
+    <FunctionImportMapping FunctionImportName="usp_AddClientDetails2" FunctionName="csidbModel.Store.usp_AddClientDetails2" />
+    <FunctionImportMapping FunctionImportName="usp_AddClientMaster" FunctionName="csidbModel.Store.usp_AddClientMaster" />
+    <FunctionImportMapping FunctionImportName="usp_AddClientMaster2" FunctionName="csidbModel.Store.usp_AddClientMaster2" />
+    <FunctionImportMapping FunctionImportName="usp_AddComment" FunctionName="csidbModel.Store.usp_AddComment" />
+    <FunctionImportMapping FunctionImportName="usp_AddConferenceDetails" FunctionName="csidbModel.Store.usp_AddConferenceDetails" />
+    <FunctionImportMapping FunctionImportName="usp_AddDocDetail" FunctionName="csidbModel.Store.usp_AddDocDetail" />
+    <FunctionImportMapping FunctionImportName="usp_AddEmpMaster" FunctionName="csidbModel.Store.usp_AddEmpMaster" />
+    <FunctionImportMapping FunctionImportName="usp_AddEmpUnitAssign" FunctionName="csidbModel.Store.usp_AddEmpUnitAssign" />
+    <FunctionImportMapping FunctionImportName="usp_AddNonCsiMembers" FunctionName="csidbModel.Store.usp_AddNonCsiMembers" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateBlog" FunctionName="csidbModel.Store.usp_UpdateBlog" />
+    <FunctionImportMapping FunctionImportName="usp_UpdateComment" FunctionName="csidbModel.Store.usp_UpdateComment" />
+    <FunctionImportMapping FunctionImportName="ValidateUser" FunctionName="csidbModel.Store.ValidateUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="csidbModel.ValidateUser_Result">
+          <ScalarProperty Name="RegId" ColumnName="RegId" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Membership_Number" ColumnName="Membership_Number" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Institution" ColumnName="Institution" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Degree" ColumnName="Degree" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Pin" ColumnName="Pin" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Sponsorship" ColumnName="Sponsorship" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Payment_Id" ColumnName="Payment_Id" />
+          <ScalarProperty Name="Payment_Amount" ColumnName="Payment_Amount" />
+          <ScalarProperty Name="Extra1" ColumnName="Extra1" />
+          <ScalarProperty Name="Extra2" ColumnName="Extra2" />
+          <ScalarProperty Name="Extra3" ColumnName="Extra3" />
+          <ScalarProperty Name="Extra4" ColumnName="Extra4" />
+          <ScalarProperty Name="Extra5" ColumnName="Extra5" />
+          <ScalarProperty Name="Extra6" ColumnName="Extra6" />
+          <ScalarProperty Name="Extra7" ColumnName="Extra7" />
+          <ScalarProperty Name="Extra8" ColumnName="Extra8" />
+          <ScalarProperty Name="Extra9" ColumnName="Extra9" />
+          <ScalarProperty Name="Extra10" ColumnName="Extra10" />
+          <ScalarProperty Name="Badge_Name" ColumnName="Badge_Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_RegistrationDetail_DeleteCommand" FunctionName="csidbModel.Store.SP_RegistrationDetail_DeleteCommand" />
+    <FunctionImportMapping FunctionImportName="SP_RegistrationDetail_InsertCommand" FunctionName="csidbModel.Store.SP_RegistrationDetail_InsertCommand">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="csidbModel.SP_RegistrationDetail_InsertCommand_Result">
+          <ScalarProperty Name="RegId" ColumnName="RegId" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Membership_Number" ColumnName="Membership_Number" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Institution" ColumnName="Institution" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Degree" ColumnName="Degree" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Pin" ColumnName="Pin" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Sponsorship" ColumnName="Sponsorship" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Payment_Id" ColumnName="Payment_Id" />
+          <ScalarProperty Name="Payment_Amount" ColumnName="Payment_Amount" />
+          <ScalarProperty Name="Extra1" ColumnName="Extra1" />
+          <ScalarProperty Name="Extra2" ColumnName="Extra2" />
+          <ScalarProperty Name="Extra3" ColumnName="Extra3" />
+          <ScalarProperty Name="Extra4" ColumnName="Extra4" />
+          <ScalarProperty Name="Extra5" ColumnName="Extra5" />
+          <ScalarProperty Name="Extra6" ColumnName="Extra6" />
+          <ScalarProperty Name="Extra7" ColumnName="Extra7" />
+          <ScalarProperty Name="Extra8" ColumnName="Extra8" />
+          <ScalarProperty Name="Extra9" ColumnName="Extra9" />
+          <ScalarProperty Name="Regno" ColumnName="Regno" />
+          <ScalarProperty Name="Badge_Name" ColumnName="Badge_Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_RegistrationDetail_SelectCommand" FunctionName="csidbModel.Store.SP_RegistrationDetail_SelectCommand">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="csidbModel.SP_RegistrationDetail_SelectCommand_Result">
+          <ScalarProperty Name="RegId" ColumnName="RegId" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Membership_Number" ColumnName="Membership_Number" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Institution" ColumnName="Institution" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Degree" ColumnName="Degree" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Pin" ColumnName="Pin" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Sponsorship" ColumnName="Sponsorship" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Payment_Id" ColumnName="Payment_Id" />
+          <ScalarProperty Name="Payment_Amount" ColumnName="Payment_Amount" />
+          <ScalarProperty Name="Extra1" ColumnName="Extra1" />
+          <ScalarProperty Name="Extra2" ColumnName="Extra2" />
+          <ScalarProperty Name="Extra3" ColumnName="Extra3" />
+          <ScalarProperty Name="Extra4" ColumnName="Extra4" />
+          <ScalarProperty Name="Extra5" ColumnName="Extra5" />
+          <ScalarProperty Name="Extra6" ColumnName="Extra6" />
+          <ScalarProperty Name="Extra7" ColumnName="Extra7" />
+          <ScalarProperty Name="Extra8" ColumnName="Extra8" />
+          <ScalarProperty Name="Extra9" ColumnName="Extra9" />
+          <ScalarProperty Name="Regno" ColumnName="Regno" />
+          <ScalarProperty Name="Badge_Name" ColumnName="Badge_Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_RegistrationDetail_UpdateCommand" FunctionName="csidbModel.Store.SP_RegistrationDetail_UpdateCommand">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="csidbModel.SP_RegistrationDetail_UpdateCommand_Result">
+          <ScalarProperty Name="RegId" ColumnName="RegId" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Membership_Number" ColumnName="Membership_Number" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Institution" ColumnName="Institution" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Degree" ColumnName="Degree" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Pin" ColumnName="Pin" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Sponsorship" ColumnName="Sponsorship" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="Payment_Id" ColumnName="Payment_Id" />
+          <ScalarProperty Name="Payment_Amount" ColumnName="Payment_Amount" />
+          <ScalarProperty Name="Extra1" ColumnName="Extra1" />
+          <ScalarProperty Name="Extra2" ColumnName="Extra2" />
+          <ScalarProperty Name="Extra3" ColumnName="Extra3" />
+          <ScalarProperty Name="Extra4" ColumnName="Extra4" />
+          <ScalarProperty Name="Extra5" ColumnName="Extra5" />
+          <ScalarProperty Name="Extra6" ColumnName="Extra6" />
+          <ScalarProperty Name="Extra7" ColumnName="Extra7" />
+          <ScalarProperty Name="Extra8" ColumnName="Extra8" />
+          <ScalarProperty Name="Extra9" ColumnName="Extra9" />
+          <ScalarProperty Name="Regno" ColumnName="Regno" />
+          <ScalarProperty Name="Badge_Name" ColumnName="Badge_Name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="tbl_CSI_69_Con_RegistrationDetails">
+      <EntityTypeMapping TypeName="csidbModel.tbl_CSI_69_Con_RegistrationDetails">
+        <MappingFragment StoreEntitySet="tbl_CSI_69_Con_RegistrationDetails">
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+          <ScalarProperty Name="Foodtype" ColumnName="Foodtype" />
+          <ScalarProperty Name="Badge_Name" ColumnName="Badge_Name" />
+          <ScalarProperty Name="Regno" ColumnName="Regno" />
+          <ScalarProperty Name="Extra9" ColumnName="Extra9" />
+          <ScalarProperty Name="Extra8" ColumnName="Extra8" />
+          <ScalarProperty Name="Extra7" ColumnName="Extra7" />
+          <ScalarProperty Name="Extra6" ColumnName="Extra6" />
+          <ScalarProperty Name="Extra5" ColumnName="Extra5" />
+          <ScalarProperty Name="Extra4" ColumnName="Extra4" />
+          <ScalarProperty Name="Extra3" ColumnName="Extra3" />
+          <ScalarProperty Name="Extra2" ColumnName="Extra2" />
+          <ScalarProperty Name="Extra1" ColumnName="Extra1" />
+          <ScalarProperty Name="Payment_Amount" ColumnName="Payment_Amount" />
+          <ScalarProperty Name="Payment_Id" ColumnName="Payment_Id" />
+          <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+          <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Sponsorship" ColumnName="Sponsorship" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Pin" ColumnName="Pin" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="Degree" ColumnName="Degree" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Institution" ColumnName="Institution" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="Membership_Number" ColumnName="Membership_Number" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+          <ScalarProperty Name="RegId" ColumnName="RegId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="csidbModel.tbl_CSI_69_Con_RegistrationDetails">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="csidbModel.Store.SP_RegistrationDetail_InsertCommand">
+            <ScalarProperty Name="PaymentMode" ParameterName="PaymentMode" />
+            <ScalarProperty Name="Foodtype" ParameterName="Foodtype" />
+            <ScalarProperty Name="Badge_Name" ParameterName="Badge_Name" />
+            <ScalarProperty Name="Regno" ParameterName="Regno" />
+            <ScalarProperty Name="Extra9" ParameterName="Extra9" />
+            <ScalarProperty Name="Extra8" ParameterName="Extra8" />
+            <ScalarProperty Name="Extra7" ParameterName="Extra7" />
+            <ScalarProperty Name="Extra6" ParameterName="Extra6" />
+            <ScalarProperty Name="Extra5" ParameterName="Extra5" />
+            <ScalarProperty Name="Extra4" ParameterName="Extra4" />
+            <ScalarProperty Name="Extra3" ParameterName="Extra3" />
+            <ScalarProperty Name="Extra2" ParameterName="Extra2" />
+            <ScalarProperty Name="Extra1" ParameterName="Extra1" />
+            <ScalarProperty Name="Payment_Amount" ParameterName="Payment_Amount" />
+            <ScalarProperty Name="Payment_Id" ParameterName="Payment_Id" />
+            <ScalarProperty Name="ModifiedDate" ParameterName="ModifiedDate" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" />
+            <ScalarProperty Name="CreatedDate" ParameterName="CreatedDate" />
+            <ScalarProperty Name="Status" ParameterName="Status" />
+            <ScalarProperty Name="Sponsorship" ParameterName="Sponsorship" />
+            <ScalarProperty Name="Password" ParameterName="Password" />
+            <ScalarProperty Name="Username" ParameterName="Username" />
+            <ScalarProperty Name="Email" ParameterName="Email" />
+            <ScalarProperty Name="Fax" ParameterName="Fax" />
+            <ScalarProperty Name="Mobile" ParameterName="Mobile" />
+            <ScalarProperty Name="WorkPhone" ParameterName="WorkPhone" />
+            <ScalarProperty Name="Country" ParameterName="Country" />
+            <ScalarProperty Name="State" ParameterName="State" />
+            <ScalarProperty Name="Pin" ParameterName="Pin" />
+            <ScalarProperty Name="City" ParameterName="City" />
+            <ScalarProperty Name="Address" ParameterName="Address" />
+            <ScalarProperty Name="Nationality" ParameterName="Nationality" />
+            <ScalarProperty Name="Degree" ParameterName="Degree" />
+            <ScalarProperty Name="Designation" ParameterName="Designation" />
+            <ScalarProperty Name="Department" ParameterName="Department" />
+            <ScalarProperty Name="Institution" ParameterName="Institution" />
+            <ScalarProperty Name="Category" ParameterName="Category" />
+            <ScalarProperty Name="Membership_Number" ParameterName="Membership_Number" />
+            <ScalarProperty Name="DOB" ParameterName="DOB" />
+            <ScalarProperty Name="Name" ParameterName="Name" />
+            <ScalarProperty Name="Prefix" ParameterName="Prefix" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="csidbModel.Store.SP_RegistrationDetail_UpdateCommand">
+            <ScalarProperty Name="RegId" ParameterName="Original_RegId" Version="Current" />
+            <ScalarProperty Name="RegId" ParameterName="RegId" Version="Current" />
+            <ScalarProperty Name="PaymentMode" ParameterName="PaymentMode" Version="Current" />
+            <ScalarProperty Name="Foodtype" ParameterName="Foodtype" Version="Current" />
+            <ScalarProperty Name="Badge_Name" ParameterName="Badge_Name" Version="Current" />
+            <ScalarProperty Name="Regno" ParameterName="Regno" Version="Current" />
+            <ScalarProperty Name="Extra9" ParameterName="Extra9" Version="Current" />
+            <ScalarProperty Name="Extra8" ParameterName="Extra8" Version="Current" />
+            <ScalarProperty Name="Extra7" ParameterName="Extra7" Version="Current" />
+            <ScalarProperty Name="Extra6" ParameterName="Extra6" Version="Current" />
+            <ScalarProperty Name="Extra5" ParameterName="Extra5" Version="Current" />
+            <ScalarProperty Name="Extra4" ParameterName="Extra4" Version="Current" />
+            <ScalarProperty Name="Extra3" ParameterName="Extra3" Version="Current" />
+            <ScalarProperty Name="Extra2" ParameterName="Extra2" Version="Current" />
+            <ScalarProperty Name="Extra1" ParameterName="Extra1" Version="Current" />
+            <ScalarProperty Name="Payment_Amount" ParameterName="Payment_Amount" Version="Current" />
+            <ScalarProperty Name="Payment_Id" ParameterName="Payment_Id" Version="Current" />
+            <ScalarProperty Name="ModifiedDate" ParameterName="ModifiedDate" Version="Current" />
+            <ScalarProperty Name="ModifiedBy" ParameterName="ModifiedBy" Version="Current" />
+            <ScalarProperty Name="CreatedDate" ParameterName="CreatedDate" Version="Current" />
+            <ScalarProperty Name="Status" ParameterName="Status" Version="Current" />
+            <ScalarProperty Name="Sponsorship" ParameterName="Sponsorship" Version="Current" />
+            <ScalarProperty Name="Password" ParameterName="Password" Version="Current" />
+            <ScalarProperty Name="Username" ParameterName="Username" Version="Current" />
+            <ScalarProperty Name="Email" ParameterName="Email" Version="Current" />
+            <ScalarProperty Name="Fax" ParameterName="Fax" Version="Current" />
+            <ScalarProperty Name="Mobile" ParameterName="Mobile" Version="Current" />
+            <ScalarProperty Name="WorkPhone" ParameterName="WorkPhone" Version="Current" />
+            <ScalarProperty Name="Country" ParameterName="Country" Version="Current" />
+            <ScalarProperty Name="State" ParameterName="State" Version="Current" />
+            <ScalarProperty Name="Pin" ParameterName="Pin" Version="Current" />
+            <ScalarProperty Name="City" ParameterName="City" Version="Current" />
+            <ScalarProperty Name="Address" ParameterName="Address" Version="Current" />
+            <ScalarProperty Name="Nationality" ParameterName="Nationality" Version="Current" />
+            <ScalarProperty Name="Degree" ParameterName="Degree" Version="Current" />
+            <ScalarProperty Name="Designation" ParameterName="Designation" Version="Current" />
+            <ScalarProperty Name="Department" ParameterName="Department" Version="Current" />
+            <ScalarProperty Name="Institution" ParameterName="Institution" Version="Current" />
+            <ScalarProperty Name="Category" ParameterName="Category" Version="Current" />
+            <ScalarProperty Name="Membership_Number" ParameterName="Membership_Number" Version="Current" />
+            <ScalarProperty Name="DOB" ParameterName="DOB" Version="Current" />
+            <ScalarProperty Name="Name" ParameterName="Name" Version="Current" />
+            <ScalarProperty Name="Prefix" ParameterName="Prefix" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="csidbModel.Store.SP_RegistrationDetail_DeleteCommand">
+            <ScalarProperty Name="RegId" ParameterName="Original_RegId" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

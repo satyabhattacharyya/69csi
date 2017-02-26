@@ -1,0 +1,978 @@
+﻿@model _69CSI.Models.tbl_CSI_69_Con_RegistrationDetails
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Theme Starz">
+
+    <link href="~/Content/css00000.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/selectiz.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/owl.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/vanillab.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/timer.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/build.css" rel="stylesheet" type="text/css" />
+
+    <title>Online Registration CSI Conference 2017</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="~/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="~/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="~/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="~/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="~/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="~/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="~/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="~/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="~/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="~/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="~/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/favicon/favicon-16x16.png">
+    <link rel="manifest" href="~/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+</head>
+<body class="page-homepage-carousel">
+
+
+
+    @using (Html.BeginForm())
+     {
+        @*@Html.AntiForgeryToken()*@
+        @Html.ValidationSummary(true)
+        <input type="hidden" id="hdnid" name="hdnid" value="0" />
+        <input type="hidden" id="hdntypemember" name="hdntypemember" value="0" />
+    <input type="hidden" id="hdexret" name="hdexret" value="@ViewBag.exrate" />
+        <fieldset>
+            <!-- Wrapper -->
+            <div class="wrapper">
+                <!-- Header -->
+                <div class="navigation-wrapper">
+                    <div class="secondary-navigation-wrapper">
+                        <div class="container">
+                            <div class="navigation-contact pull-left">Call Us:  <span class="opacity-70">+91 33 2355 6308 / 1500</span></div>
+
+                            <ul class="secondary-navigation list-unstyled">
+                                <li><a href="">Travel Guidelines</a></li>
+                                <li><a href="contact.htm">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div><!-- /.secondary-navigation -->
+                    <div class="primary-navigation-wrapper">
+                        <header class="navbar" id="top" role="banner">
+                            <div class="container">
+                                <div class="navbar-header">
+                                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <div class="navbar-brand nav" id="brand">
+                                        <a href="#"><img src="~/Images//logo0000.png" alt="brand"></a>
+                                    </div>
+                                </div>
+                                <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="index.htm">Home</a></li>
+                                        <li>
+                                            <a href="javascript:void(0)" class=" has-child no-link">CSI 2017</a>
+                                            <ul class="list-unstyled child-navigation">
+                                                <li><a href="welcome.htm">Welcome Messages</a></li>
+                                                <li><a href="#">Conference Highlights</a></li>
+                                                <li><a href="core_committee.htm">Core Committee</a></li>
+                                                <li><a href="advisory_committee.htm">Advisory Committee</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="active">
+                                            <a href="javascript:void(0)" class="has-child no-link">Venue</a>
+                                            <ul class="list-unstyled child-navigation">
+                                                <li><a href="about-kolkata.htm">About Kolkata</a></li>
+                                                <li><a href="about-venue.htm">About the Venue</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)" class="has-child no-link">Scientific Programme</a>
+                                            <ul class="list-unstyled child-navigation">
+                                                <li><a href="#">Main Session</a></li>
+                                                <li><a href="#">Student / Fellow Session</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)" class="has-child no-link">Faculty</a>
+                                            <ul class="list-unstyled child-navigation">
+                                                <li><a href="#">International</a></li>
+                                                <li><a href="#">Domestic</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)" class="has-child no-link">Accommodation</a>
+                                            <ul class="list-unstyled child-navigation">
+                                                <li><a href="airport-connectivity.htm">Airport &amp; Connectivity</a></li>
+                                                <li><a href="hotels.htm">Hotels</a></li>
+                                                <li><a href="weather.htm">Weather</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav><!-- /.navbar collapse-->
+                            </div><!-- /.container -->
+                        </header><!-- /.navbar -->
+                    </div><!-- /.primary-navigation -->
+                    <div class="background">
+                        <img src="~/Images//backgrou.png" alt="background">
+
+                    </div>
+                </div>
+                <!-- end Header -->
+                <!-- Page Content -->
+                <div id="page-content">
+                    <!-- Slider -->
+                    <div id="homepage-carousel">
+                        <div class="container">
+                            <div class="homepage-carousel-wrapper">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <img src="~/Images//registration.jpg" class="img-responsive">
+                                    </div><!-- /.col-md-6 -->
+
+                                </div><!-- /.row -->
+                                <div class="background"></div>
+                            </div><!-- /.slider-wrapper -->
+                            <div class="slider-inner"></div>
+                        </div><!-- /.container -->
+                    </div>
+                    <!-- end Slider -->
+                    <!-- News, Events, About -->
+
+                    <div class="block">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <section class="news-small" id="news-small">
+                                        <header>
+                                            <h2>Registration</h2>
+                                        </header>
+                                        <div class="section-content">
+                                            <div class="col-lg-8">
+                                                <div class="frm" id="rediocln">
+                                                    <h4>Are you a member of CSI?</h4><div id="rediocln1"></div>
+                                                    <p style="margin:0;">
+                                                        <div class="radio">
+                                                            <input type="radio" name="radio2" id="radio1" value="step">
+                                                            <label for="radio1">
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <input type="radio" name="radio2" id="radio2" value="step">
+                                                            <label for="radio2">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                    </p>
+                                                </div>
+                                                <div id="show-me" style="display:none;">
+                                                    <div class="frm">
+                                                        <h4 style="color:red;">Membership Number (format 'L-1345'):</h4>
+                                                        <p style="margin:0;">
+                                                            @Html.TextBoxFor(model=>model.Membership_Number,new{@onchange="Setvalue()"})
+                                                            @*<input name="Membership_Number" class="tbox pull-left" style="width:65%" value="" maxlength="100" type="text" id="Membership_Number" @*required="required" onchange="Setvalue()">*@
+                                                            @*<button type="submit" style="width:30%" id="slider-submit" class="btn btn-framed pull-right">Check</button>*@
+                                                        </p>
+                                                        <div style="display:inline-block;">
+                                                            <div class="radio">
+                                                                <input type="radio" name="radio3" id="EC_Member" value="member">
+                                                                <label for="EC_Member">
+                                                                    EC Member
+                                                                </label>
+                                                            </div>
+                                                            <div class="radio">
+                                                                <input type="radio" name="radio3" id="Ex_President" value="member">
+                                                                <label for="Ex_President">
+                                                                    Ex President
+                                                                </label>
+                                                            </div>
+                                                            <div class="radio">
+                                                                <input type="radio" name="radio3" id="Ex_Secretary" value="member">
+                                                                <label for="Ex_Secretary">
+                                                                    Ex Secretary
+                                                                </label>
+                                                            </div>
+                                                            <div class="radio">
+                                                                <input type="radio" name="radio3" id="others" value="member">
+                                                                <label for="others">
+                                                                    Others
+                                                                </label>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Category*</h4>
+                                                    <p style="margin:0;">
+                                                        @Html.DropDownListFor(model => model.Category, ViewBag.catgrylist as SelectList, "Please Select", new { @name = "ddlcsiCategory", @id = "ddlcsiCategory", @class = "dropdown", @required = "required", @onchange = "setRegistration(this.value)", @style = "width:100%;background-color: whitesmoke;border: 2px solid #c5c5c5;height: 40px;padding: 9px;" })
+
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm" id="dvPassport" style="display:none;">
+                                                    <h4>Letter From HOD(doc,pdf)</h4>
+                                                    <input type="file" class="filestyle" data-buttontext="Select a File" id="filestyle-0" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);">
+
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Full Name*</h4>
+                                                    <p style="margin:0;">
+                                                        @Html.DropDownListFor(model => model.Prefix, ViewBag.pfx as SelectList, new { @id = "RegisterPrif", @style = "width:20%;background-color: whitesmoke;border: 2px solid #c5c5c5;height: 40px;padding: 9px;", @name = "RegisterPrif", @class = "dropdown pull-left", @required = "required" })
+                                                        @Html.TextBoxFor(model => model.Name, new { @name="register_fullname", @class="tbox pull-right", @style="width:75%" ,@value="",@maxlength="100" ,@type="text" ,@id="register_fullname" ,@required="required"})
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Date of Birth</h4>
+                                                    <p style="margin:0;">
+                                                        <div class="input-group two_input">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+
+                                                            <input name="first_name" placeholder="Date" class="form-control" id="example1" type="text">
+                                                        </div>
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Institution</h4>
+                                                    <p style="margin:0;">
+                                                        @*<input type="text" id="txt_institution">*@
+                                                        @Html.TextBoxFor(model => model.Institution, new { @type = "text", @id = "txt_institution" })
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Department</h4>
+                                                    <p style="margin:0;">
+                                                        @*<input type="text" id="txt_Department">*@
+                                                        @Html.TextBoxFor(model => model.Department, new { @type = "text", @id = "txt_Department" })
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Designation</h4>
+                                                    <p style="margin:0;">
+                                                        @*<input type="text" id="txt_Designation">*@
+                                                        @Html.TextBoxFor(model => model.Designation, new { @type = "text", @id = "txt_Designation" })
+                                                    </p>
+
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Degree</h4>
+                                                    <p style="margin:0;">
+                                                        @*<input type="text" id="txt_Degree">*@
+                                                        @Html.TextBoxFor(model => model.Degree, new { @type = "text", @id = "txt_Degree" })
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Nationality</h4>
+                                                    <p style="margin:0;">
+                                                        @*<input type="text" id="txt_Nationality">*@
+                                                        @Html.TextBoxFor(model => model.Nationality, new { @type = "text", @id = "txt_Nationality" })
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Name to appear on the badge</h4>
+                                                    <p style="margin:0;">
+                                                        @*<input type="text" id="txt_badge">*@
+                                                        @Html.TextBoxFor(model => model.Badge_Name, new { @type = "text", @id = "txt_badge" })
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Address*</h4>
+                                                    <p style="margin:0;">
+                                                        @*<textarea id="txt_Address"></textarea>*@
+                                                        @Html.TextAreaFor(model => model.Address, new { @id = "txt_Address" })
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>City*</h4>
+                                                    <p style="margin:0;">
+                                                        @*<input type="text" id="txt_City">*@
+                                                        @Html.TextBoxFor(model => model.City, new { @type = "text", @id = "txt_City" })
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Pin*</h4>
+                                                    <p style="margin:0;">
+                                                        @*<input type="text" id="txt_Pin">*@
+                                                        @Html.TextBoxFor(model => model.Pin, new { @type = "text", @id = "txt_Pin" })
+                                                    </p>
+
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>State*</h4>
+                                                    <p style="margin:0;">
+                                                        @Html.DropDownList("State", ViewBag.ststlst as SelectList, new { @style = "width:100%;background-color: whitesmoke;border: 2px solid #c5c5c5;height: 40px;padding: 9px;", @class = "dropdown", @name = "register_state", @id = "register_state" })
+
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Country*</h4>
+                                                    <p style="margin:0;">
+                                                        @Html.DropDownList("Country", ViewBag.cntlist as SelectList, new { @style = "width:100%;background-color: whitesmoke;border: 2px solid #c5c5c5;height: 40px;padding: 9px;", @class = "dropdown", @name = "register_state", @id = "register_state" })
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+
+                                                <div class="frm">
+
+                                                    <h4>Work Phone</h4>
+                                                    <p style="margin:0;">
+                                                        @*<input type="text" id="txt_Work_Phone" class="pull-left" style="width:100%">*@
+                                                        @Html.TextBoxFor(model => model.WorkPhone, new { @type = "text", @id = "txt_Work_Phone" })
+                                                        @*<input type="text" class="pull-right" style="width:75%">*@
+                                                    </p>
+
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Mobile*</h4>
+                                                    <p style="margin:0;">
+                                                        @*<input type="text" id="txt_Mobile">*@
+                                                        @Html.TextBoxFor(model => model.Mobile, new { @type = "text", @id = "txt_Mobile", @required = "required" })
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Fax</h4>
+                                                    <p style="margin:0;">
+                                                        @*<input type="text" id="txt_Fax" class="pull-left" style="width:100%">*@
+                                                        @Html.TextBoxFor(model => model.Fax, new { @id = "txt_Fax", @class = "pull-left", @style = "width:100%" })
+                                                        @*<input type="text" class="pull-right" style="width:75%">*@
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Email*</h4>
+                                                    <p style="margin:0;">
+                                                        @*<input type="text" id="txt_Email">*@
+                                                        @Html.TextBoxFor(model => model.Email, new { @type = "text", @id = "txt_Email" })
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+
+
+                                          
+                                                <h3 style="margin-top:40px;">Login Details</h3>
+                                                <hr>
+                                                <div class="frm">
+                                                    <h4>Username*</h4>
+                                                    <p style="margin:0;">
+                                                        @*<input type="text" id="txt_Username">*@
+                                                        @Html.TextBoxFor(model => model.Username, new { @id = "txt_Username", @required = "required" })
+
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Password*</h4>
+                                                    <p style="margin:0;">
+                                                        @*<input type="password" id="txt_password">*@
+                                                        @Html.PasswordFor(model => model.Password, new { @id = "txt_password", @required = "required" })
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Confirm Password*</h4>
+                                                    <p style="margin:0;"><input type="password"></p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="foodchoice">
+                                                    <h3>Choice of Food</h3>
+                                                    @Html.RadioButtonFor(model => model.Foodtype, "vegetarian") Vegetarian
+                                                    @Html.RadioButtonFor(model => model.Foodtype, "nonvegetarian") Non-Vegetarian
+
+
+                                                </div>
+
+
+                                            </div>
+                                            <!--div id="price-table" style="display:none;"-->
+                                            <div id="">
+                                                <div class="col-lg-12">
+                                                    <div class="category-table table-responsive">
+                                                  
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12">
+                                                    <h3>Payment Mode*</h3>
+                                                    @Html.RadioButtonFor(model => model.PaymentMode, "Online") Online
+                                                    @Html.RadioButtonFor(model => model.PaymentMode, "Neft") Neft
+                                                    @Html.RadioButtonFor(model => model.PaymentMode, "Cheque") Cheque
+                                                    @Html.RadioButtonFor(model => model.PaymentMode, "DD") DD
+                                                </div>
+
+
+                                                <div class="col-lg-12">
+                                                    @*<h5 style="color:red;">* An Additional amount of 15% to be added towards Service tax</h5>*@
+                                                    <h3>PG (MD) in training and Post Doctoral (DNB/DM) in training will have to submit a certificate from their HOD.</h3>
+                                                </div>
+                                                <div class="col-lg-7">
+                                                    <div class="frm" id="frm1">
+                                                        <h3>Total Amount</h3>
+                                                        <label id="Total_Amount" value="INR 23000"></label>
+                                                        <h2 style="margin:0;">INR  0.00</h2>
+                                                        <div class="clearfix"></div>
+                                                        <div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-12">
+
+                                                        @*<input type="submit" value="submit" style="margin-top:30px;" id="slider-submit" class="btn btn-framed pull-right" onclick="Setsubmit()" />*@
+
+                                                        @*<input type="submit" value="submit" style="margin-top:30px;" id="slider-submit" class="btn btn-framed pull-right" />*@
+                                                        @*//<button type="submit" style="margin-top:30px;" id="slider-submit" class="btn btn-framed pull-right">Submit</button>*@
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </div>
+                                                <!-- /.section-content -->
+
+                                    </section><!-- /.news-small -->
+                                    <input type="submit" value="submit" style="margin-top:30px;" id="slider-submit" class="btn btn-framed pull-right" />
+                                </div>
+                                <!-- /.col-md-4 -->
+
+
+                            </div><!-- /.row -->
+                        </div><!-- /.container -->
+                    </div>
+
+                    @*<input type="submit" value="submit" style="margin-top:30px;" id="slider-submit" class="btn btn-framed pull-right" />*@
+                    <!-- end News, Events, About -->
+                    <!-- end Partners, Make a Donation -->
+                </div>
+                <!-- end Page Content -->
+                <!-- Footer -->
+                <footer id="page-footer">
+
+                    <section id="footer-content">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4">
+                                    <aside>
+                                        <header><h4>Contact Us</h4></header>
+                                        <address>
+                                            <strong style="color:#fff;">Dr. Mrinal Kanti Das, Organizing Secretary</strong>
+                                            <br>
+                                            <span>Indian Heart House, P-60, C.I.T Road, <br>Scheme - VII-M, Kankurgachi,</span>
+                                            <br><br>
+                                            <span>Kolkata - 700054, India</span>
+                                            <br>
+                                            <abbr title="Telephone">Telephone:</abbr> +91 33 2355 7837, 2355 6308, 2355 1500
+                                            <br>
+                                            <abbr title="Email">Email:</abbr> <a href="">secretary@csicon2017.org</a>
+                                        </address>
+                                    </aside>
+                                </div><!-- /.col-md-3 -->
+                                <div class="col-md-4 col-sm-4">
+                                    <aside>
+                                        <header><h4>Important Links</h4></header>
+                                        <ul class="list-links">
+                                            <li><a href="hotels.htm">Accommodation</a></li>
+                                            <li><a href="">Privacy Policy</a></li>
+                                            <li><a href="">Terms & Conditions</a></li>
+                                            <li><a href="">Cancellation &amp; Refund Policy</a></li>
+                                            <li><a href="contact.htm">Contact us</a></li>
+                                        </ul>
+                                    </aside>
+                                </div><!-- /.col-md-3 -->
+                                <div class="col-md-4 col-sm-4">
+                                    <aside>
+                                        <header><h4>About CSICON 2017</h4></header>
+                                        <p>
+                                            All roads lead to Kolkata, India, the city of joy, city of palaces, a palpable mosaic of the old and new cultures and landscapes mutating with time. Mark the dates 7 th to 10<sup>th</sup> December, 2017 on your calendar.
+                                        </p>
+                                        <div>
+                                            <a href="about-csi.htm" class="read-more">More</a>
+                                        </div>
+                                    </aside>
+                                </div><!-- /.col-md-3 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.container -->
+                        <div class="background"><img src="~/Images//backgrou.png" class="" alt=""></div>
+                    </section><!-- /#footer-content -->
+
+                    <section id="footer-bottom">
+                        <div class="container">
+                            <div class="footer-inner">
+                                <div class="copyright">© 69th Annual Conference of Cardiological Society of India, All rights reserved</div><!-- /.copyright -->
+                            </div><!-- /.footer-inner -->
+                        </div><!-- /.container -->
+                    </section><!-- /#footer-bottom -->
+
+                </footer>
+                <!-- end Footer -->
+
+            </div>
+            <!-- end Wrapper -->
+        </fieldset>
+    }
+    <script type="text/javascript" src="~/Scripts/jquery-2.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-m.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Scripts/selectiz.js"></script>
+    <script type="text/javascript" src="~/Scripts/owl.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery00.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery01.js"></script>
+    <script type="text/javascript" src="~/Scripts/jQuery02.js"></script>
+    <script type="text/javascript" src="~/Scripts/icheck00.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery03.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap-filestyle.min.js"></script>
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+    <link href="~/Content/datepicker.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+        // When the document is ready
+        $(document).ready(function () {
+
+            $('#example1').datepicker({
+                format: "dd/mm/yyyy",
+                todayBtn: "linked",
+                autoclose: true
+            });
+
+        });
+    </script>
+
+    <script type="text/javascript" src="~/Scripts/jquery.downCount.js"></script>
+    <script type="text/javascript">
+        $('.countdown').downCount({
+            date: '12/07/2017 12:00:00',
+            offset: +10
+        }, function () {
+            alert('WOOT WOOT, done!');
+        });
+    </script>
+
+    <style type="text/css">
+        /* Set a size for our map container, the Google Map will take up 100% of this container */
+        #map {
+            width: 100%;
+            height: 50vh;
+        }
+
+        .mp-head {
+            color: #555;
+        }
+
+        #firstHeading {
+            font-size: 20pt !important;
+            padding-bottom: 0 !important;
+            color: #555;
+        }
+    </style>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>tbl_CSI_69_Con_RegistrationDetails</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RegId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RegId)
+            @Html.ValidationMessageFor(model => model.RegId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Prefix)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Prefix)
+            @Html.ValidationMessageFor(model => model.Prefix)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DOB)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DOB)
+            @Html.ValidationMessageFor(model => model.DOB)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Membership_Number)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Membership_Number)
+            @Html.ValidationMessageFor(model => model.Membership_Number)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Category)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Category)
+            @Html.ValidationMessageFor(model => model.Category)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Institution)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Institution)
+            @Html.ValidationMessageFor(model => model.Institution)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Department)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Department)
+            @Html.ValidationMessageFor(model => model.Department)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Designation)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Designation)
+            @Html.ValidationMessageFor(model => model.Designation)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Degree)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Degree)
+            @Html.ValidationMessageFor(model => model.Degree)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nationality)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nationality)
+            @Html.ValidationMessageFor(model => model.Nationality)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.City)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.City)
+            @Html.ValidationMessageFor(model => model.City)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Pin)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Pin)
+            @Html.ValidationMessageFor(model => model.Pin)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.State)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.State)
+            @Html.ValidationMessageFor(model => model.State)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Country)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Country)
+            @Html.ValidationMessageFor(model => model.Country)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorkPhone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WorkPhone)
+            @Html.ValidationMessageFor(model => model.WorkPhone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Mobile)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Mobile)
+            @Html.ValidationMessageFor(model => model.Mobile)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Fax)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Fax)
+            @Html.ValidationMessageFor(model => model.Fax)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Username)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Username)
+            @Html.ValidationMessageFor(model => model.Username)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Sponsorship)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Sponsorship)
+            @Html.ValidationMessageFor(model => model.Sponsorship)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Status)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Status)
+            @Html.ValidationMessageFor(model => model.Status)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CreatedDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreatedDate)
+            @Html.ValidationMessageFor(model => model.CreatedDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ModifiedBy)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ModifiedBy)
+            @Html.ValidationMessageFor(model => model.ModifiedBy)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ModifiedDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ModifiedDate)
+            @Html.ValidationMessageFor(model => model.ModifiedDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Payment_Id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Payment_Id)
+            @Html.ValidationMessageFor(model => model.Payment_Id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Payment_Amount)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Payment_Amount)
+            @Html.ValidationMessageFor(model => model.Payment_Amount)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Extra1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Extra1)
+            @Html.ValidationMessageFor(model => model.Extra1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Extra2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Extra2)
+            @Html.ValidationMessageFor(model => model.Extra2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Extra3)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Extra3)
+            @Html.ValidationMessageFor(model => model.Extra3)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Extra4)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Extra4)
+            @Html.ValidationMessageFor(model => model.Extra4)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Extra5)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Extra5)
+            @Html.ValidationMessageFor(model => model.Extra5)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Extra6)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Extra6)
+            @Html.ValidationMessageFor(model => model.Extra6)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Extra7)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Extra7)
+            @Html.ValidationMessageFor(model => model.Extra7)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Extra8)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Extra8)
+            @Html.ValidationMessageFor(model => model.Extra8)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Extra9)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Extra9)
+            @Html.ValidationMessageFor(model => model.Extra9)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Extra10)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Extra10)
+            @Html.ValidationMessageFor(model => model.Extra10)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Badge_Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Badge_Name)
+            @Html.ValidationMessageFor(model => model.Badge_Name)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

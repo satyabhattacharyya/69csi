@@ -1,0 +1,320 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Theme Starz">
+
+    @*<link href='css/css00000.css' rel='stylesheet' type='text/css'>*@
+    <link href="~/Content/css00000.css" rel="stylesheet" />
+    @*<link href="css/font-awesome.css" rel="stylesheet" type="text/css">*@
+    <link href="~/Content/font-awesome.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="css/bootstrap.css" type="text/css">*@
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="css/selectiz.css" type="text/css">*@
+    <link href="~/Content/selectiz.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="css/owl.css" type="text/css">*@
+    <link href="~/Content/owl.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="css/vanillab.css" type="text/css">*@
+    <link href="~/Content/vanillab.css" rel="stylesheet" />
+
+    @*<link rel="stylesheet" href="css/style.css" type="text/css">*@
+    <link href="~/Content/style.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="css/timer.css" type="text/css" />*@
+    <link href="~/Content/timer.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="css/build.css" type="text/css" />*@
+    <link href="~/Content/build.css" rel="stylesheet" />
+    <title>Thank you</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="~/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="~/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="~/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="~/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="~/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="~/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="~/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="~/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="~/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="~/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="~/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/favicon/favicon-16x16.png">
+    <link rel="manifest" href="~/favicon/manifest.json">
+
+
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <script language="javascript">
+        function toggle() {
+            var ele = document.getElementById("toggleText");
+            var text = document.getElementById("displayText");
+            if (ele.style.display == "block") {
+                ele.style.display = "none";
+                text.innerHTML = "<img src='~Images//plus.png'>";
+            }
+            else {
+                ele.style.display = "block";
+                text.innerHTML = "<img src='~Images//minus.png' style='width:auto;'>";
+            }
+        }
+    </script>
+    <style>
+        #displayText {
+            text-align: center;
+            width: 100%;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body class="page-homepage-carousel">
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <!-- Header -->
+        <div class="navigation-wrapper">
+
+            <div class="primary-navigation-wrapper">
+                <header class="navbar" id="top" role="banner">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <div class="navbar-brand nav" id="brand">
+                                <a href="#"><img src="~Images//logo0000.png" alt="brand"></a>
+                            </div>
+                        </div>
+
+                    </div><!-- /.container -->
+                </header><!-- /.navbar -->
+            </div><!-- /.primary-navigation -->
+            <div class="background">
+                <img src="~Images//backgrou.png" alt="background">
+            </div>
+        </div>
+        <!-- end Header -->
+        <!-- Page Content -->
+        <div id="page-content">
+            <!-- Slider -->
+            <div id="homepage-carousel">
+                <div class="container">
+                    <div class="homepage-carousel-wrapper">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
+                                <img src="~Images//thank.jpg" class="img-responsive">
+                            </div><!-- /.col-md-6 -->
+
+                        </div><!-- /.row -->
+                        <div class="background"></div>
+                    </div><!-- /.slider-wrapper -->
+                    <div class="slider-inner"></div>
+                </div><!-- /.container -->
+            </div>
+            <!-- end Slider -->
+            <!-- News, Events, About -->
+            <div class="block">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12">
+                            <section class="news-small" id="news-small">
+                                <header>
+                                    <h2>Thank You</h2>
+                                </header>
+                                <div class="col-md-12">
+                                    @*<h3>Dear Dr. Rana Chakraborty</h3>*@
+                                    <h3>Dear @ViewBag.Name</h3>
+
+                                    <p class="leadtag">
+                                        On behalf of <strong>69th Annual Conference of Cardiological Society of India Kolkata</strong>, we thank you
+                                        for your Online Registration and payment.
+                                    </p>
+                                    <p class="leadtag">Look forward for your presence and participation for the forthcoming Annual Conference.</p>
+
+                                    <address>
+                                        <h3>Kind Regards</h3>
+                                        <strong>Dr. Mrinal Kanti Das, Organizing Secretary</strong>
+                                        <br>
+                                        <span>Indian Heart House, P-60, C.I.T Road, <br>Scheme - VII-M, Kankurgachi,</span>
+                                        <br>
+                                        <span>Kolkata - 700054, India</span>
+                                        <br><br>
+                                        <abbr title="Telephone">Telephone:</abbr> +91 33 2355 7837, 2355 6308, 2355 1500
+                                        <br>
+                                        <abbr title="Email">Email:</abbr> <a href="">secretary@csicon2017.org</a>
+                                    </address>
+                                </div>
+
+                            </section><!-- /.news-small -->
+                        </div><!-- /.col-md-4 -->
+
+
+                    </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div>
+            <!-- end News, Events, About -->
+            <!-- end Partners, Make a Donation -->
+        </div>
+        <!-- end Page Content -->
+
+
+    </div>
+    <!-- end Wrapper -->
+
+    <script type="text/javascript" src="~/Scripts/jquery-2.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-m.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Scripts/selectiz.js"></script>
+    <script type="text/javascript" src="~/Scripts/owl.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery00.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery01.js"></script>
+    <script type="text/javascript" src="~/Scripts/jQuery02.js"></script>
+    <script type="text/javascript" src="~/Scripts/icheck00.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery03.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap-filestyle.min.js"></script>
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+    <link href="~/Content/datepicker.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+        // When the document is ready
+        $(document).ready(function () {
+
+            $('#example1').datepicker({
+                format: "dd/mm/yyyy",
+                todayBtn: "linked",
+                autoclose: true
+            });
+
+        });
+    </script>
+
+    <script type="text/javascript" src="~/Scripts/jquery.downCount.js"></script>
+    <script type="text/javascript">
+        $('.countdown').downCount({
+            date: '12/07/2017 12:00:00',
+            offset: +10
+        }, function () {
+            alert('WOOT WOOT, done!');
+        });
+    </script>
+
+    <style type="text/css">
+        /* Set a size for our map container, the Google Map will take up 100% of this container */
+        #map {
+            width: 100%;
+            height: 50vh;
+        }
+
+        .mp-head {
+            color: #555;
+        }
+
+        #firstHeading {
+            font-size: 20pt !important;
+            padding-bottom: 0 !important;
+            color: #555;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            $('#map').click(function () {
+                $('.gm-style').css("pointer-events", "auto");
+            });
+
+            $("#map").mouseleave(function () {
+                $('.gm-style').css("pointer-events", "none");
+            });
+        });
+    </script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRPvYnc6Da15McC2HM9jzdDRCSFXohxwY"></script>
+    <script type="text/javascript">
+
+        // Create and Initialise the Map (required) our google map below
+
+        google.maps.event.addDomListener(window, 'load', init);
+
+        function init() {
+            // Basic options for a simple Google Map
+            // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+            var isDraggable = $(document).width() > 640 ? true : false; // If document (your website) is wider than 480px, isDraggable = true, else isDraggable = false
+
+            var mapOptions = {
+
+                // How zoomed in you want the map to start at (always required)
+
+                zoom: 12,
+                draggable: isDraggable,
+                scrollwheel: false,
+                // The latitude and longitude to center the map (always required)
+
+                center: new google.maps.LatLng(22.5817824, 88.4715596), // Nova Scotia
+
+                // How you would like to style the map.
+                // This is where you would paste any style found on [Snazzy Maps][1].
+                // copy the Styles from Snazzy maps,  and paste that style info after the word "styles:"
+
+                styles: [{ "elementType": "geometry", "stylers": [{ "hue": "#ff4400" }, { "saturation": -68 }, { "lightness": -4 }, { "gamma": 0.72 }] }, { "featureType": "road", "elementType": "labels.icon" }, { "featureType": "landscape.man_made", "elementType": "geometry", "stylers": [{ "hue": "#0077ff" }, { "gamma": 3.1 }] }, { "featureType": "water", "stylers": [{ "hue": "#00ccff" }, { "gamma": 0.44 }, { "saturation": -33 }] }, { "featureType": "poi.park", "stylers": [{ "hue": "#44ff00" }, { "saturation": -23 }] }, { "featureType": "water", "elementType": "labels.text.fill", "stylers": [{ "hue": "#007fff" }, { "gamma": 0.77 }, { "saturation": 65 }, { "lightness": 99 }] }, { "featureType": "water", "elementType": "labels.text.stroke", "stylers": [{ "gamma": 0.11 }, { "weight": 5.6 }, { "saturation": 99 }, { "hue": "#0091ff" }, { "lightness": -86 }] }, { "featureType": "transit.line", "elementType": "geometry", "stylers": [{ "lightness": -48 }, { "hue": "#ff5e00" }, { "gamma": 1.2 }, { "saturation": -23 }] }, { "featureType": "transit", "elementType": "labels.text.stroke", "stylers": [{ "saturation": -64 }, { "hue": "#ff9100" }, { "lightness": 16 }, { "gamma": 0.47 }, { "weight": 2.7 }] }]
+            };
+
+
+
+            var mapElement = document.getElementById('map');
+
+            // Create the Google Map using out element and options defined above
+            var map = new google.maps.Map(mapElement, mapOptions);
+
+            // Following section, you can create your info window content using html markup
+
+            var contentString = '<div id="content">' +
+                '<div id="siteNotice">' +
+                '</div>' +
+                '<h3 id="firstHeading" class="firstHeading">Kolkata Convention Center</h3>' +
+                '<div id="bodyContent">' +
+                '<p style="color:#555;"><b>Address: </b>DG Block(Newtown), Action Area 1D, Newtown, Kolkata, West Bengal 700157</p>' +
+                '</div>' +
+                '</div>';
+
+
+            // Define the image to use for the map marker (58 x 44 px)
+
+            var image = 'images/marker.png';
+
+            // Define the Lattitude and Longitude for the map location
+
+            var myLatLng = new google.maps.LatLng(22.5817824, 88.4715596);
+
+            // Define the map marker characteristics
+
+            var mapMarker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                icon: image,
+                title: 'Snazzy!'
+
+            });
+
+            // Following Lines are needed if you use the Info Window to display content when map marker is clicked
+
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
+
+            // Following line turns the marker, into a clickable button and when clicked, opens the info window
+
+            google.maps.event.addListener(mapMarker, 'click', function () {
+                infowindow.open(map, mapMarker);
+
+            });
+
+        }
+
+    </script>
+</body>
+</html>

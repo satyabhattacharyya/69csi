@@ -1,0 +1,117 @@
+ul.countdown {
+list-style: none;
+margin-bottom: 20px;
+padding: 0;
+display: block;
+text-align: center;
+}
+ul.countdown li {
+display: inline-block;
+}
+ul.countdown li span {
+font-size: 50px;
+font-weight: 300;
+line-height: 80px;
+font-family: 'Segment7Standard';
+}
+ul.countdown li.seperator {
+font-size: 80px;
+line-height: 70px;
+vertical-align: top;
+}
+ul.countdown li p {
+color: #a7abb1;
+font-size: 14px;
+}
+.source {
+width: 405px;
+margin: 0 auto;
+background: #4f5861;
+color: #a7abb1;
+font-weight: bold;
+display: block;
+white-space: pre;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+}
+.timer {
+    font-family: "Segment7Standard";
+    font-size: 40px;
+    display: inline-block;
+    vertical-align: top;
+	    line-height: 80px;
+}
+
+
+
+.clear-loading {
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+}
+
+.spinner > span,
+.spinner > span:before,
+.spinner > span:after {
+    content: "";
+    display: block;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.spinner > span {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-left-color: transparent;
+    -webkit-animation: effect-2 2s infinite linear;
+    -moz-animation: effect-2 2s infinite linear;
+    -o-animation: effect-2 2s infinite linear;
+    animation: effect-2 2s infinite linear;
+}
+
+.spinner > span:before {
+    width: 75%;
+    height: 75%;
+    border-right-color: transparent;
+}
+
+.spinner > span:after {
+    width: 50%;
+    height: 50%;
+    border-bottom-color: transparent;
+}
+
+@-webkit-keyframes effect-2 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes effect-2 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

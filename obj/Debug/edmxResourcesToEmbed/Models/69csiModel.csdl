@@ -1,0 +1,1477 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="csidbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="associate_member">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="slno" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="fname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="lname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="memberno" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="designation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="8" FixedLength="true" Unicode="true" />
+    <Property Name="phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="age" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="sex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="dob" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="spouse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="qualification" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="answer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="question" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="last_date" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="pin" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Conference">
+    <Key>
+      <PropertyRef Name="CId" />
+    </Key>
+    <Property Name="CId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Day" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SubTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Hall" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ConferenceUser">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RegId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IMEI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="life_associate_member">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="slno" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="fname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="lname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="memberno" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="designation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="8" FixedLength="true" Unicode="true" />
+    <Property Name="phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="age" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="sex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="dob" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="spouse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="qualification" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="answer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="question" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="last_date" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="pin" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="life_member">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="slno" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="fname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="lname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="memberno" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="designation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="8" FixedLength="true" Unicode="true" />
+    <Property Name="phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="age" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="sex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="dob" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="spouse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="qualification" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="answer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="question" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="last_date" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="pin" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="tblAbstractSubmissionDetails" Relationship="Self.FK_tblAbstractSubmissionDetails_life_associate_member" FromRole="life_member" ToRole="tblAbstractSubmissionDetails" />
+  </EntityType>
+  <EntityType Name="logbook">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+    <Property Name="Precess" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="slno" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="fname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="lname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="memberno" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="designation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="8" FixedLength="true" Unicode="true" />
+    <Property Name="phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="age" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="sex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="dob" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="spouse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="qualification" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="answer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="question" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="last_date" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="pin" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MyConference">
+    <Key>
+      <PropertyRef Name="PId" />
+    </Key>
+    <Property Name="PId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IMEI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CId" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="other_member">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="slno" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="fname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="lname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="memberno" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="designation" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" MaxLength="8" FixedLength="true" Unicode="true" />
+    <Property Name="phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="age" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="sex" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="dob" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="spouse" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="qualification" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="answer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="question" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="last_date" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="pin" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="tbl_CSI_69_Con_Accompanys">
+    <Key>
+      <PropertyRef Name="AccompanyId" />
+    </Key>
+    <Property Name="AccompanyId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RegId" Type="Int64" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Age" Type="Int64" Nullable="false" />
+    <Property Name="Sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Meal_Preference" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Accommodation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FromDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ToDate" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Check_in_Time" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Check_out_Time" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Extra1" Type="Int64" />
+    <Property Name="Extra2" Type="DateTime" Precision="3" />
+    <Property Name="Extra3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Extra4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Extra5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Extra6" Type="Int64" />
+    <Property Name="Extra7" Type="DateTime" Precision="3" />
+    <Property Name="Extra8" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Extra9" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Extra10" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_CSI_69_Con_RegistrationDetails" Relationship="csidbModel.FK_tbl_CSI_69_Con_Accompanys_tbl_CSI_69_Con_RegistrationDetails" FromRole="tbl_CSI_69_Con_Accompanys" ToRole="tbl_CSI_69_Con_RegistrationDetails" />
+  </EntityType>
+  <EntityType Name="tbl_CSI_69_Con_Transections">
+    <Key>
+      <PropertyRef Name="TransId" />
+    </Key>
+    <Property Name="TransId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int64" Nullable="false" />
+    <Property Name="AmountToPay" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AmountPaid" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TransDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Extra1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Extra2" Type="DateTime" Precision="3" />
+    <Property Name="Extra3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Extra4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Extra5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Extra6" Type="Int64" />
+    <Property Name="Extra7" Type="DateTime" Precision="3" />
+    <Property Name="Extra8" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Extra9" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Extra10" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_CSI_69_Con_RegistrationDetails" Relationship="csidbModel.FK_tbl_CSI_69_Con_Transections_tbl_CSI_69_Con_RegistrationDetails" FromRole="tbl_CSI_69_Con_Transections" ToRole="tbl_CSI_69_Con_RegistrationDetails" />
+  </EntityType>
+  <EntityType Name="tblAbstractCategory">
+    <Key>
+      <PropertyRef Name="Catid" />
+    </Key>
+    <Property Name="Catid" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AbstractCategory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="tblAbstractSubmissionDetails" Relationship="Self.FK_tblAbstractSubmissionDetails_associate_member" FromRole="tblAbstractCategories" ToRole="tblAbstractSubmissionDetails" />
+  </EntityType>
+  <EntityType Name="tblAbstractSubmissionDetail">
+    <Key>
+      <PropertyRef Name="SubId" />
+    </Key>
+    <Property Name="SubId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="catid" Type="Int64" Nullable="false" />
+    <Property Name="MemberID" Type="Int64" Nullable="false" />
+    <Property Name="MembershipNO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Authors" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="PresentingAuthor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Institution" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Name_of_Corresponding_Author" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address_for_Correspondence" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Telephone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Foldername" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Filename" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="type" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="life_member" Relationship="Self.FK_tblAbstractSubmissionDetails_life_associate_member" FromRole="tblAbstractSubmissionDetails" ToRole="life_member" />
+    <NavigationProperty Name="tblAbstractCategory" Relationship="Self.FK_tblAbstractSubmissionDetails_associate_member" FromRole="tblAbstractSubmissionDetails" ToRole="tblAbstractCategories" />
+  </EntityType>
+  <EntityType Name="tblregid">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="regid" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="imeino" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="SENDER_ID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="membershipNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="mobileNo" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wbc_CsiMembersLoginDtls">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Memberno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WebcastName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastLogin" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Mnth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Yr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Extra1" Type="Int64" />
+    <Property Name="Extra2" Type="Int64" Nullable="false" />
+    <Property Name="Extra3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Extra4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Extra5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wbc_NonCsiLoginDtls">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int64" Nullable="false" />
+    <Property Name="WebcastName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PharmaName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastLogin" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Mnth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Yr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Extra1" Type="Int64" Nullable="false" />
+    <Property Name="Extra2" Type="Int64" Nullable="false" />
+    <Property Name="Extra3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Extra4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Extra5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wbc_NonCsiMembers">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmailId" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PharmaName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WebcastName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Mobile" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="Extra1" Type="Int64" Nullable="false" />
+    <Property Name="Extra2" Type="Int64" Nullable="false" />
+    <Property Name="Extra3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Extra4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Extra5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wbc_WebcastMasters">
+    <Key>
+      <PropertyRef Name="WebcastId" />
+    </Key>
+    <Property Name="WebcastId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WebcastName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="Extra1" Type="Int64" Nullable="false" />
+    <Property Name="Extra2" Type="Int64" Nullable="false" />
+    <Property Name="Extra3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Extra4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Extra5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="csi_mail_details">
+    <Key>
+      <PropertyRef Name="SL" />
+    </Key>
+    <Property Name="SL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Mail_Dt" Type="DateTime" Precision="3" />
+    <Property Name="Mail_Sender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Mail_Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Mail_Sub" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="csi_massmail_member">
+    <Key>
+      <PropertyRef Name="Sl" />
+    </Key>
+    <Property Name="Sl" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="lname" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="memberno" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="emailid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblBlog">
+    <Key>
+      <PropertyRef Name="BlogId" />
+      <PropertyRef Name="BlogTitle" />
+      <PropertyRef Name="BlogDetails" />
+      <PropertyRef Name="MemberId" />
+      <PropertyRef Name="AuthorName" />
+      <PropertyRef Name="PostedDate" />
+      <PropertyRef Name="Mnth" />
+      <PropertyRef Name="Yr" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="BlogId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BlogTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BlogDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MemberId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AuthorName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PostedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Mnth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Yr" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblComment">
+    <Key>
+      <PropertyRef Name="CommentId" />
+      <PropertyRef Name="BlogId" />
+      <PropertyRef Name="CDetails" />
+      <PropertyRef Name="MemberId" />
+      <PropertyRef Name="AuthorName" />
+      <PropertyRef Name="PostedDate" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="CommentId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BlogId" Type="Int64" Nullable="false" />
+    <Property Name="CDetails" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MemberId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AuthorName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PostedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblCountryCode">
+    <Key>
+      <PropertyRef Name="CountryCodeId" />
+    </Key>
+    <Property Name="CountryCodeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="stateId" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tblLoginDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="MemberId" />
+      <PropertyRef Name="Fullname" />
+      <PropertyRef Name="LoginDate" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Fullname" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoginDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <Association Name="FK_tblAbstractSubmissionDetails_life_associate_member">
+    <End Role="life_member" Type="Self.life_member" Multiplicity="1" />
+    <End Role="tblAbstractSubmissionDetails" Type="Self.tblAbstractSubmissionDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="life_member">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblAbstractSubmissionDetails">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAbstractSubmissionDetails_associate_member">
+    <End Role="tblAbstractCategories" Type="Self.tblAbstractCategory" Multiplicity="1" />
+    <End Role="tblAbstractSubmissionDetails" Type="Self.tblAbstractSubmissionDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAbstractCategories">
+        <PropertyRef Name="Catid" />
+      </Principal>
+      <Dependent Role="tblAbstractSubmissionDetails">
+        <PropertyRef Name="catid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="csidbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="associate_member" EntityType="Self.associate_member" />
+    <EntitySet Name="Conferences" EntityType="Self.Conference" />
+    <EntitySet Name="ConferenceUsers" EntityType="Self.ConferenceUser" />
+    <EntitySet Name="life_associate_member" EntityType="Self.life_associate_member" />
+    <EntitySet Name="life_member" EntityType="Self.life_member" />
+    <EntitySet Name="logbooks" EntityType="Self.logbook" />
+    <EntitySet Name="MyConferences" EntityType="Self.MyConference" />
+    <EntitySet Name="other_member" EntityType="Self.other_member" />
+    <EntitySet Name="tbl_CSI_69_Con_Accompanys" EntityType="Self.tbl_CSI_69_Con_Accompanys" />
+    <EntitySet Name="tbl_CSI_69_Con_Transections" EntityType="Self.tbl_CSI_69_Con_Transections" />
+    <EntitySet Name="tblAbstractCategories" EntityType="Self.tblAbstractCategory" />
+    <EntitySet Name="tblAbstractSubmissionDetails" EntityType="Self.tblAbstractSubmissionDetail" />
+    <EntitySet Name="tblregids" EntityType="Self.tblregid" />
+    <EntitySet Name="wbc_CsiMembersLoginDtls" EntityType="Self.wbc_CsiMembersLoginDtls" />
+    <EntitySet Name="wbc_NonCsiLoginDtls" EntityType="Self.wbc_NonCsiLoginDtls" />
+    <EntitySet Name="wbc_NonCsiMembers" EntityType="Self.wbc_NonCsiMembers" />
+    <EntitySet Name="wbc_WebcastMasters" EntityType="Self.wbc_WebcastMasters" />
+    <EntitySet Name="csi_mail_details" EntityType="Self.csi_mail_details" />
+    <EntitySet Name="csi_massmail_member" EntityType="Self.csi_massmail_member" />
+    <EntitySet Name="tblBlogs" EntityType="Self.tblBlog" />
+    <EntitySet Name="tblComments" EntityType="Self.tblComment" />
+    <EntitySet Name="tblCountryCodes" EntityType="Self.tblCountryCode" />
+    <EntitySet Name="tblLoginDetails" EntityType="Self.tblLoginDetail" />
+    <AssociationSet Name="FK_tblAbstractSubmissionDetails_life_associate_member" Association="Self.FK_tblAbstractSubmissionDetails_life_associate_member">
+      <End Role="life_member" EntitySet="life_member" />
+      <End Role="tblAbstractSubmissionDetails" EntitySet="tblAbstractSubmissionDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAbstractSubmissionDetails_associate_member" Association="Self.FK_tblAbstractSubmissionDetails_associate_member">
+      <End Role="tblAbstractCategories" EntitySet="tblAbstractCategories" />
+      <End Role="tblAbstractSubmissionDetails" EntitySet="tblAbstractSubmissionDetails" />
+    </AssociationSet>
+    <FunctionImport Name="SP_CSI_69_Con_RegistrationDeleteCommand">
+      <Parameter Name="Original_RegId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_CSI_69_Con_RegistrationInsertCommand" ReturnType="Collection(csidbModel.SP_CSI_69_Con_RegistrationInsertCommand_Result)">
+      <Parameter Name="Prefix" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="DOB" Mode="In" Type="String" />
+      <Parameter Name="Membership_Number" Mode="In" Type="String" />
+      <Parameter Name="Category" Mode="In" Type="String" />
+      <Parameter Name="Institution" Mode="In" Type="String" />
+      <Parameter Name="Department" Mode="In" Type="String" />
+      <Parameter Name="Designation" Mode="In" Type="String" />
+      <Parameter Name="Degree" Mode="In" Type="String" />
+      <Parameter Name="Nationality" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="Pin" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="String" />
+      <Parameter Name="WorkPhone" Mode="In" Type="String" />
+      <Parameter Name="Mobile" Mode="In" Type="String" />
+      <Parameter Name="Fax" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Username" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="Sponsorship" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="Int32" />
+      <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="Int64" />
+      <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Payment_Id" Mode="In" Type="Int64" />
+      <Parameter Name="Payment_Amount" Mode="In" Type="Decimal" />
+      <Parameter Name="Extra1" Mode="In" Type="Int64" />
+      <Parameter Name="Extra2" Mode="In" Type="DateTime" />
+      <Parameter Name="Extra3" Mode="In" Type="String" />
+      <Parameter Name="Extra4" Mode="In" Type="String" />
+      <Parameter Name="Extra5" Mode="In" Type="String" />
+      <Parameter Name="Extra6" Mode="In" Type="Int64" />
+      <Parameter Name="Extra7" Mode="In" Type="DateTime" />
+      <Parameter Name="Extra8" Mode="In" Type="String" />
+      <Parameter Name="Extra9" Mode="In" Type="String" />
+      <Parameter Name="Extra10" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_CSI_69_Con_RegistrationSelectCommand" ReturnType="Collection(csidbModel.SP_CSI_69_Con_RegistrationSelectCommand_Result)" />
+    <FunctionImport Name="SP_CSI_69_Con_RegistrationUpdateCommand" ReturnType="Collection(csidbModel.SP_CSI_69_Con_RegistrationUpdateCommand_Result)">
+      <Parameter Name="Prefix" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="DOB" Mode="In" Type="String" />
+      <Parameter Name="Membership_Number" Mode="In" Type="String" />
+      <Parameter Name="Category" Mode="In" Type="String" />
+      <Parameter Name="Institution" Mode="In" Type="String" />
+      <Parameter Name="Department" Mode="In" Type="String" />
+      <Parameter Name="Designation" Mode="In" Type="String" />
+      <Parameter Name="Degree" Mode="In" Type="String" />
+      <Parameter Name="Nationality" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="Pin" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="String" />
+      <Parameter Name="WorkPhone" Mode="In" Type="String" />
+      <Parameter Name="Mobile" Mode="In" Type="String" />
+      <Parameter Name="Fax" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Username" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="Sponsorship" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="Int32" />
+      <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="Int64" />
+      <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Payment_Id" Mode="In" Type="Int64" />
+      <Parameter Name="Payment_Amount" Mode="In" Type="Decimal" />
+      <Parameter Name="Extra1" Mode="In" Type="Int64" />
+      <Parameter Name="Extra2" Mode="In" Type="DateTime" />
+      <Parameter Name="Extra3" Mode="In" Type="String" />
+      <Parameter Name="Extra4" Mode="In" Type="String" />
+      <Parameter Name="Extra5" Mode="In" Type="String" />
+      <Parameter Name="Extra6" Mode="In" Type="Int64" />
+      <Parameter Name="Extra7" Mode="In" Type="DateTime" />
+      <Parameter Name="Extra8" Mode="In" Type="String" />
+      <Parameter Name="Extra9" Mode="In" Type="String" />
+      <Parameter Name="Extra10" Mode="In" Type="String" />
+      <Parameter Name="Original_RegId" Mode="In" Type="Int64" />
+      <Parameter Name="RegId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Insert">
+      <Parameter Name="Sl" Mode="InOut" Type="Int32" />
+      <Parameter Name="names" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="tbl_CSI_69_Con_TransectionDeleteCommand">
+      <Parameter Name="Original_TransId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="tbl_CSI_69_Con_TransectionInsertCommand" ReturnType="Collection(csidbModel.tbl_CSI_69_Con_TransectionInsertCommand_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int64" />
+      <Parameter Name="AmountToPay" Mode="In" Type="Decimal" />
+      <Parameter Name="AmountPaid" Mode="In" Type="Decimal" />
+      <Parameter Name="TransDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+      <Parameter Name="Remarks" Mode="In" Type="String" />
+      <Parameter Name="Extra1" Mode="In" Type="String" />
+      <Parameter Name="Extra2" Mode="In" Type="DateTime" />
+      <Parameter Name="Extra3" Mode="In" Type="String" />
+      <Parameter Name="Extra4" Mode="In" Type="String" />
+      <Parameter Name="Extra5" Mode="In" Type="String" />
+      <Parameter Name="Extra6" Mode="In" Type="Int64" />
+      <Parameter Name="Extra7" Mode="In" Type="DateTime" />
+      <Parameter Name="Extra8" Mode="In" Type="String" />
+      <Parameter Name="Extra9" Mode="In" Type="String" />
+      <Parameter Name="Extra10" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="tbl_CSI_69_Con_TransectionSelectCommand" ReturnType="Collection(csidbModel.tbl_CSI_69_Con_TransectionSelectCommand_Result)" />
+    <FunctionImport Name="tbl_CSI_69_Con_TransectionUpdateCommand" ReturnType="Collection(csidbModel.tbl_CSI_69_Con_TransectionUpdateCommand_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int64" />
+      <Parameter Name="AmountToPay" Mode="In" Type="Decimal" />
+      <Parameter Name="AmountPaid" Mode="In" Type="Decimal" />
+      <Parameter Name="TransDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Status" Mode="In" Type="String" />
+      <Parameter Name="Remarks" Mode="In" Type="String" />
+      <Parameter Name="Extra1" Mode="In" Type="String" />
+      <Parameter Name="Extra2" Mode="In" Type="DateTime" />
+      <Parameter Name="Extra3" Mode="In" Type="String" />
+      <Parameter Name="Extra4" Mode="In" Type="String" />
+      <Parameter Name="Extra5" Mode="In" Type="String" />
+      <Parameter Name="Extra6" Mode="In" Type="Int64" />
+      <Parameter Name="Extra7" Mode="In" Type="DateTime" />
+      <Parameter Name="Extra8" Mode="In" Type="String" />
+      <Parameter Name="Extra9" Mode="In" Type="String" />
+      <Parameter Name="Extra10" Mode="In" Type="String" />
+      <Parameter Name="Original_TransId" Mode="In" Type="Int64" />
+      <Parameter Name="TransId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="usp_AddBlog">
+      <Parameter Name="BlogTitle" Mode="In" Type="String" />
+      <Parameter Name="BlogDetails" Mode="In" Type="String" />
+      <Parameter Name="MemberId" Mode="In" Type="String" />
+      <Parameter Name="AuthorName" Mode="In" Type="String" />
+      <Parameter Name="BlogId" Mode="InOut" Type="Int64" />
+      <Parameter Name="ErrorOut" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_AddClientDetails">
+      <Parameter Name="clcode" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="category" Mode="In" Type="String" />
+      <Parameter Name="strength" Mode="In" Type="Int32" />
+      <Parameter Name="site" Mode="In" Type="String" />
+      <Parameter Name="exhrs" Mode="In" Type="Int32" />
+      <Parameter Name="minwage" Mode="In" Type="Decimal" />
+      <Parameter Name="examt" Mode="In" Type="Decimal" />
+      <Parameter Name="basicp" Mode="In" Type="Decimal" />
+      <Parameter Name="basic" Mode="In" Type="Decimal" />
+      <Parameter Name="hrap" Mode="In" Type="Decimal" />
+      <Parameter Name="hra" Mode="In" Type="Decimal" />
+      <Parameter Name="washp" Mode="In" Type="Decimal" />
+      <Parameter Name="wash" Mode="In" Type="Decimal" />
+      <Parameter Name="convp" Mode="In" Type="Decimal" />
+      <Parameter Name="conv" Mode="In" Type="Decimal" />
+      <Parameter Name="tiffinp" Mode="In" Type="Decimal" />
+      <Parameter Name="tiffin" Mode="In" Type="Decimal" />
+      <Parameter Name="pfp" Mode="In" Type="Decimal" />
+      <Parameter Name="pf" Mode="In" Type="Decimal" />
+      <Parameter Name="esicp" Mode="In" Type="Decimal" />
+      <Parameter Name="esic" Mode="In" Type="Decimal" />
+      <Parameter Name="bonusp" Mode="In" Type="Decimal" />
+      <Parameter Name="bonus" Mode="In" Type="Decimal" />
+      <Parameter Name="gratuityp" Mode="In" Type="Decimal" />
+      <Parameter Name="gratuity" Mode="In" Type="Decimal" />
+      <Parameter Name="leavep" Mode="In" Type="Decimal" />
+      <Parameter Name="leaveamt" Mode="In" Type="Decimal" />
+      <Parameter Name="rchp" Mode="In" Type="Decimal" />
+      <Parameter Name="rchamt" Mode="In" Type="Decimal" />
+      <Parameter Name="adminp" Mode="In" Type="Decimal" />
+      <Parameter Name="adminamt" Mode="In" Type="Decimal" />
+      <Parameter Name="svcchgp" Mode="In" Type="Decimal" />
+      <Parameter Name="svcchg" Mode="In" Type="Decimal" />
+      <Parameter Name="total1" Mode="In" Type="Decimal" />
+      <Parameter Name="total2" Mode="In" Type="Decimal" />
+      <Parameter Name="total3" Mode="In" Type="Decimal" />
+      <Parameter Name="trcost" Mode="In" Type="Decimal" />
+      <Parameter Name="macost" Mode="In" Type="Decimal" />
+      <Parameter Name="mobcost" Mode="In" Type="Decimal" />
+      <Parameter Name="unicost" Mode="In" Type="Decimal" />
+      <Parameter Name="nholicost" Mode="In" Type="Decimal" />
+      <Parameter Name="incentive" Mode="In" Type="Decimal" />
+      <Parameter Name="total5" Mode="In" Type="Decimal" />
+      <Parameter Name="total4" Mode="In" Type="Decimal" />
+      <Parameter Name="billrate" Mode="In" Type="Decimal" />
+      <Parameter Name="WorkDays" Mode="In" Type="Decimal" />
+      <Parameter Name="EmpLeavep" Mode="In" Type="Decimal" />
+      <Parameter Name="EmpLeaveAmt" Mode="In" Type="Decimal" />
+      <Parameter Name="LeaveAdd" Mode="In" Type="Decimal" />
+      <Parameter Name="EmpBonusp" Mode="In" Type="Decimal" />
+      <Parameter Name="EmpBonusAmt" Mode="In" Type="Decimal" />
+      <Parameter Name="BonusAdd" Mode="In" Type="Decimal" />
+      <Parameter Name="EsicAllow" Mode="In" Type="Int32" />
+      <Parameter Name="ErrorOut" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_AddClientDetails2">
+      <Parameter Name="clcode" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="category" Mode="In" Type="String" />
+      <Parameter Name="strength" Mode="In" Type="Int32" />
+      <Parameter Name="site" Mode="In" Type="String" />
+      <Parameter Name="exhrs" Mode="In" Type="Int32" />
+      <Parameter Name="minwage" Mode="In" Type="Decimal" />
+      <Parameter Name="examt" Mode="In" Type="Decimal" />
+      <Parameter Name="basicp" Mode="In" Type="Decimal" />
+      <Parameter Name="basic" Mode="In" Type="Decimal" />
+      <Parameter Name="hrap" Mode="In" Type="Decimal" />
+      <Parameter Name="hra" Mode="In" Type="Decimal" />
+      <Parameter Name="washp" Mode="In" Type="Decimal" />
+      <Parameter Name="wash" Mode="In" Type="Decimal" />
+      <Parameter Name="convp" Mode="In" Type="Decimal" />
+      <Parameter Name="conv" Mode="In" Type="Decimal" />
+      <Parameter Name="tiffinp" Mode="In" Type="Decimal" />
+      <Parameter Name="tiffin" Mode="In" Type="Decimal" />
+      <Parameter Name="pfp" Mode="In" Type="Decimal" />
+      <Parameter Name="pf" Mode="In" Type="Decimal" />
+      <Parameter Name="esicp" Mode="In" Type="Decimal" />
+      <Parameter Name="esic" Mode="In" Type="Decimal" />
+      <Parameter Name="bonusp" Mode="In" Type="Decimal" />
+      <Parameter Name="bonus" Mode="In" Type="Decimal" />
+      <Parameter Name="gratuityp" Mode="In" Type="Decimal" />
+      <Parameter Name="gratuity" Mode="In" Type="Decimal" />
+      <Parameter Name="leavep" Mode="In" Type="Decimal" />
+      <Parameter Name="leaveamt" Mode="In" Type="Decimal" />
+      <Parameter Name="rchp" Mode="In" Type="Decimal" />
+      <Parameter Name="rchamt" Mode="In" Type="Decimal" />
+      <Parameter Name="adminp" Mode="In" Type="Decimal" />
+      <Parameter Name="adminamt" Mode="In" Type="Decimal" />
+      <Parameter Name="svcchgp" Mode="In" Type="Decimal" />
+      <Parameter Name="svcchg" Mode="In" Type="Decimal" />
+      <Parameter Name="total1" Mode="In" Type="Decimal" />
+      <Parameter Name="total2" Mode="In" Type="Decimal" />
+      <Parameter Name="total3" Mode="In" Type="Decimal" />
+      <Parameter Name="trcost" Mode="In" Type="Decimal" />
+      <Parameter Name="macost" Mode="In" Type="Decimal" />
+      <Parameter Name="mobcost" Mode="In" Type="Decimal" />
+      <Parameter Name="unicost" Mode="In" Type="Decimal" />
+      <Parameter Name="nholicost" Mode="In" Type="Decimal" />
+      <Parameter Name="incentive" Mode="In" Type="Decimal" />
+      <Parameter Name="total5" Mode="In" Type="Decimal" />
+      <Parameter Name="total4" Mode="In" Type="Decimal" />
+      <Parameter Name="billrate" Mode="In" Type="Decimal" />
+      <Parameter Name="WorkDays" Mode="In" Type="Decimal" />
+      <Parameter Name="EmpLeavep" Mode="In" Type="Decimal" />
+      <Parameter Name="EmpLeaveAmt" Mode="In" Type="Decimal" />
+      <Parameter Name="LeaveAdd" Mode="In" Type="Decimal" />
+      <Parameter Name="EmpBonusp" Mode="In" Type="Decimal" />
+      <Parameter Name="EmpBonusAmt" Mode="In" Type="Decimal" />
+      <Parameter Name="BonusAdd" Mode="In" Type="Decimal" />
+      <Parameter Name="EsicAllow" Mode="In" Type="Int32" />
+      <Parameter Name="ErrorOut" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_AddClientMaster">
+      <Parameter Name="csu" Mode="In" Type="Int32" />
+      <Parameter Name="clcode" Mode="In" Type="String" />
+      <Parameter Name="ContractType" Mode="In" Type="String" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="addr" Mode="In" Type="String" />
+      <Parameter Name="cpname" Mode="In" Type="String" />
+      <Parameter Name="mob" Mode="In" Type="String" />
+      <Parameter Name="ophno" Mode="In" Type="String" />
+      <Parameter Name="cemailid" Mode="In" Type="String" />
+      <Parameter Name="phno1" Mode="In" Type="String" />
+      <Parameter Name="phno2" Mode="In" Type="String" />
+      <Parameter Name="phno3" Mode="In" Type="String" />
+      <Parameter Name="faxno" Mode="In" Type="String" />
+      <Parameter Name="emailid" Mode="In" Type="String" />
+      <Parameter Name="cperiodfrm" Mode="In" Type="DateTime" />
+      <Parameter Name="cperiodto" Mode="In" Type="DateTime" />
+      <Parameter Name="branchloc" Mode="In" Type="String" />
+      <Parameter Name="brnch" Mode="In" Type="String" />
+      <Parameter Name="paybasis" Mode="In" Type="String" />
+      <Parameter Name="Agreement" Mode="In" Type="String" />
+      <Parameter Name="remarks" Mode="In" Type="String" />
+      <Parameter Name="mnth" Mode="In" Type="String" />
+      <Parameter Name="jyear" Mode="In" Type="String" />
+      <Parameter Name="ErrorOut" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_AddClientMaster2">
+      <Parameter Name="csu" Mode="In" Type="Int32" />
+      <Parameter Name="clcode" Mode="In" Type="String" />
+      <Parameter Name="ContractType" Mode="In" Type="String" />
+      <Parameter Name="name" Mode="In" Type="String" />
+      <Parameter Name="addr" Mode="In" Type="String" />
+      <Parameter Name="cpname" Mode="In" Type="String" />
+      <Parameter Name="mob" Mode="In" Type="String" />
+      <Parameter Name="ophno" Mode="In" Type="String" />
+      <Parameter Name="cemailid" Mode="In" Type="String" />
+      <Parameter Name="phno1" Mode="In" Type="String" />
+      <Parameter Name="phno2" Mode="In" Type="String" />
+      <Parameter Name="phno3" Mode="In" Type="String" />
+      <Parameter Name="faxno" Mode="In" Type="String" />
+      <Parameter Name="emailid" Mode="In" Type="String" />
+      <Parameter Name="cperiodfrm" Mode="In" Type="DateTime" />
+      <Parameter Name="cperiodto" Mode="In" Type="DateTime" />
+      <Parameter Name="branchloc" Mode="In" Type="String" />
+      <Parameter Name="brnch" Mode="In" Type="String" />
+      <Parameter Name="paybasis" Mode="In" Type="String" />
+      <Parameter Name="Agreement" Mode="In" Type="String" />
+      <Parameter Name="remarks" Mode="In" Type="String" />
+      <Parameter Name="mnth" Mode="In" Type="String" />
+      <Parameter Name="jyear" Mode="In" Type="String" />
+      <Parameter Name="ErrorOut" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_AddComment">
+      <Parameter Name="BlogId" Mode="In" Type="Int64" />
+      <Parameter Name="CDetails" Mode="In" Type="String" />
+      <Parameter Name="MemberId" Mode="In" Type="String" />
+      <Parameter Name="AuthorName" Mode="In" Type="String" />
+      <Parameter Name="CommentId" Mode="InOut" Type="Int64" />
+      <Parameter Name="ErrorOut" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_AddConferenceDetails">
+      <Parameter Name="Day" Mode="In" Type="String" />
+      <Parameter Name="CDate" Mode="In" Type="String" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="SubTitle" Mode="In" Type="String" />
+      <Parameter Name="StartTime" Mode="In" Type="DateTime" />
+      <Parameter Name="EndTime" Mode="In" Type="DateTime" />
+      <Parameter Name="Hall" Mode="In" Type="String" />
+      <Parameter Name="Details" Mode="In" Type="String" />
+      <Parameter Name="CId" Mode="InOut" Type="Int64" />
+      <Parameter Name="ErrorOut" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_AddDocDetail">
+      <Parameter Name="docid" Mode="In" Type="String" />
+      <Parameter Name="docname" Mode="In" Type="String" />
+      <Parameter Name="hadd" Mode="In" Type="String" />
+      <Parameter Name="cadd" Mode="In" Type="String" />
+      <Parameter Name="hphone" Mode="In" Type="String" />
+      <Parameter Name="mobile" Mode="In" Type="String" />
+      <Parameter Name="cphone" Mode="In" Type="String" />
+      <Parameter Name="ncode" Mode="In" Type="String" />
+      <Parameter Name="slno" Mode="InOut" Type="Int32" />
+      <Parameter Name="ErrorOut" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_AddEmpMaster">
+      <Parameter Name="empid" Mode="In" Type="String" />
+      <Parameter Name="empsu" Mode="In" Type="String" />
+      <Parameter Name="etype" Mode="In" Type="String" />
+      <Parameter Name="jyear" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="sex" Mode="In" Type="String" />
+      <Parameter Name="fname" Mode="In" Type="String" />
+      <Parameter Name="address" Mode="In" Type="String" />
+      <Parameter Name="mobno" Mode="In" Type="String" />
+      <Parameter Name="phno" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="photo" Mode="In" Type="String" />
+      <Parameter Name="category" Mode="In" Type="String" />
+      <Parameter Name="loccode" Mode="In" Type="String" />
+      <Parameter Name="branch" Mode="In" Type="String" />
+      <Parameter Name="pfno" Mode="In" Type="String" />
+      <Parameter Name="fdate" Mode="In" Type="String" />
+      <Parameter Name="esicno" Mode="In" Type="String" />
+      <Parameter Name="crdrefno" Mode="In" Type="String" />
+      <Parameter Name="acctno" Mode="In" Type="String" />
+      <Parameter Name="bankname" Mode="In" Type="String" />
+      <Parameter Name="branch1" Mode="In" Type="String" />
+      <Parameter Name="dob" Mode="In" Type="String" />
+      <Parameter Name="doj" Mode="In" Type="String" />
+      <Parameter Name="dol" Mode="In" Type="String" />
+      <Parameter Name="dregno" Mode="In" Type="String" />
+      <Parameter Name="dname" Mode="In" Type="String" />
+      <Parameter Name="dmobno" Mode="In" Type="String" />
+      <Parameter Name="dphno" Mode="In" Type="String" />
+      <Parameter Name="demail" Mode="In" Type="String" />
+      <Parameter Name="reason" Mode="In" Type="String" />
+      <Parameter Name="tag" Mode="In" Type="String" />
+      <Parameter Name="lfyear" Mode="In" Type="String" />
+      <Parameter Name="item1" Mode="In" Type="String" />
+      <Parameter Name="item2" Mode="In" Type="String" />
+      <Parameter Name="item3" Mode="In" Type="String" />
+      <Parameter Name="item4" Mode="In" Type="String" />
+      <Parameter Name="item5" Mode="In" Type="String" />
+      <Parameter Name="sl" Mode="InOut" Type="Int32" />
+      <Parameter Name="ErrorOut" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_AddEmpUnitAssign">
+      <Parameter Name="Mon" Mode="In" Type="Int32" />
+      <Parameter Name="Yr" Mode="In" Type="Int32" />
+      <Parameter Name="brnch" Mode="In" Type="String" />
+      <Parameter Name="Unit" Mode="In" Type="String" />
+      <Parameter Name="SiteName" Mode="In" Type="String" />
+      <Parameter Name="empcode" Mode="In" Type="String" />
+      <Parameter Name="empName" Mode="In" Type="String" />
+      <Parameter Name="AppDt" Mode="In" Type="DateTime" />
+      <Parameter Name="FrmDt" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDt" Mode="In" Type="DateTime" />
+      <Parameter Name="rank" Mode="In" Type="String" />
+      <Parameter Name="FixHr" Mode="In" Type="String" />
+      <Parameter Name="TotHr" Mode="In" Type="Decimal" />
+      <Parameter Name="OverHr" Mode="In" Type="Decimal" />
+      <Parameter Name="AbsentDt" Mode="In" Type="Int32" />
+      <Parameter Name="TotLeave" Mode="In" Type="Int32" />
+      <Parameter Name="Day1" Mode="In" Type="String" />
+      <Parameter Name="Day2" Mode="In" Type="String" />
+      <Parameter Name="Day3" Mode="In" Type="String" />
+      <Parameter Name="Day4" Mode="In" Type="String" />
+      <Parameter Name="Day5" Mode="In" Type="String" />
+      <Parameter Name="Day6" Mode="In" Type="String" />
+      <Parameter Name="Day7" Mode="In" Type="String" />
+      <Parameter Name="Day8" Mode="In" Type="String" />
+      <Parameter Name="Day9" Mode="In" Type="String" />
+      <Parameter Name="Day10" Mode="In" Type="String" />
+      <Parameter Name="Day11" Mode="In" Type="String" />
+      <Parameter Name="Day12" Mode="In" Type="String" />
+      <Parameter Name="Day13" Mode="In" Type="String" />
+      <Parameter Name="Day14" Mode="In" Type="String" />
+      <Parameter Name="Day15" Mode="In" Type="String" />
+      <Parameter Name="Day16" Mode="In" Type="String" />
+      <Parameter Name="Day17" Mode="In" Type="String" />
+      <Parameter Name="Day18" Mode="In" Type="String" />
+      <Parameter Name="Day19" Mode="In" Type="String" />
+      <Parameter Name="Day20" Mode="In" Type="String" />
+      <Parameter Name="Day21" Mode="In" Type="String" />
+      <Parameter Name="Day22" Mode="In" Type="String" />
+      <Parameter Name="Day23" Mode="In" Type="String" />
+      <Parameter Name="Day24" Mode="In" Type="String" />
+      <Parameter Name="Day25" Mode="In" Type="String" />
+      <Parameter Name="Day26" Mode="In" Type="String" />
+      <Parameter Name="Day27" Mode="In" Type="String" />
+      <Parameter Name="Day28" Mode="In" Type="String" />
+      <Parameter Name="Day29" Mode="In" Type="String" />
+      <Parameter Name="Day30" Mode="In" Type="String" />
+      <Parameter Name="Day31" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="Int32" />
+      <Parameter Name="Field1" Mode="In" Type="String" />
+      <Parameter Name="Field2" Mode="In" Type="String" />
+      <Parameter Name="Field3" Mode="In" Type="String" />
+      <Parameter Name="Field4" Mode="In" Type="String" />
+      <Parameter Name="Field5" Mode="In" Type="String" />
+      <Parameter Name="Field6" Mode="In" Type="String" />
+      <Parameter Name="Field7" Mode="In" Type="String" />
+      <Parameter Name="Field8" Mode="In" Type="String" />
+      <Parameter Name="SlNo" Mode="InOut" Type="Int64" />
+      <Parameter Name="ErrorOut" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_AddNonCsiMembers">
+      <Parameter Name="FullName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="EmailId" Mode="In" Type="String" />
+      <Parameter Name="PharmaName" Mode="In" Type="String" />
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="WebcastName" Mode="In" Type="String" />
+      <Parameter Name="Mobile" Mode="In" Type="String" />
+      <Parameter Name="UserId" Mode="InOut" Type="Int64" />
+      <Parameter Name="ErrorOut" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_UpdateBlog">
+      <Parameter Name="BlogTitle" Mode="In" Type="String" />
+      <Parameter Name="BlogDetails" Mode="In" Type="String" />
+      <Parameter Name="BlogId" Mode="In" Type="Int64" />
+      <Parameter Name="ErrorOut" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="usp_UpdateComment">
+      <Parameter Name="CDetails" Mode="In" Type="String" />
+      <Parameter Name="CommentId" Mode="In" Type="Int64" />
+      <Parameter Name="ErrorOut" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ValidateUser" ReturnType="Collection(csidbModel.ValidateUser_Result)">
+      <Parameter Name="LoginEmail" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_RegistrationDetail_DeleteCommand">
+      <Parameter Name="Original_RegId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SP_RegistrationDetail_InsertCommand" ReturnType="Collection(csidbModel.SP_RegistrationDetail_InsertCommand_Result)">
+      <Parameter Name="Prefix" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="DOB" Mode="In" Type="String" />
+      <Parameter Name="Membership_Number" Mode="In" Type="String" />
+      <Parameter Name="Category" Mode="In" Type="String" />
+      <Parameter Name="Institution" Mode="In" Type="String" />
+      <Parameter Name="Department" Mode="In" Type="String" />
+      <Parameter Name="Designation" Mode="In" Type="String" />
+      <Parameter Name="Degree" Mode="In" Type="String" />
+      <Parameter Name="Nationality" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="Pin" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="String" />
+      <Parameter Name="WorkPhone" Mode="In" Type="String" />
+      <Parameter Name="Mobile" Mode="In" Type="String" />
+      <Parameter Name="Fax" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Username" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="Sponsorship" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="Int32" />
+      <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="Int64" />
+      <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Payment_Id" Mode="In" Type="Int64" />
+      <Parameter Name="Payment_Amount" Mode="In" Type="Decimal" />
+      <Parameter Name="Extra1" Mode="In" Type="Int64" />
+      <Parameter Name="Extra2" Mode="In" Type="DateTime" />
+      <Parameter Name="Extra3" Mode="In" Type="String" />
+      <Parameter Name="Extra4" Mode="In" Type="String" />
+      <Parameter Name="Extra5" Mode="In" Type="String" />
+      <Parameter Name="Extra6" Mode="In" Type="Int64" />
+      <Parameter Name="Extra7" Mode="In" Type="DateTime" />
+      <Parameter Name="Extra8" Mode="In" Type="String" />
+      <Parameter Name="Extra9" Mode="In" Type="String" />
+      <Parameter Name="Regno" Mode="In" Type="String" />
+      <Parameter Name="Badge_Name" Mode="In" Type="String" />
+      <Parameter Name="Foodtype" Mode="In" Type="String" />
+      <Parameter Name="PaymentMode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_RegistrationDetail_SelectCommand" ReturnType="Collection(csidbModel.SP_RegistrationDetail_SelectCommand_Result)" />
+    <FunctionImport Name="SP_RegistrationDetail_UpdateCommand" ReturnType="Collection(csidbModel.SP_RegistrationDetail_UpdateCommand_Result)">
+      <Parameter Name="Prefix" Mode="In" Type="String" />
+      <Parameter Name="Name" Mode="In" Type="String" />
+      <Parameter Name="DOB" Mode="In" Type="String" />
+      <Parameter Name="Membership_Number" Mode="In" Type="String" />
+      <Parameter Name="Category" Mode="In" Type="String" />
+      <Parameter Name="Institution" Mode="In" Type="String" />
+      <Parameter Name="Department" Mode="In" Type="String" />
+      <Parameter Name="Designation" Mode="In" Type="String" />
+      <Parameter Name="Degree" Mode="In" Type="String" />
+      <Parameter Name="Nationality" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="Pin" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="String" />
+      <Parameter Name="WorkPhone" Mode="In" Type="String" />
+      <Parameter Name="Mobile" Mode="In" Type="String" />
+      <Parameter Name="Fax" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Username" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="Sponsorship" Mode="In" Type="String" />
+      <Parameter Name="Status" Mode="In" Type="Int32" />
+      <Parameter Name="CreatedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ModifiedBy" Mode="In" Type="Int64" />
+      <Parameter Name="ModifiedDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Payment_Id" Mode="In" Type="Int64" />
+      <Parameter Name="Payment_Amount" Mode="In" Type="Decimal" />
+      <Parameter Name="Extra1" Mode="In" Type="Int64" />
+      <Parameter Name="Extra2" Mode="In" Type="DateTime" />
+      <Parameter Name="Extra3" Mode="In" Type="String" />
+      <Parameter Name="Extra4" Mode="In" Type="String" />
+      <Parameter Name="Extra5" Mode="In" Type="String" />
+      <Parameter Name="Extra6" Mode="In" Type="Int64" />
+      <Parameter Name="Extra7" Mode="In" Type="DateTime" />
+      <Parameter Name="Extra8" Mode="In" Type="String" />
+      <Parameter Name="Extra9" Mode="In" Type="String" />
+      <Parameter Name="Regno" Mode="In" Type="String" />
+      <Parameter Name="Badge_Name" Mode="In" Type="String" />
+      <Parameter Name="Foodtype" Mode="In" Type="String" />
+      <Parameter Name="PaymentMode" Mode="In" Type="String" />
+      <Parameter Name="Original_RegId" Mode="In" Type="Int64" />
+      <Parameter Name="RegId" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <EntitySet Name="tbl_CSI_69_Con_RegistrationDetails" EntityType="csidbModel.tbl_CSI_69_Con_RegistrationDetails" />
+    <AssociationSet Name="FK_tbl_CSI_69_Con_Accompanys_tbl_CSI_69_Con_RegistrationDetails" Association="csidbModel.FK_tbl_CSI_69_Con_Accompanys_tbl_CSI_69_Con_RegistrationDetails">
+      <End Role="tbl_CSI_69_Con_RegistrationDetails" EntitySet="tbl_CSI_69_Con_RegistrationDetails" />
+      <End Role="tbl_CSI_69_Con_Accompanys" EntitySet="tbl_CSI_69_Con_Accompanys" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_CSI_69_Con_Transections_tbl_CSI_69_Con_RegistrationDetails" Association="csidbModel.FK_tbl_CSI_69_Con_Transections_tbl_CSI_69_Con_RegistrationDetails">
+      <End Role="tbl_CSI_69_Con_RegistrationDetails" EntitySet="tbl_CSI_69_Con_RegistrationDetails" />
+      <End Role="tbl_CSI_69_Con_Transections" EntitySet="tbl_CSI_69_Con_Transections" />
+    </AssociationSet>
+  </EntityContainer>
+  <ComplexType Name="SP_CSI_69_Con_RegistrationInsertCommand_Result">
+    <Property Type="Int64" Name="RegId" Nullable="false" />
+    <Property Type="String" Name="Prefix" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="DOB" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Membership_Number" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Category" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Institution" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Department" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Degree" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Nationality" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Pin" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="State" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Country" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="WorkPhone" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Mobile" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Username" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Sponsorship" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="23" />
+    <Property Type="Int64" Name="ModifiedBy" Nullable="true" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="Payment_Id" Nullable="true" />
+    <Property Type="Decimal" Name="Payment_Amount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int64" Name="Extra1" Nullable="true" />
+    <Property Type="DateTime" Name="Extra2" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Extra3" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra4" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra5" Nullable="true" MaxLength="500" />
+    <Property Type="Int64" Name="Extra6" Nullable="true" />
+    <Property Type="DateTime" Name="Extra7" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Extra8" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra9" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra10" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_CSI_69_Con_RegistrationSelectCommand_Result">
+    <Property Type="Int64" Name="RegId" Nullable="false" />
+    <Property Type="String" Name="Prefix" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="DOB" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Membership_Number" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Category" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Institution" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Department" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Degree" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Nationality" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Pin" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="State" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Country" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="WorkPhone" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Mobile" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Username" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Sponsorship" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="23" />
+    <Property Type="Int64" Name="ModifiedBy" Nullable="true" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="Payment_Id" Nullable="true" />
+    <Property Type="Decimal" Name="Payment_Amount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int64" Name="Extra1" Nullable="true" />
+    <Property Type="DateTime" Name="Extra2" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Extra3" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra4" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra5" Nullable="true" MaxLength="500" />
+    <Property Type="Int64" Name="Extra6" Nullable="true" />
+    <Property Type="DateTime" Name="Extra7" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Extra8" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra9" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra10" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_CSI_69_Con_RegistrationUpdateCommand_Result">
+    <Property Type="Int64" Name="RegId" Nullable="false" />
+    <Property Type="String" Name="Prefix" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="DOB" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Membership_Number" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Category" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Institution" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Department" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Degree" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Nationality" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Pin" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="State" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Country" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="WorkPhone" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Mobile" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Username" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Sponsorship" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="23" />
+    <Property Type="Int64" Name="ModifiedBy" Nullable="true" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="Payment_Id" Nullable="true" />
+    <Property Type="Decimal" Name="Payment_Amount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int64" Name="Extra1" Nullable="true" />
+    <Property Type="DateTime" Name="Extra2" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Extra3" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra4" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra5" Nullable="true" MaxLength="500" />
+    <Property Type="Int64" Name="Extra6" Nullable="true" />
+    <Property Type="DateTime" Name="Extra7" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Extra8" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra9" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra10" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="tbl_CSI_69_Con_TransectionInsertCommand_Result">
+    <Property Type="Int64" Name="TransId" Nullable="false" />
+    <Property Type="Int64" Name="UserId" Nullable="false" />
+    <Property Type="Decimal" Name="AmountToPay" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="AmountPaid" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="TransDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Remarks" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra1" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="Extra2" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Extra3" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra4" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra5" Nullable="true" MaxLength="500" />
+    <Property Type="Int64" Name="Extra6" Nullable="true" />
+    <Property Type="DateTime" Name="Extra7" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Extra8" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra9" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra10" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="tbl_CSI_69_Con_TransectionSelectCommand_Result">
+    <Property Type="Int64" Name="TransId" Nullable="false" />
+    <Property Type="Int64" Name="UserId" Nullable="false" />
+    <Property Type="Decimal" Name="AmountToPay" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="AmountPaid" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="TransDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Remarks" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra1" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="Extra2" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Extra3" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra4" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra5" Nullable="true" MaxLength="500" />
+    <Property Type="Int64" Name="Extra6" Nullable="true" />
+    <Property Type="DateTime" Name="Extra7" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Extra8" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra9" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra10" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="tbl_CSI_69_Con_TransectionUpdateCommand_Result">
+    <Property Type="Int64" Name="TransId" Nullable="false" />
+    <Property Type="Int64" Name="UserId" Nullable="false" />
+    <Property Type="Decimal" Name="AmountToPay" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="AmountPaid" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="TransDate" Nullable="false" Precision="23" />
+    <Property Type="String" Name="Status" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Remarks" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra1" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="Extra2" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Extra3" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra4" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra5" Nullable="true" MaxLength="500" />
+    <Property Type="Int64" Name="Extra6" Nullable="true" />
+    <Property Type="DateTime" Name="Extra7" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Extra8" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra9" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra10" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="ValidateUser_Result">
+    <Property Type="Int64" Name="RegId" Nullable="false" />
+    <Property Type="String" Name="Prefix" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="DOB" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Membership_Number" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Category" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Institution" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Department" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Designation" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Degree" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Nationality" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Pin" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="State" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Country" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="WorkPhone" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Mobile" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Username" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Sponsorship" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="23" />
+    <Property Type="Int64" Name="ModifiedBy" Nullable="true" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="Payment_Id" Nullable="true" />
+    <Property Type="Decimal" Name="Payment_Amount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int64" Name="Extra1" Nullable="true" />
+    <Property Type="DateTime" Name="Extra2" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Extra3" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra4" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra5" Nullable="true" MaxLength="500" />
+    <Property Type="Int64" Name="Extra6" Nullable="true" />
+    <Property Type="DateTime" Name="Extra7" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Extra8" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra9" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra10" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Badge_Name" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_RegistrationDetail_InsertCommand_Result">
+    <Property Type="Int64" Name="RegId" Nullable="false" />
+    <Property Type="String" Name="Prefix" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="DOB" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Membership_Number" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Category" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Institution" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Department" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Designation" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Degree" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Nationality" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Pin" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="State" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Country" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="WorkPhone" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Mobile" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Username" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Sponsorship" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="23" />
+    <Property Type="Int64" Name="ModifiedBy" Nullable="true" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="Payment_Id" Nullable="true" />
+    <Property Type="Decimal" Name="Payment_Amount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int64" Name="Extra1" Nullable="true" />
+    <Property Type="DateTime" Name="Extra2" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Extra3" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra4" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra5" Nullable="true" MaxLength="500" />
+    <Property Type="Int64" Name="Extra6" Nullable="true" />
+    <Property Type="DateTime" Name="Extra7" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Extra8" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra9" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Regno" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Badge_Name" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_RegistrationDetail_SelectCommand_Result">
+    <Property Type="Int64" Name="RegId" Nullable="false" />
+    <Property Type="String" Name="Prefix" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="DOB" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Membership_Number" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Category" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Institution" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Department" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Designation" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Degree" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Nationality" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Pin" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="State" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Country" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="WorkPhone" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Mobile" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Username" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Sponsorship" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="23" />
+    <Property Type="Int64" Name="ModifiedBy" Nullable="true" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="Payment_Id" Nullable="true" />
+    <Property Type="Decimal" Name="Payment_Amount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int64" Name="Extra1" Nullable="true" />
+    <Property Type="DateTime" Name="Extra2" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Extra3" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra4" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra5" Nullable="true" MaxLength="500" />
+    <Property Type="Int64" Name="Extra6" Nullable="true" />
+    <Property Type="DateTime" Name="Extra7" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Extra8" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra9" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Regno" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Badge_Name" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SP_RegistrationDetail_UpdateCommand_Result">
+    <Property Type="Int64" Name="RegId" Nullable="false" />
+    <Property Type="String" Name="Prefix" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="DOB" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Membership_Number" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Category" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Institution" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Department" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Designation" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Degree" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Nationality" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="500" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Pin" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="State" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Country" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="WorkPhone" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Mobile" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Username" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Password" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Sponsorship" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Status" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="23" />
+    <Property Type="Int64" Name="ModifiedBy" Nullable="true" />
+    <Property Type="DateTime" Name="ModifiedDate" Nullable="true" Precision="23" />
+    <Property Type="Int64" Name="Payment_Id" Nullable="true" />
+    <Property Type="Decimal" Name="Payment_Amount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Int64" Name="Extra1" Nullable="true" />
+    <Property Type="DateTime" Name="Extra2" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Extra3" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra4" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra5" Nullable="true" MaxLength="500" />
+    <Property Type="Int64" Name="Extra6" Nullable="true" />
+    <Property Type="DateTime" Name="Extra7" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Extra8" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Extra9" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Regno" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="Badge_Name" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <EntityType Name="tbl_CSI_69_Con_RegistrationDetails">
+    <Key>
+      <PropertyRef Name="RegId" />
+    </Key>
+    <Property Name="RegId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Prefix" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DOB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Membership_Number" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Category" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Institution" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Department" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Designation" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Degree" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Nationality" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Pin" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="WorkPhone" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Username" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Sponsorship" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ModifiedBy" Type="Int64" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+    <Property Name="Payment_Id" Type="Int64" />
+    <Property Name="Payment_Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Extra1" Type="Int64" />
+    <Property Name="Extra2" Type="DateTime" Precision="3" />
+    <Property Name="Extra3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Extra4" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Extra5" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Extra6" Type="Int64" />
+    <Property Name="Extra7" Type="DateTime" Precision="3" />
+    <Property Name="Extra8" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Extra9" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Regno" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Badge_Name" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Foodtype" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentMode" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tbl_CSI_69_Con_Accompanys" Relationship="csidbModel.FK_tbl_CSI_69_Con_Accompanys_tbl_CSI_69_Con_RegistrationDetails" FromRole="tbl_CSI_69_Con_RegistrationDetails" ToRole="tbl_CSI_69_Con_Accompanys" />
+    <NavigationProperty Name="tbl_CSI_69_Con_Transections" Relationship="csidbModel.FK_tbl_CSI_69_Con_Transections_tbl_CSI_69_Con_RegistrationDetails" FromRole="tbl_CSI_69_Con_RegistrationDetails" ToRole="tbl_CSI_69_Con_Transections" />
+  </EntityType>
+  <Association Name="FK_tbl_CSI_69_Con_Accompanys_tbl_CSI_69_Con_RegistrationDetails">
+    <End Type="csidbModel.tbl_CSI_69_Con_RegistrationDetails" Role="tbl_CSI_69_Con_RegistrationDetails" Multiplicity="1" />
+    <End Type="csidbModel.tbl_CSI_69_Con_Accompanys" Role="tbl_CSI_69_Con_Accompanys" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_CSI_69_Con_RegistrationDetails">
+        <PropertyRef Name="RegId" />
+      </Principal>
+      <Dependent Role="tbl_CSI_69_Con_Accompanys">
+        <PropertyRef Name="RegId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_CSI_69_Con_Transections_tbl_CSI_69_Con_RegistrationDetails">
+    <End Type="csidbModel.tbl_CSI_69_Con_RegistrationDetails" Role="tbl_CSI_69_Con_RegistrationDetails" Multiplicity="1" />
+    <End Type="csidbModel.tbl_CSI_69_Con_Transections" Role="tbl_CSI_69_Con_Transections" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_CSI_69_Con_RegistrationDetails">
+        <PropertyRef Name="RegId" />
+      </Principal>
+      <Dependent Role="tbl_CSI_69_Con_Transections">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

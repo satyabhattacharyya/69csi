@@ -1,0 +1,45 @@
+﻿@model IEnumerable<_69CSI.Models.tbl_CSI_69_Con_RegistrationDetails>
+@{
+    ViewBag.Title = "Csimemberlist";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap-combined.min.css" rel="stylesheet" />
+
+<h2>Csimemberlist</h2>
+<div class="well">
+    <div class="bs-example table-responsive">
+        @using GridMvc.Html
+        @Html.Grid(Model).Columns(columns =>
+            {
+                   columns.Add(m => m.Name).Titled("Name").Filterable(true);
+                   columns.Add(m => m.Membership_Number).Titled("Membership No").Filterable(true);
+                   columns.Add(m => m.Institution).Titled("Institution");
+                   columns.Add(m => m.Address).Titled("Address").Filterable(true);
+                   columns.Add(m => m.Badge_Name).Titled("Badge Name").Filterable(true);
+                   columns.Add(m => m.City).Titled("City");
+                   columns.Add(m => m.Country).Titled("Country").Filterable(true);
+                   columns.Add(m => m.Degree).Titled("Degree").Filterable(true);
+                   columns.Add(m => m.Department).Titled("Department");
+                   columns.Add(m => m.DOB).Titled("DOB").Format("{0:dd/MM/yyyy}").Filterable(true);
+                   columns.Add(m => m.Email).Titled("Email").Filterable(true);
+                   columns.Add(m => m.Mobile).Titled("Mobile");
+                   columns.Add().Encoded(false).Sanitized(false).SetWidth(10).RenderValueAs(model => @Html.ActionLink(" ", "Edit", new { id = model.RegId }, new { @class = "icon-edit", @title = "Edit" }));
+                   columns.Add().Encoded(false).Sanitized(false).SetWidth(10).RenderValueAs(model => @Html.ActionLink(" ", "Details", new { id = model.RegId }, new { @class = "icon-list-alt ", @title = "Details" }));
+                   columns.Add().Encoded(false).Sanitized(false).SetWidth(10).RenderValueAs(model => @Html.ActionLink(" ", "Delete", new { id = model.RegId }, new { @class = "icon-trash", @title = "Delete" }));
+
+                   //columns.Add(m => m.Discount).Titled("Discount Amount");
+                   //columns.Add(m => m.Paid).Titled("Paid Amount");
+                   //columns.Add(m => m.Due).Titled("Due Amount");
+                   //columns.Add(m => m.CreatedDate).Titled("Payment Date").Format("{0:dd/MM/yyyy}");
+
+               }).WithPaging(20)
+    </div>
+</div>
+
+
+
+
+
+
+

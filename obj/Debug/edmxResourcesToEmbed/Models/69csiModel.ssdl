@@ -1,0 +1,1101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="csidbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="associate_member">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="slno" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="fname" Type="nvarchar(max)" />
+    <Property Name="lname" Type="nvarchar(max)" />
+    <Property Name="address" Type="nvarchar(max)" />
+    <Property Name="phone" Type="nvarchar(max)" />
+    <Property Name="memberno" Type="nchar" MaxLength="10" />
+    <Property Name="designation" Type="nvarchar(max)" />
+    <Property Name="fax" Type="nvarchar(max)" />
+    <Property Name="email" Type="nvarchar(max)" />
+    <Property Name="password" Type="nchar" MaxLength="8" />
+    <Property Name="phone1" Type="nvarchar" MaxLength="50" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="age" Type="nchar" MaxLength="10" />
+    <Property Name="sex" Type="nchar" MaxLength="10" />
+    <Property Name="dob" Type="nchar" MaxLength="10" />
+    <Property Name="spouse" Type="nvarchar" MaxLength="50" />
+    <Property Name="qualification" Type="nvarchar(max)" />
+    <Property Name="answer" Type="nvarchar" MaxLength="50" />
+    <Property Name="question" Type="nvarchar" MaxLength="50" />
+    <Property Name="last_date" Type="nchar" MaxLength="10" />
+    <Property Name="pin" Type="nchar" MaxLength="10" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" />
+    <Property Name="state" Type="nvarchar" MaxLength="50" />
+    <Property Name="country" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Conference">
+    <Key>
+      <PropertyRef Name="CId" />
+    </Key>
+    <Property Name="CId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Day" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CDate" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="SubTitle" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="StartTime" Type="datetime" Nullable="false" />
+    <Property Name="EndTime" Type="datetime" Nullable="false" />
+    <Property Name="Hall" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Details" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ConferenceUsers">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IMEI" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'csidb.dbo.csi_mail_details' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="csi_mail_details">
+    <Key>
+      <PropertyRef Name="SL" />
+    </Key>
+    <Property Name="SL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Mail_Dt" Type="datetime" />
+    <Property Name="Mail_Sender" Type="nvarchar(max)" />
+    <Property Name="Mail_Body" Type="text" />
+    <Property Name="Mail_Sub" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'csidb.dbo.csi_massmail_member' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="csi_massmail_member">
+    <Key>
+      <PropertyRef Name="Sl" />
+    </Key>
+    <Property Name="Sl" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fname" Type="nvarchar(max)" />
+    <Property Name="lname" Type="nvarchar(max)" />
+    <Property Name="memberno" Type="nchar" MaxLength="10" />
+    <Property Name="emailid" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="life_associate_member">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="slno" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="fname" Type="nvarchar(max)" />
+    <Property Name="lname" Type="nvarchar(max)" />
+    <Property Name="address" Type="nvarchar(max)" />
+    <Property Name="phone" Type="nvarchar(max)" />
+    <Property Name="memberno" Type="nchar" MaxLength="10" />
+    <Property Name="designation" Type="nvarchar(max)" />
+    <Property Name="fax" Type="nvarchar(max)" />
+    <Property Name="email" Type="nvarchar(max)" />
+    <Property Name="password" Type="nchar" MaxLength="8" />
+    <Property Name="phone1" Type="nvarchar" MaxLength="50" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="age" Type="nchar" MaxLength="10" />
+    <Property Name="sex" Type="nchar" MaxLength="10" />
+    <Property Name="dob" Type="nchar" MaxLength="10" />
+    <Property Name="spouse" Type="nvarchar" MaxLength="50" />
+    <Property Name="qualification" Type="nvarchar(max)" />
+    <Property Name="answer" Type="nvarchar" MaxLength="50" />
+    <Property Name="question" Type="nvarchar" MaxLength="50" />
+    <Property Name="last_date" Type="nchar" MaxLength="10" />
+    <Property Name="pin" Type="nchar" MaxLength="10" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" />
+    <Property Name="state" Type="nvarchar" MaxLength="50" />
+    <Property Name="country" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="life_member">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="slno" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="fname" Type="nvarchar(max)" />
+    <Property Name="lname" Type="nvarchar(max)" />
+    <Property Name="address" Type="nvarchar(max)" />
+    <Property Name="phone" Type="nvarchar(max)" />
+    <Property Name="memberno" Type="nchar" MaxLength="10" />
+    <Property Name="designation" Type="nvarchar(max)" />
+    <Property Name="fax" Type="nvarchar(max)" />
+    <Property Name="email" Type="nvarchar(max)" />
+    <Property Name="password" Type="nchar" MaxLength="8" />
+    <Property Name="phone1" Type="nvarchar" MaxLength="50" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="age" Type="nchar" MaxLength="10" />
+    <Property Name="sex" Type="nchar" MaxLength="10" />
+    <Property Name="dob" Type="nchar" MaxLength="10" />
+    <Property Name="spouse" Type="nvarchar" MaxLength="50" />
+    <Property Name="qualification" Type="nvarchar(max)" />
+    <Property Name="answer" Type="nvarchar" MaxLength="50" />
+    <Property Name="question" Type="nvarchar" MaxLength="50" />
+    <Property Name="last_date" Type="nchar" MaxLength="10" />
+    <Property Name="pin" Type="nchar" MaxLength="10" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" />
+    <Property Name="state" Type="nvarchar" MaxLength="50" />
+    <Property Name="country" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="logbook">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberType" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdateDate" Type="datetime" />
+    <Property Name="Precess" Type="nvarchar" MaxLength="50" />
+    <Property Name="slno" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="fname" Type="nvarchar(max)" />
+    <Property Name="lname" Type="nvarchar(max)" />
+    <Property Name="address" Type="nvarchar(max)" />
+    <Property Name="phone" Type="nvarchar(max)" />
+    <Property Name="memberno" Type="nchar" MaxLength="10" />
+    <Property Name="designation" Type="nvarchar(max)" />
+    <Property Name="fax" Type="nvarchar(max)" />
+    <Property Name="email" Type="nvarchar(max)" />
+    <Property Name="password" Type="nchar" MaxLength="8" />
+    <Property Name="phone1" Type="nvarchar" MaxLength="50" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="age" Type="nchar" MaxLength="10" />
+    <Property Name="sex" Type="nchar" MaxLength="10" />
+    <Property Name="dob" Type="nchar" MaxLength="10" />
+    <Property Name="spouse" Type="nvarchar" MaxLength="50" />
+    <Property Name="qualification" Type="nvarchar(max)" />
+    <Property Name="answer" Type="nvarchar" MaxLength="50" />
+    <Property Name="question" Type="nvarchar" MaxLength="50" />
+    <Property Name="last_date" Type="nchar" MaxLength="10" />
+    <Property Name="pin" Type="nchar" MaxLength="10" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" />
+    <Property Name="state" Type="nvarchar" MaxLength="50" />
+    <Property Name="country" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MyConference">
+    <Key>
+      <PropertyRef Name="PId" />
+    </Key>
+    <Property Name="PId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IMEI" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="other_member">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="slno" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="fname" Type="nvarchar(max)" />
+    <Property Name="lname" Type="nvarchar(max)" />
+    <Property Name="address" Type="nvarchar(max)" />
+    <Property Name="phone" Type="nvarchar(max)" />
+    <Property Name="memberno" Type="nchar" MaxLength="10" />
+    <Property Name="designation" Type="nvarchar(max)" />
+    <Property Name="fax" Type="nvarchar(max)" />
+    <Property Name="email" Type="nvarchar(max)" />
+    <Property Name="password" Type="nchar" MaxLength="8" />
+    <Property Name="phone1" Type="nvarchar" MaxLength="50" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="age" Type="nchar" MaxLength="10" />
+    <Property Name="sex" Type="nchar" MaxLength="10" />
+    <Property Name="dob" Type="nchar" MaxLength="10" />
+    <Property Name="spouse" Type="nvarchar" MaxLength="50" />
+    <Property Name="qualification" Type="nvarchar(max)" />
+    <Property Name="answer" Type="nvarchar" MaxLength="50" />
+    <Property Name="question" Type="nvarchar" MaxLength="50" />
+    <Property Name="last_date" Type="nchar" MaxLength="10" />
+    <Property Name="pin" Type="nchar" MaxLength="10" />
+    <Property Name="city" Type="nvarchar" MaxLength="50" />
+    <Property Name="state" Type="nvarchar" MaxLength="50" />
+    <Property Name="country" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_CSI_69_Con_Accompanys">
+    <Key>
+      <PropertyRef Name="AccompanyId" />
+    </Key>
+    <Property Name="AccompanyId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RegId" Type="bigint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Age" Type="bigint" Nullable="false" />
+    <Property Name="Sex" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Meal_Preference" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Accommodation" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FromDate" Type="nvarchar" MaxLength="100" />
+    <Property Name="ToDate" Type="nvarchar" MaxLength="100" />
+    <Property Name="Check_in_Time" Type="nvarchar" MaxLength="100" />
+    <Property Name="Check_out_Time" Type="nvarchar" MaxLength="100" />
+    <Property Name="Extra1" Type="bigint" />
+    <Property Name="Extra2" Type="datetime" />
+    <Property Name="Extra3" Type="nvarchar" MaxLength="500" />
+    <Property Name="Extra4" Type="nvarchar" MaxLength="500" />
+    <Property Name="Extra5" Type="nvarchar" MaxLength="500" />
+    <Property Name="Extra6" Type="bigint" />
+    <Property Name="Extra7" Type="datetime" />
+    <Property Name="Extra8" Type="nvarchar" MaxLength="500" />
+    <Property Name="Extra9" Type="nvarchar" MaxLength="500" />
+    <Property Name="Extra10" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_CSI_69_Con_RegistrationDetails">
+    <Key>
+      <PropertyRef Name="RegId" />
+    </Key>
+    <Property Name="RegId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Prefix" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="DOB" Type="nvarchar" MaxLength="50" />
+    <Property Name="Membership_Number" Type="nchar" MaxLength="10" />
+    <Property Name="Category" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Institution" Type="nvarchar" MaxLength="200" />
+    <Property Name="Department" Type="nvarchar" MaxLength="200" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="200" />
+    <Property Name="Degree" Type="nvarchar" MaxLength="200" />
+    <Property Name="Nationality" Type="nvarchar" MaxLength="200" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Pin" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="State" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Country" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="WorkPhone" Type="nvarchar" MaxLength="200" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="200" />
+    <Property Name="Email" Type="nvarchar" MaxLength="200" />
+    <Property Name="Username" Type="nvarchar" MaxLength="200" />
+    <Property Name="Password" Type="nvarchar" MaxLength="200" />
+    <Property Name="Sponsorship" Type="nchar" MaxLength="10" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="ModifiedBy" Type="bigint" />
+    <Property Name="ModifiedDate" Type="datetime" />
+    <Property Name="Payment_Id" Type="bigint" />
+    <Property Name="Payment_Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Extra1" Type="bigint" />
+    <Property Name="Extra2" Type="datetime" />
+    <Property Name="Extra3" Type="nvarchar" MaxLength="500" />
+    <Property Name="Extra4" Type="nvarchar" MaxLength="500" />
+    <Property Name="Extra5" Type="nvarchar" MaxLength="500" />
+    <Property Name="Extra6" Type="bigint" />
+    <Property Name="Extra7" Type="datetime" />
+    <Property Name="Extra8" Type="nvarchar" MaxLength="500" />
+    <Property Name="Extra9" Type="nvarchar" MaxLength="500" />
+    <Property Name="Regno" Type="nvarchar" MaxLength="500" />
+    <Property Name="Badge_Name" Type="nvarchar" MaxLength="500" />
+    <Property Name="Foodtype" Type="nvarchar" MaxLength="500" />
+    <Property Name="PaymentMode" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tbl_CSI_69_Con_Transections">
+    <Key>
+      <PropertyRef Name="TransId" />
+    </Key>
+    <Property Name="TransId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="AmountToPay" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AmountPaid" Type="numeric" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TransDate" Type="datetime" Nullable="false" />
+    <Property Name="Status" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="500" />
+    <Property Name="Extra1" Type="nchar" MaxLength="10" />
+    <Property Name="Extra2" Type="datetime" />
+    <Property Name="Extra3" Type="nvarchar" MaxLength="500" />
+    <Property Name="Extra4" Type="nvarchar" MaxLength="500" />
+    <Property Name="Extra5" Type="nvarchar" MaxLength="500" />
+    <Property Name="Extra6" Type="bigint" />
+    <Property Name="Extra7" Type="datetime" />
+    <Property Name="Extra8" Type="nvarchar" MaxLength="500" />
+    <Property Name="Extra9" Type="nvarchar" MaxLength="500" />
+    <Property Name="Extra10" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="tblAbstractCategories">
+    <Key>
+      <PropertyRef Name="Catid" />
+    </Key>
+    <Property Name="Catid" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AbstractCategory" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblAbstractSubmissionDetails">
+    <Key>
+      <PropertyRef Name="SubId" />
+    </Key>
+    <Property Name="SubId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="catid" Type="bigint" Nullable="false" />
+    <Property Name="MemberID" Type="bigint" Nullable="false" />
+    <Property Name="MembershipNO" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Authors" Type="nvarchar" MaxLength="500" />
+    <Property Name="PresentingAuthor" Type="nvarchar" MaxLength="50" />
+    <Property Name="Institution" Type="nvarchar(max)" />
+    <Property Name="Name_of_Corresponding_Author" Type="nvarchar" MaxLength="500" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="50" />
+    <Property Name="Address_for_Correspondence" Type="nvarchar" MaxLength="500" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Foldername" Type="nvarchar" MaxLength="500" />
+    <Property Name="Filename" Type="nvarchar" MaxLength="500" />
+    <Property Name="type" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreateDate" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'csidb.dbo.tblBlog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblBlog">
+    <Key>
+      <PropertyRef Name="BlogId" />
+      <PropertyRef Name="BlogTitle" />
+      <PropertyRef Name="BlogDetails" />
+      <PropertyRef Name="MemberId" />
+      <PropertyRef Name="AuthorName" />
+      <PropertyRef Name="PostedDate" />
+      <PropertyRef Name="Mnth" />
+      <PropertyRef Name="Yr" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="BlogId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BlogTitle" Type="ntext" Nullable="false" />
+    <Property Name="BlogDetails" Type="ntext" Nullable="false" />
+    <Property Name="MemberId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AuthorName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="PostedDate" Type="datetime" Nullable="false" />
+    <Property Name="Mnth" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Yr" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'csidb.dbo.tblComment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblComment">
+    <Key>
+      <PropertyRef Name="CommentId" />
+      <PropertyRef Name="BlogId" />
+      <PropertyRef Name="CDetails" />
+      <PropertyRef Name="MemberId" />
+      <PropertyRef Name="AuthorName" />
+      <PropertyRef Name="PostedDate" />
+      <PropertyRef Name="Status" />
+    </Key>
+    <Property Name="CommentId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BlogId" Type="bigint" Nullable="false" />
+    <Property Name="CDetails" Type="ntext" Nullable="false" />
+    <Property Name="MemberId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AuthorName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="PostedDate" Type="datetime" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'csidb.dbo.tblCountryCode' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblCountryCode">
+    <Key>
+      <PropertyRef Name="CountryCodeId" />
+    </Key>
+    <Property Name="CountryCodeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="50" />
+    <Property Name="state" Type="nvarchar" MaxLength="50" />
+    <Property Name="stateId" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'csidb.dbo.tblLoginDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tblLoginDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="MemberId" />
+      <PropertyRef Name="Fullname" />
+      <PropertyRef Name="LoginDate" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemberId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Fullname" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="LoginDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblregid">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="regid" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="imeino" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="SENDER_ID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="membershipNo" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="mobileNo" Type="nchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wbc_CsiMembersLoginDtls">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Memberno" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WebcastName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="LastLogin" Type="datetime" Nullable="false" />
+    <Property Name="Mnth" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Yr" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Extra1" Type="bigint" />
+    <Property Name="Extra2" Type="bigint" Nullable="false" />
+    <Property Name="Extra3" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Extra4" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Extra5" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wbc_NonCsiLoginDtls">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="WebcastName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="PharmaName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="LastLogin" Type="datetime" Nullable="false" />
+    <Property Name="Mnth" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Yr" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Extra1" Type="bigint" Nullable="false" />
+    <Property Name="Extra2" Type="bigint" Nullable="false" />
+    <Property Name="Extra3" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Extra4" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Extra5" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wbc_NonCsiMembers">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="EmailId" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="PharmaName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="WebcastName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="Extra1" Type="bigint" Nullable="false" />
+    <Property Name="Extra2" Type="bigint" Nullable="false" />
+    <Property Name="Extra3" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Extra4" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Extra5" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="wbc_WebcastMasters">
+    <Key>
+      <PropertyRef Name="WebcastId" />
+    </Key>
+    <Property Name="WebcastId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WebcastName" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="Extra1" Type="bigint" Nullable="false" />
+    <Property Name="Extra2" Type="bigint" Nullable="false" />
+    <Property Name="Extra3" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Extra4" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Extra5" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tbl_CSI_69_Con_Accompanys_tbl_CSI_69_Con_RegistrationDetails">
+    <End Role="tbl_CSI_69_Con_RegistrationDetails" Type="Self.tbl_CSI_69_Con_RegistrationDetails" Multiplicity="1" />
+    <End Role="tbl_CSI_69_Con_Accompanys" Type="Self.tbl_CSI_69_Con_Accompanys" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_CSI_69_Con_RegistrationDetails">
+        <PropertyRef Name="RegId" />
+      </Principal>
+      <Dependent Role="tbl_CSI_69_Con_Accompanys">
+        <PropertyRef Name="RegId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tbl_CSI_69_Con_Transections_tbl_CSI_69_Con_RegistrationDetails">
+    <End Role="tbl_CSI_69_Con_RegistrationDetails" Type="Self.tbl_CSI_69_Con_RegistrationDetails" Multiplicity="1" />
+    <End Role="tbl_CSI_69_Con_Transections" Type="Self.tbl_CSI_69_Con_Transections" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tbl_CSI_69_Con_RegistrationDetails">
+        <PropertyRef Name="RegId" />
+      </Principal>
+      <Dependent Role="tbl_CSI_69_Con_Transections">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAbstractSubmissionDetails_associate_member">
+    <End Role="tblAbstractCategories" Type="Self.tblAbstractCategories" Multiplicity="1" />
+    <End Role="tblAbstractSubmissionDetails" Type="Self.tblAbstractSubmissionDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblAbstractCategories">
+        <PropertyRef Name="Catid" />
+      </Principal>
+      <Dependent Role="tblAbstractSubmissionDetails">
+        <PropertyRef Name="catid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblAbstractSubmissionDetails_life_associate_member">
+    <End Role="life_member" Type="Self.life_member" Multiplicity="1" />
+    <End Role="tblAbstractSubmissionDetails" Type="Self.tblAbstractSubmissionDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="life_member">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblAbstractSubmissionDetails">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SP_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Sl" Type="int" Mode="InOut" />
+    <Parameter Name="names" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_RegistrationDetail_DeleteCommand" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Original_RegId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="SP_RegistrationDetail_InsertCommand" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Prefix" Type="nchar" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="DOB" Type="nvarchar" Mode="In" />
+    <Parameter Name="Membership_Number" Type="nchar" Mode="In" />
+    <Parameter Name="Category" Type="nvarchar" Mode="In" />
+    <Parameter Name="Institution" Type="nvarchar" Mode="In" />
+    <Parameter Name="Department" Type="nvarchar" Mode="In" />
+    <Parameter Name="Designation" Type="nvarchar" Mode="In" />
+    <Parameter Name="Degree" Type="nvarchar" Mode="In" />
+    <Parameter Name="Nationality" Type="nvarchar" Mode="In" />
+    <Parameter Name="Address" Type="nvarchar" Mode="In" />
+    <Parameter Name="City" Type="nvarchar" Mode="In" />
+    <Parameter Name="Pin" Type="nvarchar" Mode="In" />
+    <Parameter Name="State" Type="nvarchar" Mode="In" />
+    <Parameter Name="Country" Type="nvarchar" Mode="In" />
+    <Parameter Name="WorkPhone" Type="nvarchar" Mode="In" />
+    <Parameter Name="Mobile" Type="nvarchar" Mode="In" />
+    <Parameter Name="Fax" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="Username" Type="nvarchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+    <Parameter Name="Sponsorship" Type="nchar" Mode="In" />
+    <Parameter Name="Status" Type="int" Mode="In" />
+    <Parameter Name="CreatedDate" Type="datetime" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="bigint" Mode="In" />
+    <Parameter Name="ModifiedDate" Type="datetime" Mode="In" />
+    <Parameter Name="Payment_Id" Type="bigint" Mode="In" />
+    <Parameter Name="Payment_Amount" Type="decimal" Mode="In" />
+    <Parameter Name="Extra1" Type="bigint" Mode="In" />
+    <Parameter Name="Extra2" Type="datetime" Mode="In" />
+    <Parameter Name="Extra3" Type="nvarchar" Mode="In" />
+    <Parameter Name="Extra4" Type="nvarchar" Mode="In" />
+    <Parameter Name="Extra5" Type="nvarchar" Mode="In" />
+    <Parameter Name="Extra6" Type="bigint" Mode="In" />
+    <Parameter Name="Extra7" Type="datetime" Mode="In" />
+    <Parameter Name="Extra8" Type="nvarchar" Mode="In" />
+    <Parameter Name="Extra9" Type="nvarchar" Mode="In" />
+    <Parameter Name="Regno" Type="nvarchar" Mode="In" />
+    <Parameter Name="Badge_Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="Foodtype" Type="nvarchar" Mode="In" />
+    <Parameter Name="PaymentMode" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_RegistrationDetail_SelectCommand" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_RegistrationDetail_UpdateCommand" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Prefix" Type="nchar" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="DOB" Type="nvarchar" Mode="In" />
+    <Parameter Name="Membership_Number" Type="nchar" Mode="In" />
+    <Parameter Name="Category" Type="nvarchar" Mode="In" />
+    <Parameter Name="Institution" Type="nvarchar" Mode="In" />
+    <Parameter Name="Department" Type="nvarchar" Mode="In" />
+    <Parameter Name="Designation" Type="nvarchar" Mode="In" />
+    <Parameter Name="Degree" Type="nvarchar" Mode="In" />
+    <Parameter Name="Nationality" Type="nvarchar" Mode="In" />
+    <Parameter Name="Address" Type="nvarchar" Mode="In" />
+    <Parameter Name="City" Type="nvarchar" Mode="In" />
+    <Parameter Name="Pin" Type="nvarchar" Mode="In" />
+    <Parameter Name="State" Type="nvarchar" Mode="In" />
+    <Parameter Name="Country" Type="nvarchar" Mode="In" />
+    <Parameter Name="WorkPhone" Type="nvarchar" Mode="In" />
+    <Parameter Name="Mobile" Type="nvarchar" Mode="In" />
+    <Parameter Name="Fax" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="Username" Type="nvarchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+    <Parameter Name="Sponsorship" Type="nchar" Mode="In" />
+    <Parameter Name="Status" Type="int" Mode="In" />
+    <Parameter Name="CreatedDate" Type="datetime" Mode="In" />
+    <Parameter Name="ModifiedBy" Type="bigint" Mode="In" />
+    <Parameter Name="ModifiedDate" Type="datetime" Mode="In" />
+    <Parameter Name="Payment_Id" Type="bigint" Mode="In" />
+    <Parameter Name="Payment_Amount" Type="decimal" Mode="In" />
+    <Parameter Name="Extra1" Type="bigint" Mode="In" />
+    <Parameter Name="Extra2" Type="datetime" Mode="In" />
+    <Parameter Name="Extra3" Type="nvarchar" Mode="In" />
+    <Parameter Name="Extra4" Type="nvarchar" Mode="In" />
+    <Parameter Name="Extra5" Type="nvarchar" Mode="In" />
+    <Parameter Name="Extra6" Type="bigint" Mode="In" />
+    <Parameter Name="Extra7" Type="datetime" Mode="In" />
+    <Parameter Name="Extra8" Type="nvarchar" Mode="In" />
+    <Parameter Name="Extra9" Type="nvarchar" Mode="In" />
+    <Parameter Name="Regno" Type="nvarchar" Mode="In" />
+    <Parameter Name="Badge_Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="Foodtype" Type="nvarchar" Mode="In" />
+    <Parameter Name="PaymentMode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Original_RegId" Type="bigint" Mode="In" />
+    <Parameter Name="RegId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="tbl_CSI_69_Con_TransectionDeleteCommand" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Original_TransId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="tbl_CSI_69_Con_TransectionInsertCommand" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="bigint" Mode="In" />
+    <Parameter Name="AmountToPay" Type="numeric" Mode="In" />
+    <Parameter Name="AmountPaid" Type="numeric" Mode="In" />
+    <Parameter Name="TransDate" Type="datetime" Mode="In" />
+    <Parameter Name="Status" Type="nchar" Mode="In" />
+    <Parameter Name="Remarks" Type="nvarchar" Mode="In" />
+    <Parameter Name="Extra1" Type="nchar" Mode="In" />
+    <Parameter Name="Extra2" Type="datetime" Mode="In" />
+    <Parameter Name="Extra3" Type="nvarchar" Mode="In" />
+    <Parameter Name="Extra4" Type="nvarchar" Mode="In" />
+    <Parameter Name="Extra5" Type="nvarchar" Mode="In" />
+    <Parameter Name="Extra6" Type="bigint" Mode="In" />
+    <Parameter Name="Extra7" Type="datetime" Mode="In" />
+    <Parameter Name="Extra8" Type="nvarchar" Mode="In" />
+    <Parameter Name="Extra9" Type="nvarchar" Mode="In" />
+    <Parameter Name="Extra10" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="tbl_CSI_69_Con_TransectionSelectCommand" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="tbl_CSI_69_Con_TransectionUpdateCommand" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="bigint" Mode="In" />
+    <Parameter Name="AmountToPay" Type="numeric" Mode="In" />
+    <Parameter Name="AmountPaid" Type="numeric" Mode="In" />
+    <Parameter Name="TransDate" Type="datetime" Mode="In" />
+    <Parameter Name="Status" Type="nchar" Mode="In" />
+    <Parameter Name="Remarks" Type="nvarchar" Mode="In" />
+    <Parameter Name="Extra1" Type="nchar" Mode="In" />
+    <Parameter Name="Extra2" Type="datetime" Mode="In" />
+    <Parameter Name="Extra3" Type="nvarchar" Mode="In" />
+    <Parameter Name="Extra4" Type="nvarchar" Mode="In" />
+    <Parameter Name="Extra5" Type="nvarchar" Mode="In" />
+    <Parameter Name="Extra6" Type="bigint" Mode="In" />
+    <Parameter Name="Extra7" Type="datetime" Mode="In" />
+    <Parameter Name="Extra8" Type="nvarchar" Mode="In" />
+    <Parameter Name="Extra9" Type="nvarchar" Mode="In" />
+    <Parameter Name="Extra10" Type="nvarchar" Mode="In" />
+    <Parameter Name="Original_TransId" Type="bigint" Mode="In" />
+    <Parameter Name="TransId" Type="bigint" Mode="In" />
+  </Function>
+  <Function Name="usp_AddBlog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BlogTitle" Type="ntext" Mode="In" />
+    <Parameter Name="BlogDetails" Type="ntext" Mode="In" />
+    <Parameter Name="MemberId" Type="nvarchar" Mode="In" />
+    <Parameter Name="AuthorName" Type="nvarchar" Mode="In" />
+    <Parameter Name="BlogId" Type="bigint" Mode="InOut" />
+    <Parameter Name="ErrorOut" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="usp_AddClientDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="clcode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="category" Type="nvarchar" Mode="In" />
+    <Parameter Name="strength" Type="int" Mode="In" />
+    <Parameter Name="site" Type="nvarchar" Mode="In" />
+    <Parameter Name="exhrs" Type="int" Mode="In" />
+    <Parameter Name="minwage" Type="decimal" Mode="In" />
+    <Parameter Name="examt" Type="decimal" Mode="In" />
+    <Parameter Name="basicp" Type="decimal" Mode="In" />
+    <Parameter Name="basic" Type="decimal" Mode="In" />
+    <Parameter Name="hrap" Type="decimal" Mode="In" />
+    <Parameter Name="hra" Type="decimal" Mode="In" />
+    <Parameter Name="washp" Type="decimal" Mode="In" />
+    <Parameter Name="wash" Type="decimal" Mode="In" />
+    <Parameter Name="convp" Type="decimal" Mode="In" />
+    <Parameter Name="conv" Type="decimal" Mode="In" />
+    <Parameter Name="tiffinp" Type="decimal" Mode="In" />
+    <Parameter Name="tiffin" Type="decimal" Mode="In" />
+    <Parameter Name="pfp" Type="decimal" Mode="In" />
+    <Parameter Name="pf" Type="decimal" Mode="In" />
+    <Parameter Name="esicp" Type="decimal" Mode="In" />
+    <Parameter Name="esic" Type="decimal" Mode="In" />
+    <Parameter Name="bonusp" Type="decimal" Mode="In" />
+    <Parameter Name="bonus" Type="decimal" Mode="In" />
+    <Parameter Name="gratuityp" Type="decimal" Mode="In" />
+    <Parameter Name="gratuity" Type="decimal" Mode="In" />
+    <Parameter Name="leavep" Type="decimal" Mode="In" />
+    <Parameter Name="leaveamt" Type="decimal" Mode="In" />
+    <Parameter Name="rchp" Type="decimal" Mode="In" />
+    <Parameter Name="rchamt" Type="decimal" Mode="In" />
+    <Parameter Name="adminp" Type="decimal" Mode="In" />
+    <Parameter Name="adminamt" Type="decimal" Mode="In" />
+    <Parameter Name="svcchgp" Type="decimal" Mode="In" />
+    <Parameter Name="svcchg" Type="decimal" Mode="In" />
+    <Parameter Name="total1" Type="decimal" Mode="In" />
+    <Parameter Name="total2" Type="decimal" Mode="In" />
+    <Parameter Name="total3" Type="decimal" Mode="In" />
+    <Parameter Name="trcost" Type="decimal" Mode="In" />
+    <Parameter Name="macost" Type="decimal" Mode="In" />
+    <Parameter Name="mobcost" Type="decimal" Mode="In" />
+    <Parameter Name="unicost" Type="decimal" Mode="In" />
+    <Parameter Name="nholicost" Type="decimal" Mode="In" />
+    <Parameter Name="incentive" Type="decimal" Mode="In" />
+    <Parameter Name="total5" Type="decimal" Mode="In" />
+    <Parameter Name="total4" Type="decimal" Mode="In" />
+    <Parameter Name="billrate" Type="decimal" Mode="In" />
+    <Parameter Name="WorkDays" Type="decimal" Mode="In" />
+    <Parameter Name="EmpLeavep" Type="decimal" Mode="In" />
+    <Parameter Name="EmpLeaveAmt" Type="decimal" Mode="In" />
+    <Parameter Name="LeaveAdd" Type="decimal" Mode="In" />
+    <Parameter Name="EmpBonusp" Type="decimal" Mode="In" />
+    <Parameter Name="EmpBonusAmt" Type="decimal" Mode="In" />
+    <Parameter Name="BonusAdd" Type="decimal" Mode="In" />
+    <Parameter Name="EsicAllow" Type="int" Mode="In" />
+    <Parameter Name="ErrorOut" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="usp_AddClientDetails2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="clcode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="category" Type="nvarchar" Mode="In" />
+    <Parameter Name="strength" Type="int" Mode="In" />
+    <Parameter Name="site" Type="nvarchar" Mode="In" />
+    <Parameter Name="exhrs" Type="int" Mode="In" />
+    <Parameter Name="minwage" Type="decimal" Mode="In" />
+    <Parameter Name="examt" Type="decimal" Mode="In" />
+    <Parameter Name="basicp" Type="decimal" Mode="In" />
+    <Parameter Name="basic" Type="decimal" Mode="In" />
+    <Parameter Name="hrap" Type="decimal" Mode="In" />
+    <Parameter Name="hra" Type="decimal" Mode="In" />
+    <Parameter Name="washp" Type="decimal" Mode="In" />
+    <Parameter Name="wash" Type="decimal" Mode="In" />
+    <Parameter Name="convp" Type="decimal" Mode="In" />
+    <Parameter Name="conv" Type="decimal" Mode="In" />
+    <Parameter Name="tiffinp" Type="decimal" Mode="In" />
+    <Parameter Name="tiffin" Type="decimal" Mode="In" />
+    <Parameter Name="pfp" Type="decimal" Mode="In" />
+    <Parameter Name="pf" Type="decimal" Mode="In" />
+    <Parameter Name="esicp" Type="decimal" Mode="In" />
+    <Parameter Name="esic" Type="decimal" Mode="In" />
+    <Parameter Name="bonusp" Type="decimal" Mode="In" />
+    <Parameter Name="bonus" Type="decimal" Mode="In" />
+    <Parameter Name="gratuityp" Type="decimal" Mode="In" />
+    <Parameter Name="gratuity" Type="decimal" Mode="In" />
+    <Parameter Name="leavep" Type="decimal" Mode="In" />
+    <Parameter Name="leaveamt" Type="decimal" Mode="In" />
+    <Parameter Name="rchp" Type="decimal" Mode="In" />
+    <Parameter Name="rchamt" Type="decimal" Mode="In" />
+    <Parameter Name="adminp" Type="decimal" Mode="In" />
+    <Parameter Name="adminamt" Type="decimal" Mode="In" />
+    <Parameter Name="svcchgp" Type="decimal" Mode="In" />
+    <Parameter Name="svcchg" Type="decimal" Mode="In" />
+    <Parameter Name="total1" Type="decimal" Mode="In" />
+    <Parameter Name="total2" Type="decimal" Mode="In" />
+    <Parameter Name="total3" Type="decimal" Mode="In" />
+    <Parameter Name="trcost" Type="decimal" Mode="In" />
+    <Parameter Name="macost" Type="decimal" Mode="In" />
+    <Parameter Name="mobcost" Type="decimal" Mode="In" />
+    <Parameter Name="unicost" Type="decimal" Mode="In" />
+    <Parameter Name="nholicost" Type="decimal" Mode="In" />
+    <Parameter Name="incentive" Type="decimal" Mode="In" />
+    <Parameter Name="total5" Type="decimal" Mode="In" />
+    <Parameter Name="total4" Type="decimal" Mode="In" />
+    <Parameter Name="billrate" Type="decimal" Mode="In" />
+    <Parameter Name="WorkDays" Type="decimal" Mode="In" />
+    <Parameter Name="EmpLeavep" Type="decimal" Mode="In" />
+    <Parameter Name="EmpLeaveAmt" Type="decimal" Mode="In" />
+    <Parameter Name="LeaveAdd" Type="decimal" Mode="In" />
+    <Parameter Name="EmpBonusp" Type="decimal" Mode="In" />
+    <Parameter Name="EmpBonusAmt" Type="decimal" Mode="In" />
+    <Parameter Name="BonusAdd" Type="decimal" Mode="In" />
+    <Parameter Name="EsicAllow" Type="int" Mode="In" />
+    <Parameter Name="ErrorOut" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="usp_AddClientMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="csu" Type="int" Mode="In" />
+    <Parameter Name="clcode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ContractType" Type="nvarchar" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="addr" Type="nvarchar" Mode="In" />
+    <Parameter Name="cpname" Type="nvarchar" Mode="In" />
+    <Parameter Name="mob" Type="nvarchar" Mode="In" />
+    <Parameter Name="ophno" Type="nvarchar" Mode="In" />
+    <Parameter Name="cemailid" Type="nvarchar" Mode="In" />
+    <Parameter Name="phno1" Type="nvarchar" Mode="In" />
+    <Parameter Name="phno2" Type="nvarchar" Mode="In" />
+    <Parameter Name="phno3" Type="nvarchar" Mode="In" />
+    <Parameter Name="faxno" Type="nvarchar" Mode="In" />
+    <Parameter Name="emailid" Type="nvarchar" Mode="In" />
+    <Parameter Name="cperiodfrm" Type="datetime" Mode="In" />
+    <Parameter Name="cperiodto" Type="datetime" Mode="In" />
+    <Parameter Name="branchloc" Type="nvarchar" Mode="In" />
+    <Parameter Name="brnch" Type="nvarchar" Mode="In" />
+    <Parameter Name="paybasis" Type="nvarchar" Mode="In" />
+    <Parameter Name="Agreement" Type="nvarchar" Mode="In" />
+    <Parameter Name="remarks" Type="nvarchar" Mode="In" />
+    <Parameter Name="mnth" Type="nvarchar" Mode="In" />
+    <Parameter Name="jyear" Type="nvarchar" Mode="In" />
+    <Parameter Name="ErrorOut" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="usp_AddClientMaster2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="csu" Type="int" Mode="In" />
+    <Parameter Name="clcode" Type="nvarchar" Mode="In" />
+    <Parameter Name="ContractType" Type="nvarchar" Mode="In" />
+    <Parameter Name="name" Type="nvarchar" Mode="In" />
+    <Parameter Name="addr" Type="nvarchar" Mode="In" />
+    <Parameter Name="cpname" Type="nvarchar" Mode="In" />
+    <Parameter Name="mob" Type="nvarchar" Mode="In" />
+    <Parameter Name="ophno" Type="nvarchar" Mode="In" />
+    <Parameter Name="cemailid" Type="nvarchar" Mode="In" />
+    <Parameter Name="phno1" Type="nvarchar" Mode="In" />
+    <Parameter Name="phno2" Type="nvarchar" Mode="In" />
+    <Parameter Name="phno3" Type="nvarchar" Mode="In" />
+    <Parameter Name="faxno" Type="nvarchar" Mode="In" />
+    <Parameter Name="emailid" Type="nvarchar" Mode="In" />
+    <Parameter Name="cperiodfrm" Type="datetime" Mode="In" />
+    <Parameter Name="cperiodto" Type="datetime" Mode="In" />
+    <Parameter Name="branchloc" Type="nvarchar" Mode="In" />
+    <Parameter Name="brnch" Type="nvarchar" Mode="In" />
+    <Parameter Name="paybasis" Type="nvarchar" Mode="In" />
+    <Parameter Name="Agreement" Type="nvarchar" Mode="In" />
+    <Parameter Name="remarks" Type="nvarchar" Mode="In" />
+    <Parameter Name="mnth" Type="nvarchar" Mode="In" />
+    <Parameter Name="jyear" Type="nvarchar" Mode="In" />
+    <Parameter Name="ErrorOut" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="usp_AddComment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BlogId" Type="bigint" Mode="In" />
+    <Parameter Name="CDetails" Type="ntext" Mode="In" />
+    <Parameter Name="MemberId" Type="nvarchar" Mode="In" />
+    <Parameter Name="AuthorName" Type="nvarchar" Mode="In" />
+    <Parameter Name="CommentId" Type="bigint" Mode="InOut" />
+    <Parameter Name="ErrorOut" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="usp_AddConferenceDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Day" Type="nvarchar" Mode="In" />
+    <Parameter Name="CDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="Title" Type="nvarchar" Mode="In" />
+    <Parameter Name="SubTitle" Type="nvarchar" Mode="In" />
+    <Parameter Name="StartTime" Type="datetime" Mode="In" />
+    <Parameter Name="EndTime" Type="datetime" Mode="In" />
+    <Parameter Name="Hall" Type="nvarchar" Mode="In" />
+    <Parameter Name="Details" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="CId" Type="bigint" Mode="InOut" />
+    <Parameter Name="ErrorOut" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="usp_AddDocDetail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="docid" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="docname" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="hadd" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="cadd" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="hphone" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="mobile" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="cphone" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ncode" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="slno" Type="int" Mode="InOut" />
+    <Parameter Name="ErrorOut" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="usp_AddEmpMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="empid" Type="nvarchar" Mode="In" />
+    <Parameter Name="empsu" Type="nvarchar" Mode="In" />
+    <Parameter Name="etype" Type="nvarchar" Mode="In" />
+    <Parameter Name="jyear" Type="nvarchar" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="sex" Type="nvarchar" Mode="In" />
+    <Parameter Name="fname" Type="nvarchar" Mode="In" />
+    <Parameter Name="address" Type="nvarchar" Mode="In" />
+    <Parameter Name="mobno" Type="nvarchar" Mode="In" />
+    <Parameter Name="phno" Type="nvarchar" Mode="In" />
+    <Parameter Name="email" Type="nvarchar" Mode="In" />
+    <Parameter Name="photo" Type="nvarchar" Mode="In" />
+    <Parameter Name="category" Type="nvarchar" Mode="In" />
+    <Parameter Name="loccode" Type="nvarchar" Mode="In" />
+    <Parameter Name="branch" Type="nvarchar" Mode="In" />
+    <Parameter Name="pfno" Type="nvarchar" Mode="In" />
+    <Parameter Name="fdate" Type="nvarchar" Mode="In" />
+    <Parameter Name="esicno" Type="nvarchar" Mode="In" />
+    <Parameter Name="crdrefno" Type="nvarchar" Mode="In" />
+    <Parameter Name="acctno" Type="nvarchar" Mode="In" />
+    <Parameter Name="bankname" Type="nvarchar" Mode="In" />
+    <Parameter Name="branch1" Type="nvarchar" Mode="In" />
+    <Parameter Name="dob" Type="nvarchar" Mode="In" />
+    <Parameter Name="doj" Type="nvarchar" Mode="In" />
+    <Parameter Name="dol" Type="nvarchar" Mode="In" />
+    <Parameter Name="dregno" Type="nvarchar" Mode="In" />
+    <Parameter Name="dname" Type="nvarchar" Mode="In" />
+    <Parameter Name="dmobno" Type="nvarchar" Mode="In" />
+    <Parameter Name="dphno" Type="nvarchar" Mode="In" />
+    <Parameter Name="demail" Type="nvarchar" Mode="In" />
+    <Parameter Name="reason" Type="nvarchar" Mode="In" />
+    <Parameter Name="tag" Type="nvarchar" Mode="In" />
+    <Parameter Name="lfyear" Type="nvarchar" Mode="In" />
+    <Parameter Name="item1" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="item2" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="item3" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="item4" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="item5" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="sl" Type="int" Mode="InOut" />
+    <Parameter Name="ErrorOut" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="usp_AddEmpUnitAssign" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Mon" Type="int" Mode="In" />
+    <Parameter Name="Yr" Type="int" Mode="In" />
+    <Parameter Name="brnch" Type="nvarchar" Mode="In" />
+    <Parameter Name="Unit" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="SiteName" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="empcode" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="empName" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="AppDt" Type="datetime" Mode="In" />
+    <Parameter Name="FrmDt" Type="datetime" Mode="In" />
+    <Parameter Name="ToDt" Type="datetime" Mode="In" />
+    <Parameter Name="rank" Type="nvarchar" Mode="In" />
+    <Parameter Name="FixHr" Type="nvarchar" Mode="In" />
+    <Parameter Name="TotHr" Type="decimal" Mode="In" />
+    <Parameter Name="OverHr" Type="numeric" Mode="In" />
+    <Parameter Name="AbsentDt" Type="int" Mode="In" />
+    <Parameter Name="TotLeave" Type="int" Mode="In" />
+    <Parameter Name="Day1" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day2" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day3" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day4" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day5" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day6" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day7" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day8" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day9" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day10" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day11" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day12" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day13" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day14" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day15" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day16" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day17" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day18" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day19" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day20" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day21" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day22" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day23" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day24" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day25" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day26" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day27" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day28" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day29" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day30" Type="nvarchar" Mode="In" />
+    <Parameter Name="Day31" Type="nvarchar" Mode="In" />
+    <Parameter Name="Status" Type="int" Mode="In" />
+    <Parameter Name="Field1" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Field2" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Field3" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Field4" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Field5" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Field6" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Field7" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Field8" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="SlNo" Type="bigint" Mode="InOut" />
+    <Parameter Name="ErrorOut" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="usp_AddNonCsiMembers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FullName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmailId" Type="nvarchar" Mode="In" />
+    <Parameter Name="PharmaName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserName" Type="nvarchar" Mode="In" />
+    <Parameter Name="WebcastName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Mobile" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserId" Type="bigint" Mode="InOut" />
+    <Parameter Name="ErrorOut" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="usp_UpdateBlog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BlogTitle" Type="ntext" Mode="In" />
+    <Parameter Name="BlogDetails" Type="ntext" Mode="In" />
+    <Parameter Name="BlogId" Type="bigint" Mode="In" />
+    <Parameter Name="ErrorOut" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="usp_UpdateComment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CDetails" Type="ntext" Mode="In" />
+    <Parameter Name="CommentId" Type="bigint" Mode="In" />
+    <Parameter Name="ErrorOut" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="ValidateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LoginEmail" Type="nvarchar" Mode="In" />
+    <Parameter Name="password" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="csidbModelStoreContainer">
+    <EntitySet Name="associate_member" EntityType="Self.associate_member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Conference" EntityType="Self.Conference" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ConferenceUsers" EntityType="Self.ConferenceUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="life_associate_member" EntityType="Self.life_associate_member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="life_member" EntityType="Self.life_member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="logbook" EntityType="Self.logbook" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MyConference" EntityType="Self.MyConference" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="other_member" EntityType="Self.other_member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_CSI_69_Con_Accompanys" EntityType="Self.tbl_CSI_69_Con_Accompanys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_CSI_69_Con_RegistrationDetails" EntityType="Self.tbl_CSI_69_Con_RegistrationDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_CSI_69_Con_Transections" EntityType="Self.tbl_CSI_69_Con_Transections" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAbstractCategories" EntityType="Self.tblAbstractCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblAbstractSubmissionDetails" EntityType="Self.tblAbstractSubmissionDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblregid" EntityType="Self.tblregid" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wbc_CsiMembersLoginDtls" EntityType="Self.wbc_CsiMembersLoginDtls" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wbc_NonCsiLoginDtls" EntityType="Self.wbc_NonCsiLoginDtls" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wbc_NonCsiMembers" EntityType="Self.wbc_NonCsiMembers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="wbc_WebcastMasters" EntityType="Self.wbc_WebcastMasters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="csi_mail_details" EntityType="Self.csi_mail_details" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[csi_mail_details].[SL] AS [SL], 
+[csi_mail_details].[Mail_Dt] AS [Mail_Dt], 
+[csi_mail_details].[Mail_Sender] AS [Mail_Sender], 
+[csi_mail_details].[Mail_Body] AS [Mail_Body], 
+[csi_mail_details].[Mail_Sub] AS [Mail_Sub]
+FROM [dbo].[csi_mail_details] AS [csi_mail_details]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="csi_massmail_member" EntityType="Self.csi_massmail_member" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[csi_massmail_member].[Sl] AS [Sl], 
+[csi_massmail_member].[fname] AS [fname], 
+[csi_massmail_member].[lname] AS [lname], 
+[csi_massmail_member].[memberno] AS [memberno], 
+[csi_massmail_member].[emailid] AS [emailid]
+FROM [dbo].[csi_massmail_member] AS [csi_massmail_member]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblBlog" EntityType="Self.tblBlog" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[tblBlog].[BlogId] AS [BlogId], 
+[tblBlog].[BlogTitle] AS [BlogTitle], 
+[tblBlog].[BlogDetails] AS [BlogDetails], 
+[tblBlog].[MemberId] AS [MemberId], 
+[tblBlog].[AuthorName] AS [AuthorName], 
+[tblBlog].[PostedDate] AS [PostedDate], 
+[tblBlog].[Mnth] AS [Mnth], 
+[tblBlog].[Yr] AS [Yr], 
+[tblBlog].[Status] AS [Status]
+FROM [dbo].[tblBlog] AS [tblBlog]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblComment" EntityType="Self.tblComment" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[tblComment].[CommentId] AS [CommentId], 
+[tblComment].[BlogId] AS [BlogId], 
+[tblComment].[CDetails] AS [CDetails], 
+[tblComment].[MemberId] AS [MemberId], 
+[tblComment].[AuthorName] AS [AuthorName], 
+[tblComment].[PostedDate] AS [PostedDate], 
+[tblComment].[Status] AS [Status]
+FROM [dbo].[tblComment] AS [tblComment]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblCountryCode" EntityType="Self.tblCountryCode" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[tblCountryCode].[CountryCodeId] AS [CountryCodeId], 
+[tblCountryCode].[Country] AS [Country], 
+[tblCountryCode].[Code] AS [Code], 
+[tblCountryCode].[Remarks] AS [Remarks], 
+[tblCountryCode].[state] AS [state], 
+[tblCountryCode].[stateId] AS [stateId]
+FROM [dbo].[tblCountryCode] AS [tblCountryCode]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tblLoginDetails" EntityType="Self.tblLoginDetails" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[tblLoginDetails].[Id] AS [Id], 
+[tblLoginDetails].[MemberId] AS [MemberId], 
+[tblLoginDetails].[Fullname] AS [Fullname], 
+[tblLoginDetails].[LoginDate] AS [LoginDate]
+FROM [dbo].[tblLoginDetails] AS [tblLoginDetails]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_tbl_CSI_69_Con_Accompanys_tbl_CSI_69_Con_RegistrationDetails" Association="Self.FK_tbl_CSI_69_Con_Accompanys_tbl_CSI_69_Con_RegistrationDetails">
+      <End Role="tbl_CSI_69_Con_RegistrationDetails" EntitySet="tbl_CSI_69_Con_RegistrationDetails" />
+      <End Role="tbl_CSI_69_Con_Accompanys" EntitySet="tbl_CSI_69_Con_Accompanys" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tbl_CSI_69_Con_Transections_tbl_CSI_69_Con_RegistrationDetails" Association="Self.FK_tbl_CSI_69_Con_Transections_tbl_CSI_69_Con_RegistrationDetails">
+      <End Role="tbl_CSI_69_Con_RegistrationDetails" EntitySet="tbl_CSI_69_Con_RegistrationDetails" />
+      <End Role="tbl_CSI_69_Con_Transections" EntitySet="tbl_CSI_69_Con_Transections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAbstractSubmissionDetails_associate_member" Association="Self.FK_tblAbstractSubmissionDetails_associate_member">
+      <End Role="tblAbstractCategories" EntitySet="tblAbstractCategories" />
+      <End Role="tblAbstractSubmissionDetails" EntitySet="tblAbstractSubmissionDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblAbstractSubmissionDetails_life_associate_member" Association="Self.FK_tblAbstractSubmissionDetails_life_associate_member">
+      <End Role="life_member" EntitySet="life_member" />
+      <End Role="tblAbstractSubmissionDetails" EntitySet="tblAbstractSubmissionDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

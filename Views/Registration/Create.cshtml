@@ -1,0 +1,1912 @@
+﻿@model _69CSI.Models.tbl_CSI_69_Con_RegistrationDetails
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Theme Starz">
+
+    <link href="~/Content/css00000.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/font-awesome.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/selectiz.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/owl.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/vanillab.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/timer.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/build.css" rel="stylesheet" type="text/css" />
+
+    <title>Online Registration CSI Conference 2017</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="~/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="~/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="~/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="~/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="~/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="~/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="~/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="~/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="~/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="~/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="~/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/favicon/favicon-16x16.png">
+    <link rel="manifest" href="~/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+
+</head>
+<body class="page-homepage-carousel">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+        <script type="text/javascript">
+      //======================================================set value====================================================...
+            function Setvalue() {
+                var _lNo=""
+                _lNo = document.getElementById("Membership_Number").value;
+                var MyAppUrl = { Url: '@Url.Action("FatchDoctorsDetails", "Registration")' }
+                     $.ajax({
+                         url: MyAppUrl.Url,
+                         data: { lno: _lNo },
+                         cache: false,
+                         type: "POST",
+                         success: function (data) {
+                             if (data[0]['fname'] == null) {
+                                 alert(data[0]['fname']);
+                             }
+                             else {
+                                 //confirm(data);
+                                 document.getElementById("register_fullname").value = data[0]['fname'] + " " + data[0]['lname'];
+                                 document.getElementById("txt_Address").value = data[0]['address'];
+                                 document.getElementById("txt_Pin").value = data[0]['pin'];
+                                 document.getElementById("txt_City").value = data[0]['city'];
+                                 document.getElementById("txt_Email").value = data[0]['email'];
+                                 document.getElementById("example1").value = data[0]['dob'];
+                                 document.getElementById("txt_Fax").value = data[0]['fax'];
+                                 document.getElementById("txt_Work_Phone").value = data[0]['phone'];
+                                 document.getElementById("txt_Designation").value = data[0]['designation'];
+                                 //Category dropdown
+                                 $("#ddlcsiCategory").empty();
+                                 var o = document.createElement("option");
+                                 o.value = "1"; o.text = "CSI Member";
+                                 $("#ddlcsiCategory").append(o);
+
+                                 //state dropdown
+                                 var p = document.createElement("option");
+                                 $("#register_state").empty();
+                                 p.value = data[0]['state'];
+                                 p.text = data[0]['state'];
+                                 $("#register_state").append(p);
+
+
+                             }
+                         },
+                         error: function (reponse) {
+                             confirm(data);
+                             //alert("Permission denied.");
+                             location.reload(true);
+                         }
+                     });
+                 
+                return false;
+            }
+            //======================================================end set value====================================================...
+
+
+            function setRegistration(type)
+            {
+               // document.getElementById("rediocln").style = 'border:2px solid #fff; padding:10px;';
+                var chk = ""
+               
+                if (document.getElementById('radio1').checked) {
+                    chk = "YES"
+                }
+                if (document.getElementById('radio2').checked) {
+                    chk = "NO"
+                }
+               // alert("please choose member of CSI YES/NO" + chk )
+                if (chk == ""  ) {
+                   // alert("Choose Appropriate Category of CSI YES/NO");
+
+                    // document.getElementById("rediocln").style.borderColor = "#FF0000"
+                    document.getElementById("rediocln").style = 'border:2px solid #ff0000; padding:10px;';
+                    $('#rediocln1').empty();
+                    var div = document.getElementById('rediocln1');
+                    div.innerHTML = '<h4 style="color:red">Please Choose Appropriate Category</h4>' ;
+                    document.getElementById("rediocln").focus();
+                    return false;
+                }
+                else
+
+                if (type == "4") {
+                    $("#dvPassport").show('fast');
+                }
+                else
+                {
+                    $("#dvPassport").hide('fast');
+                }
+                var exret = Number(document.getElementById('hdexret').value);
+                var d = new Date();
+                var price = 000;
+                var usd = 000;
+
+                var curr_date = d.getDate();
+                var curr_month = d.getMonth();
+                var curr_year = d.getFullYear();
+                curr_month = curr_month + 1;
+                if (curr_month == 1) {
+                    if (type == "1") { price = 8000; }
+                    if (type == "2") { price = 14000; }
+                    if (type == "3") { price = 14000; }
+                    if (type == "4") { price = 4500; }
+                    if (type == "5") { price = 14000; }
+                    if (type == "6") { price = 4500; }
+                    if (type == "7") { price = 14000; }
+                    if (type == "8") {
+                        price = 750 * exret;
+                        usd = 750;
+                    }
+                }
+                if (curr_month >= 2 && curr_month <= 4)
+                {
+                    if (type == "1") { price = 13000; }
+                    if (type == "2") { price = 15500; }
+                    if (type == "3") { price = 15500; }
+                    if (type == "4") { price = 5500; }
+                    if (type == "5") { price = 16500; }
+                    if (type == "6") { price = 6500; }
+                    if (type == "7") { price = 15500; }
+                    if (type == "8") { price = 800 * exret; usd = 800; }
+                    //alert(price + "- -" + curr_month);
+                }
+                if (curr_month >= 5 && curr_month <= 7)
+                {
+                    if (type == "1") { price = 14000; }
+                    if (type == "2") { price = 16500; }
+                    if (type == "3") { price = 16500; }
+                    if (type == "4") { price = 7000; }
+                    if (type == "5") { price = 18000; }
+                    if (type == "6") { price = 7500; }
+                    if (type == "7") { price = 16500; }
+                    if (type == "8") { price = 1000 * exret; usd = 1000; }
+                    //alert(price + "- -" + curr_month);
+                }
+                if (curr_month >= 8 && curr_month <= 11)
+                {
+                    if (type == "1") { price = 18000; }
+                    if (type == "2") { price = 23000; }
+                    if (type == "3") { price = 23000; }
+                    if (type == "4") { price = 9500; }
+                    if (type == "5") { price = 26000; }
+                    if (type == "6") { price = 9500; }
+                    if (type == "7") { price = 23000; }
+                    if (type == "8") { price = 1100 * exret; usd = 1100; }
+                    //alert(price + "- -" + curr_month);
+                }
+                if (curr_month == 12) {
+                    if (type == "1") { price = 8000; }
+                    if (type == "2") { price = 14000; }
+                    if (type == "3") { price = 14000; }
+                    if (type == "4") { price = 4500; }
+                    if (type == "5") { price = 14000; }
+                    if (type == "6") { price = 4500; }
+                    if (type == "7") { price = 14000; }
+                    if (type == "8") { price = 750 * exret; usd = 750; }
+                }
+                var to_date = curr_date + '-' + curr_month + '-' + curr_year;
+                //alert(to_date)
+               // num.toFixed(2)
+                $('#frm1').empty();
+                if (type == "8") { $('#frm1').append('<h3>Total Amount</h3> <h2 style="margin:0;">INR ' + price.toFixed(0) + '--->USD ' + usd.toFixed(0) + '</h2><div class="clearfix"></div>'); }
+                else { $('#frm1').append('<h3>Total Amount</h3> <h2 style="margin:0;">INR ' + price.toFixed(0) + '</h2><div class="clearfix"></div>'); }
+                $("#price-table").show();
+
+            }
+    </script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.8.3.js"></script>
+    <script type="text/javascript">
+        //<![CDATA[
+        $(function () {
+            $('input[value=step]').click(function () {
+                $('#rediocln1').empty();
+                document.getElementById("rediocln").style = 'border:2px solid #fff; padding:10px;'; $('#rediocln1').empty();
+                if (this.id == "radio1") {
+                    $("#show-me").show('fast');
+                }
+                else {
+                    document.getElementById("register_fullname").value = "";
+                    document.getElementById("txt_Address").value = "";
+                    document.getElementById("txt_Pin").value = "";
+                    document.getElementById("txt_City").value ="";
+                    document.getElementById("txt_Email").value = "";
+                    document.getElementById("example1").value = "";
+                    document.getElementById("txt_Fax").value = "";
+                    document.getElementById("txt_Work_Phone").value = "";
+                    document.getElementById("txt_Designation").value = "";
+
+                    $("#show-me").hide('fast');
+                    $("#ddlcsiCategory").empty();
+                    $("#ddlcsiCategory").append(' <option value="2">Non-CSI Member</option><option value="4">PG Students</option><option value="5">Industry Professional</option><option value="6">Nurse/Technician</option><option value="7">SAARC Countries (Non-CSI Member)</option><option value="8">Non-SAARC Foreign Nationals</option>');
+                    $("#register_state").empty();
+                    $("#register_state").append('<option value="">-------Select State --------</option><option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option><option value="Andhra Pradesh">Andhra Pradesh</option> <option value="Arunachal Pradesh">Arunachal Pradesh</option><option value="Assam">Assam</option> <option value="Bihar">Bihar</option> <option value="Chandigarh">Chandigarh</option> <option value="Chhattisgarh">Chhattisgarh</option><option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli</option> <option value="Daman and Diu">Daman and Diu</option> <option value="Delhi">Delhi</option><option value="Goa">Goa</option> <option value="Gujarat">Gujarat</option> <option value="Haryana">Haryana</option><option value="Himachal Pradesh">Himachal Pradesh</option><option value="Jammu and Kashmir">Jammu and Kashmir</option><option value="Jharkhand">Jharkhand</option> <option value="Karnataka">Karnataka</option><option value="Kerala">Kerala</option><option value="Lakshadweep">Lakshadweep</option><option value="Madhya Pradesh">Madhya Pradesh</option> <option value="Maharashtra">Maharashtra</option><option value="Manipur">Manipur</option><option value="Meghalaya">Meghalaya</option><option value="Mizoram">Mizoram</option> <option value="Nagaland">Nagaland</option><option value="Odisha">Odisha</option><option value="Puducherry">Puducherry</option><option value="Punjab">Punjab</option> <option value="Rajasthan">Rajasthan</option><option value="Sikkim">Sikkim</option><option value="Tamil Nadu">Tamil Nadu</option><option value="Telangana">Telangana</option> <option value="Tripura">Tripura</option><option value="Uttar Pradesh">Uttar Pradesh</option> <option value="Uttaranchal">Uttaranchal</option><option value="West Bengal">West Bengal</option>');
+                    $("#home_country").empty();
+                    $("#home_country").append('<option value="">---Select Country---</option> <option value="182">Afghanistan</option> <option value="128">Albania</option> <option value="74">Algeria</option> <option value="75">American Samoa</option> <option value="1">Andorra </option> <option value="73">Angola</option> <option value="76">Antigua and Barbuda</option> <option value="77">Argentina</option> <option value="129">Armenia</option> <option value="2">Aruba </option> <option value="3">Australia </option> <option value="4">Austria </option> <option value="78">Azerbaijan</option> <option value="5">Bahamas, The </option> <option value="6">Bahrain </option> <option value="183">Bangladesh</option> <option value="7">Barbados </option> <option value="79">Belarus</option> <option value="8">Belgium </option> <option value="130">Belize</option> <option value="184">Benin</option> <option value="9">Bermuda </option> <option value="131">Bhutan</option> <option value="132">Bolivia</option> <option value="80">Bosnia and Herzegovina</option> <option value="81">Botswana</option> <option value="82">Brazil</option> <option value="10">Brunei Darussalam </option> <option value="83">Bulgaria</option> <option value="185">Burkina Faso</option> <option value="186">Burundi</option> <option value="187">Cambodia</option> <option value="133">Cameroon</option> <option value="11">Canada </option> <option value="134">Cape Verde</option> <option value="12">Cayman Islands </option> <option value="188">Central African Republic</option> <option value="189">Chad</option> <option value="13">Channel Islands </option> <option value="84">Chile</option> <option value="85">China</option> <option value="86">Colombia</option> <option value="190">Comoros</option> <option value="191">Congo, Dem. Rep</option> <option value="135">Congo, Rep.</option> <option value="87">Costa Rica</option> <option value="136">Cote d Ivoire</option> <option value="14">Croatia </option> <option value="88">Cuba</option> <option value="15">Curacao </option> <option value="16">Cyprus </option> <option value="17">Czech Republic </option> <option value="18">Denmark </option> <option value="137">Djibouti</option> <option value="89">Dominica</option> <option value="90">Dominican Republic</option> <option value="91">Ecuador</option> <option value="138">Egypt, Arab Rep.</option> <option value="139">El Salvador</option> <option value="20">Equatorial Guinea </option> <option value="192">Eritrea</option> <option value="19">Estonia </option> <option value="193">Ethiopia</option> <option value="21">Faeroe Islands </option> <option value="140">Fiji</option> <option value="22">Finland </option> <option value="23">France </option> <option value="24">French Polynesia </option> <option value="92">Gabon</option> <option value="194">Gambia, The</option> <option value="141">Georgia</option> <option value="25">Germany </option> <option value="142">Ghana</option> <option value="26">Greece </option> <option value="27">Greenland </option> <option value="93">Grenada</option> <option value="28">Guam </option> <option value="143">Guatemala</option> <option value="195">Guinea</option> <option value="196">Guinea-Bisau</option> <option value="144">Guyana</option> <option value="197">Haiti</option> <option value="145">Honduras</option> <option value="29">Hong Kong</option> <option value="50">Hungary </option> <option value="51">Iceland </option> <option value="147" selected="selected">India</option> <option value="146">Indonesia</option> <option value="94">Iran, Islamic Rep.</option> <option value="148">Iraq</option> <option value="52">Ireland </option> <option value="53">Isle of Man </option> <option value="54">Israel </option> <option value="31">Italy </option> <option value="95">Jamaica</option> <option value="32">Japan </option> <option value="96">Jordan</option> <option value="97">Kazakhstan</option> <option value="198">Kenya</option> <option value="149">Kiribati</option> <option value="199">Korea, Dem Rep.</option> <option value="33">Korea, Rep. </option> <option value="150">Kosovo</option> <option value="34">Kuwait </option> <option value="200">Kyrgyz Republic</option> <option value="151">Lao PDR</option> <option value="98">Latvia</option> <option value="99">Lebanon</option> <option value="152">Lesotho</option> <option value="218">Liberia</option> <option value="100">Libya</option> <option value="35">Liechtenstein </option> <option value="101">Lithuania</option> <option value="36">Luxembourg </option> <option value="37">Macao SAR, China </option> <option value="102">Macedonia, FYR</option> <option value="202">Madagascar</option> <option value="203">Malawi</option> <option value="103">Malaysia</option> <option value="104">Maldives</option> <option value="204">Mali</option> <option value="38">Malta </option> <option value="153">Marshall Islands</option> <option value="205">Mauritania</option> <option value="105">Mauritius</option> <option value="106">Mexico</option> <option value="154">Micronesia, Fed. Sts.</option> <option value="155">Moldova</option> <option value="39">Monaco </option> <option value="156">Mongolia</option> <option value="107">Montenegro</option> <option value="157">Morocco</option> <option value="206">Mozambique</option> <option value="207">Myanmar</option> <option value="108">Namibia</option> <option value="208">Nepal</option> <option value="40">Netherlands </option> <option value="41">New Caledonia </option> <option value="42">New Zealand </option> <option value="158">Nicaragua</option> <option value="209">Niger</option> <option value="159">Nigeria</option> <option value="43">Northern Mariana Islands </option> <option value="45">Norway </option> <option value="46">Oman </option> <option value="160">Pakistan</option> <option value="109">Palau</option> <option value="110">Panama</option> <option value="161">Papua New Guinea</option> <option value="162">Paraguay</option> <option value="111">Peru</option> <option value="163">Philippines</option> <option value="47">Poland </option> <option value="48">Portugal </option> <option value="49">Puerto Rica </option> <option value="112">Puerto Rico</option> <option value="55">Qatar</option> <option value="113">Romania</option> <option value="114">Russian Federation</option> <option value="210">Rwanda</option> <option value="164">Samoa</option> <option value="56">San Marino</option> <option value="165"></option> <option value="57">Saudi Arabia</option> <option value="166">Senegal</option> <option value="115">Serbia</option> <option value="116">Seychelles</option> <option value="211">Sierra Leone</option> <option value="58">Singapore</option> <option value="59">Sint Maarten</option> <option value="60">Slovak Republic</option> <option value="61">Slovenia</option> <option value="167">Solomon Islands</option> <option value="212">Somalia</option> <option value="117">South Africa</option> <option value="168">South Sudan</option> <option value="62">Spain</option> <option value="169">Sri Lanka</option> <option value="118">St. Lucia</option> <option value="64">St. Martin</option> <option value="119">St. Vincent and the Grenadines</option> <option value="63">St.Kitts and Nevis</option> <option value="170">Sudan</option> <option value="120">Suriname</option> <option value="171">Swaziland</option> <option value="65">Sweden</option> <option value="66">Switzerland</option> <option value="172">Syrian Arab Republic</option> <option value="213">Tajikistan</option> <option value="214">Tanzania</option> <option value="121">Thailand</option> <option value="173">Timor-Leste</option> <option value="215">Togo</option> <option value="174">Tonga</option> <option value="67">Trinidad and Tobago</option> <option value="122">Tunisia</option> <option value="123">Turkey</option> <option value="124">Turkmenistan</option> <option value="68">Turks and Caicos Islands</option> <option value="125">Tuvalu</option> <option value="216">Uganda</option> <option value="175">Ukraine</option> <option value="69">United Arab Emirates</option> <option value="70">United Kingdom</option> <option value="71">United States</option> <option value="126">Uruguay</option> <option value="176">Uzbekistan</option> <option value="177">Vanuatu</option> <option value="127">Venezuela, RB</option> <option value="178">Vietnam</option> <option value="72">Virgin Islands</option> <option value="179">West Bank and Gaza</option> <option value="180">Yemen, Rep.</option> <option value="181">Zambia</option>');
+
+                }
+            });
+        });//]]>
+
+    </script>
+    <script type="text/javascript">
+        //<![CDATA[
+        $(function () {
+            $('input[value=accompanyperson]').click(function () {
+                if (this.id == "accompanys") {
+                    $("#accomp-per").show('fast');
+                    document.getElementById('hdnid').value = 1;
+                    var exret = Number(document.getElementById('hdexret').value);                   
+                    var type = $("#ddlcsiCategory option:selected").val();
+                    alert("satya-"+type);
+
+                    var d = new Date();
+                    var price = 000;
+                    var usd = 000;
+                    var curr_date = d.getDate();
+                    var curr_month = d.getMonth();
+                    var curr_year = d.getFullYear();
+                    curr_month = curr_month + 1;
+                    if (curr_month == 1) {
+                        // alert("satya1-" + type);
+                        if (type == "1") { price = 8000 + 14000; }
+                        if (type == "2") { price = 14000 + 14000; }
+                        if (type == "3") { price = 14000 + 14000; }
+                        if (type == "4") { price = 4500 + 14000; }
+                        if (type == "5") { price = 14000 + 14000; }
+                        if (type == "6") { price = 4500; +14000; }
+                        if (type == "7") { price = 14000 + 14000; }
+                        if (type == "8") { price = 750 * exret + 750 * exret; usd = 750*2 }
+                    }
+                    if (curr_month >= 2 && curr_month <= 4) {
+                        // alert("satya2-" + type);
+                        if (type == "1") { price = 13000 + 15500; }
+                        if (type == "2") { price = 15500 + 15500; }
+                        if (type == "3") { price = 15500 + 15500; }
+                        if (type == "4") { price = 5500 + 15500; }
+                        if (type == "5") { price = 16500 + 15500; }
+                        if (type == "6") { price = 6500 + 15500; }
+                        if (type == "7") { price = 15500 + 15500; }
+                        if (type == "8") { price = 800 * exret + 800 * exret; usd = 800 * 2; }
+                        // alert(price + "- -" + curr_month);
+                    }
+                    if (curr_month >= 5 && curr_month <= 7) {
+                        // alert("satya3-" + type);
+                        if (type == "1") { price = 14000 + 16500; }
+                        if (type == "2") { price = 16500 + 16500; }
+                        if (type == "3") { price = 16500 + 16500; }
+                        if (type == "4") { price = 7000 + 16500; }
+                        if (type == "5") { price = 18000 + 16500; }
+                        if (type == "6") { price = 7500 + 16500; }
+                        if (type == "7") { price = 16500 + 16500; }
+                        if (type == "8") { price = 1000 * exret + 1000 * exret; usd = 1000 * 2; }
+                        // alert(price + "- -" + curr_month);
+                    }
+                    if (curr_month >= 8 && curr_month <= 11) {
+                        // alert("satya4-" + type);
+                        if (type == "1") { price = 18000 + 23000; }
+                        if (type == "2") { price = 23000 + 23000; }
+                        if (type == "3") { price = 23000 + 23000; }
+                        if (type == "4") { price = 9500 + 23000; }
+                        if (type == "5") { price = 26000 + 23000; }
+                        if (type == "6") { price = 9500 + 23000; }
+                        if (type == "7") { price = 23000 + 23000; }
+                        if (type == "8") { price = 1100 * exret + 1100 * exret; usd = 1100 * 2 }
+                        //alert(price + "- -" + curr_month);
+                    }
+                    if (curr_month == 12) {
+                        // alert("satya5-" + type);
+                        if (type == "1") { price = 8000 + 14000; }
+                        if (type == "2") { price = 14000 + 14000; }
+                        if (type == "3") { price = 14000 + 14000; }
+                        if (type == "4") { price = 4500 + 14000; }
+                        if (type == "5") { price = 14000 + 14000; }
+                        if (type == "6") { price = 4500; +14000; }
+                        if (type == "7") { price = 14000 + 14000; }
+                        if (type == "8") { price = 750 * exret + 750 * exret; usd = 750 * 2 }
+                    }
+
+                    var to_date = curr_date + '-' + curr_month + '-' + curr_year;
+                    //alert(to_date)
+
+                    $('#frm1').empty();
+                    if (type == "8") { $('#frm1').append('<h3>Total Amount</h3> <h2 style="margin:0;">INR ' + price.toFixed(0) + '--->USD ' + usd.toFixed(0) + '</h2><div class="clearfix"></div>'); }
+                    else { $('#frm1').append('<h3>Total Amount</h3> <h2 style="margin:0;">INR ' + price.toFixed(0) + '</h2><div class="clearfix"></div>'); }
+                    $("#price-table").show();
+
+                } else {
+                    $("#accomp-per").hide('fast');
+                    document.getElementById('hdnid').value = 0;
+                    var exret = Number(document.getElementById('hdexret').value);
+                    var type = $("#ddlcsiCategory option:selected").val();
+                    // alert("satya-"+type);
+
+                    var d = new Date();
+                    var price = 000;
+                    var usd = 000;
+                    var curr_date = d.getDate();
+                    var curr_month = d.getMonth();
+                    var curr_year = d.getFullYear();
+                    curr_month = curr_month + 1;
+                    if (curr_month == 1) {
+                        if (type == "1") { price = 8000; }
+                        if (type == "2") { price = 14000; }
+                        if (type == "3") { price = 14000; }
+                        if (type == "4") { price = 4500; }
+                        if (type == "5") { price = 14000; }
+                        if (type == "6") { price = 4500; }
+                        if (type == "7") { price = 14000; }
+                        if (type == "8") {
+                            price = 750 * exret;
+                            usd = 750;
+                        }
+                    }
+                    if (curr_month >= 2 && curr_month <= 4) {
+                        if (type == "1") { price = 13000; }
+                        if (type == "2") { price = 15500; }
+                        if (type == "3") { price = 15500; }
+                        if (type == "4") { price = 5500; }
+                        if (type == "5") { price = 16500; }
+                        if (type == "6") { price = 6500; }
+                        if (type == "7") { price = 15500; }
+                        if (type == "8") { price = 800 * exret; usd = 800; }
+                        //alert(price + "- -" + curr_month);
+                    }
+                    if (curr_month >= 5 && curr_month <= 7) {
+                        if (type == "1") { price = 14000; }
+                        if (type == "2") { price = 16500; }
+                        if (type == "3") { price = 16500; }
+                        if (type == "4") { price = 7000; }
+                        if (type == "5") { price = 18000; }
+                        if (type == "6") { price = 7500; }
+                        if (type == "7") { price = 16500; }
+                        if (type == "8") { price = 1000 * exret; usd = 1000; }
+                        //alert(price + "- -" + curr_month);
+                    }
+                    if (curr_month >= 8 && curr_month <= 11) {
+                        if (type == "1") { price = 18000; }
+                        if (type == "2") { price = 23000; }
+                        if (type == "3") { price = 23000; }
+                        if (type == "4") { price = 9500; }
+                        if (type == "5") { price = 26000; }
+                        if (type == "6") { price = 9500; }
+                        if (type == "7") { price = 23000; }
+                        if (type == "8") { price = 1100 * exret; usd = 1100; }
+                        //alert(price + "- -" + curr_month);
+                    }
+                    if (curr_month == 12) {
+                        if (type == "1") { price = 8000; }
+                        if (type == "2") { price = 14000; }
+                        if (type == "3") { price = 14000; }
+                        if (type == "4") { price = 4500; }
+                        if (type == "5") { price = 14000; }
+                        if (type == "6") { price = 4500; }
+                        if (type == "7") { price = 14000; }
+                        if (type == "8") { price = 750 * exret; usd = 750; }
+                    }
+
+                    var to_date = curr_date + '-' + curr_month + '-' + curr_year;
+                    //alert(to_date)
+
+                    $('#frm1').empty();
+                    if (type == "8") { $('#frm1').append('<h3>Total Amount</h3> <h2 style="margin:0;">INR ' + price.toFixed(0) + '--->USD ' + usd.toFixed(0) + '</h2><div class="clearfix"></div>'); }
+                    else { $('#frm1').append('<h3>Total Amount</h3> <h2 style="margin:0;">INR ' + price.toFixed(0) + '</h2><div class="clearfix"></div>'); }
+                    $("#price-table").show();
+
+
+                }
+            });
+        });//]]>
+
+    </script>
+
+    <script type="text/javascript">
+        //<![CDATA[
+        $(function () {
+            $('input[value=member]').click(function () {
+                document.getElementById('hdntypemember').value = "";
+                if (this.id == "EC_Member") { document.getElementById('hdntypemember').value = "EC_Member"; }
+                if (this.id == "Ex_President") { document.getElementById('hdntypemember').value = "Ex_President"; }
+                if (this.id == "Ex_Secretary") { document.getElementById('hdntypemember').value = "Ex_President";  }
+               // if (this.id == "others") { }
+
+                if (this.id == "others") {
+                    document.getElementById('hdntypemember').value = "CSI_Member";
+                    var d = new Date();
+                    var price = 000;
+
+                    var curr_date = d.getDate();
+                    var curr_month = d.getMonth();
+                    var curr_year = d.getFullYear();
+                    curr_month = curr_month + 1;
+                    if (curr_month == 1) { price = 8000;
+                       // alert(price + "- -" + curr_month);
+                    }
+                    if (curr_month >= 2 && curr_month <= 4) {
+                        price = 13000;
+                        ///alert(price + "- -" + curr_month);
+                    }
+                    if (curr_month >= 5 && curr_month <= 7) {
+                        price = 14000;
+                        //alert(price + "- -" + curr_month);
+                    }
+                    if (curr_month >= 8 && curr_month <= 11) {
+                        price = 18000;
+                        //alert(price + "- -" + curr_month);
+                    }
+                    if (curr_month == 12) {
+                        price = 8000;
+                        //alert(price + "- -" + curr_month);
+                    }
+
+                    var to_date = curr_date + '-' + curr_month + '-' + curr_year;
+                    // alert(to_date)
+
+                    $('#frm1').empty();
+                    $('#frm1').append('<h3>Total Amount</h3> <h2 style="margin:0;">INR ' + price.toFixed(0) + '</h2><div class="clearfix"></div>');
+                    $("#price-table").show();
+
+                 
+                }
+                else {
+                    $("#price-table").hide();
+                }
+            });
+        });//]]>
+        function setprice() {
+            var x = document.getElementById("ddlcsiCategory").text();
+
+            //if()
+
+            var d = new Date();
+            var price = 000;
+            var curr_date = d.getDate();
+            var curr_month = d.getMonth();
+            var curr_year = d.getFullYear();
+            curr_month = curr_month + 1;
+            if (curr_month == 1) {
+                price = 8000;
+               // alert(price + "- -" + curr_month);
+            }
+            if (curr_month >= 2 && curr_month <= 4) { price = 13000; alert(price + "- -" + curr_month); }
+            if (curr_month >= 5 && curr_month <= 7) { price = 14000; alert(price + "- -" + curr_month); }
+            if (curr_month >= 8 && curr_month <= 11) { price = 18000; alert(price + "- -" + curr_month); }
+            if (curr_month == 12) { price = 8000; alert(price + "- -" + curr_month); }
+
+            var to_date = curr_date + '-' + curr_month + '-' + curr_year;
+           // alert(to_date)
+
+            $('#frm1').empty();
+            $('#frm1').append('<h3>Total Amount</h3> <h2 style="margin:0;">INR ' + price.toFixed(0) + '</h2><div class="clearfix"></div>');
+            $("#price-table").show();
+
+        }
+
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $("#ddlPassport").change(function () {
+                if ($(this).val() == "4") {
+                    $("#dvPassport").show('fast');
+                } else {
+                    $("#dvPassport").hide('fast');
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        //<![CDATA[
+        $(window).load(function () {
+            var i = 1;
+            var exret = Number(document.getElementById('hdexret').value);
+           // alert(exret + "  " + document.getElementById('hdexret').value)
+            $('.add').click(function () {
+                i = i + 1;
+                $('.accp:last').before(
+                '<div class="accp"> <div class="form-group"> <div class="col-lg-6"> <input type="text" id="Accompany_Pertion_Name' + i + '"name="Accompany_Pertion_Name' + i + '"placeholder="Full Name"> </div><div class="col-lg-2"> <input type="text"  id="Accompany_Pertion_Age' + i + '"name="Accompany_Pertion_Age' + i + '"placeholder="Age"> </div><div class="col-lg-3"> <select name="Accompany_Pertion_sex' + i + '"id="Accompany_Pertion_sex' + i + '"  style="width:100%;background-color: whitesmoke;border: 2px solid #c5c5c5;height: 40px;padding: 9px;" class="dropdown"> <option value="0" selected>--Sex--</option> <option value="M">Male</option> <option value="F">Female</option> </select> </div><div class="col-lg-4" style="margin-top:10px;"> <select name="Accompany_Pertion_meal' + i + '"id="Accompany_Pertion_meal' + i + '" style="width:100%;background-color: whitesmoke;border: 2px solid #c5c5c5;height: 40px;padding: 9px;" class="dropdown"> <option value="0" selected>--Meal Preference--</option> <option value="Veg">Veg</option> <option value="Non-Veg">Non-Veg</option> </select> </div><div class="col-lg-7" style="margin-top:10px;"> <select name="Accompany_Pertion_Accommodation' + i + '"id="Accompany_Pertion_Accommodation' + i + '" style="width:100%;background-color: whitesmoke;border: 2px solid #c5c5c5;height: 40px;padding: 9px;" class="dropdown"> <option value="0" selected>--Accommodation Facility Required--</option> <option value="Y">Yes</option> <option value="N">No</option> </select> </div><span class="remove col-lg-1"><img src="/Images/cross.png" class="img-responsive" style="margin-top:5px;"></span> <div style="margin:10px 0;" class="col-lg-11"> <div style="display: block; position: relative;border: 2px solid #c5c5c5; width: 100%;overflow-x:auto; background: whitesmoke; padding: 10px; height: auto;"> <table width="607" cellpadding="0" cellspacing="0" border="0"> <tbody> <tr> <td width="104"><i><font style="font-size: 9pt">From Date</font><span style="font-size: 9pt"></span></i></td><td width="14"><font style="font-weight:bold;">:</font></td><td width="181"> <select name="Accompany_frmday' + i + '" id="Accompany_frmday' + i + '" style="width:50px;background-color: whitesmoke;border: 1px solid #c5c5c5;height: 30px;padding: 1px;" > <option>Day</option> <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> <option value="4">4</option> <option value="5">5</option> <option value="6">6</option> <option value="7">7</option> <option value="8">8</option> <option value="9">9</option> <option value="10">10</option> <option value="11">11</option> <option value="12">12</option> <option value="13">13</option> <option value="14">14</option> <option value="15">15</option> <option value="16">16</option> <option value="17">17</option> <option value="18">18</option> <option value="19">19</option> <option value="20">20</option> <option value="21">21</option> <option value="22">22</option> <option value="23">23</option> <option value="24">24</option> <option value="25">25</option> <option value="26">26</option> <option value="27">27</option> <option value="28">28</option> <option value="29">29</option> <option value="30">30</option> <option value="31">31</option> </select> <select name="Accompany_frmmonth' + i + '"id="Accompany_frmmonth' + i + '"style="width:65px;background-color: whitesmoke;border: 1px solid #c5c5c5;height: 30px;padding: 1px;" > <option>Month</option> <option value="1">January</option> <option value="2">February</option> <option value="3">March</option> <option value="4">April</option> <option value="5">May</option> <option value="6">June</option> <option value="7">July</option> <option value="8">August</option> <option value="9">September</option> <option value="10">October</option> <option value="11">November</option> <option value="12">December</option> </select> 2017 </td><td width="7">&nbsp;</td><td width="98"><font style="font-size: 9pt"><i>To</i></font><i><font style="font-size: 9pt"> Date</font></i><span style="font-size: 9pt"></span></td><td width="14"><font style="font-weight:bold;">:</font></td><td width="189"> <select style="width:50px;background-color: whitesmoke;border: 1px solid #c5c5c5;height: 30px;padding: 1px;"name="Accompany_today' + i + '" id="Accompany_today' + i + '" > <option>Day</option> <option value="1">1</option> <option value="2">2</option> <option value="3">3</option> <option value="4">4</option> <option value="5">5</option> <option value="6">6</option> <option value="7">7</option> <option value="8">8</option> <option value="9">9</option> <option value="10">10</option> <option value="11">11</option> <option value="12">12</option> <option value="13">13</option> <option value="14">14</option> <option value="15">15</option> <option value="16">16</option> <option value="17">17</option> <option value="18">18</option> <option value="19">19</option> <option value="20">20</option> <option value="21">21</option> <option value="22">22</option> <option value="23">23</option> <option value="24">24</option> <option value="25">25</option> <option value="26">26</option> <option value="27">27</option> <option value="28">28</option> <option value="29">29</option> <option value="30">30</option> <option value="31">31</option> </select> <select style="width:65px;background-color: whitesmoke;border: 1px solid #c5c5c5;height: 30px;padding: 1px;" name="Accompany_tomonth' + i + '" id="Accompany_tomonth' + i + '" > <option>Month</option> <option value="1">January</option> <option value="2">February</option> <option value="3">March</option> <option value="4">April</option> <option value="5">May</option> <option value="6">June</option> <option value="7">July</option> <option value="8">August</option> <option value="9">September</option> <option value="10">October</option> <option value="11">November</option> <option value="12">December</option> </select>2017 <!-- <select  name="Accompany_toyear' + i + '" id="Accompany_toyear' + i + '" style="width:57px;background-color: whitesmoke;border: 1px solid #c5c5c5;height: 30px;padding: 1px;" tomonth> <option>Year</option> <option value="2011">2011</option> <option value="2010">2010</option> <option value="2009">2009</option> <option value="2008">2008</option> <option value="2007">2007</option> <option value="2006">2006</option> <option value="2005">2005</option> <option value="2004">2004</option> <option value="2003">2003</option> <option value="2002">2002</option> <option value="2001">2001</option> <option value="2000">2000</option> <option value="1999">1999</option> <option value="1998">1998</option> <option value="1997">1997</option> <option value="1996">1996</option> <option value="1995">1995</option> <option value="1994">1994</option> <option value="1993">1993</option> <option value="1992">1992</option> <option value="1991">1991</option> <option value="1990">1990</option> <option value="1989">1989</option> <option value="1988">1988</option> <option value="1987">1987</option> <option value="1986">1986</option> <option value="1985">1985</option> <option value="1984">1984</option> <option value="1983">1983</option> <option value="1982">1982</option> <option value="1981">1981</option> <option value="1980">1980</option> <option value="1979">1979</option> <option value="1978">1978</option> <option value="1977">1977</option> <option value="1976">1976</option> <option value="1975">1975</option> <option value="1974">1974</option> <option value="1973">1973</option> <option value="1972">1972</option> <option value="1971">1971</option> <option value="1970">1970</option> <option value="1969">1969</option> <option value="1968">1968</option> <option value="1967">1967</option> <option value="1966">1966</option> <option value="1965">1965</option> <option value="1964">1964</option> <option value="1963">1963</option> <option value="1962">1962</option> <option value="1961">1961</option> <option value="1960">1960</option> <option value="1959">1959</option> <option value="1958">1958</option> <option value="1957">1957</option> <option value="1956">1956</option> <option value="1955">1955</option> <option value="1954">1954</option> <option value="1953">1953</option> <option value="1952">1952</option> <option value="1951">1951</option> <option value="1950">1950</option> <option value="1949">1949</option> <option value="1948">1948</option> <option value="1947">1947</option> <option value="1946">1946</option> <option value="1945">1945</option> <option value="1944">1944</option> <option value="1943">1943</option> <option value="1942">1942</option> <option value="1941">1941</option> <option value="1940">1940</option> <option value="1939">1939</option> <option value="1938">1938</option> <option value="1937">1937</option> <option value="1936">1936</option> <option value="1935">1935</option> <option value="1934">1934</option> <option value="1933">1933</option> <option value="1932">1932</option> <option value="1931">1931</option> <option value="1930">1930</option> <option value="1929">1929</option> <option value="1928">1928</option> <option value="1927">1927</option> <option value="1926">1926</option> <option value="1925">1925</option> <option value="1924">1924</option> <option value="1923">1923</option> <option value="1922">1922</option> <option value="1921">1921</option> <option value="1920">1920</option> <option value="1919">1919</option> <option value="1918">1918</option> <option value="1917">1917</option> <option value="1916">1916</option> <option value="1915">1915</option> <option value="1914">1914</option> <option value="1913">1913</option> <option value="1912">1912</option> <option value="1911">1911</option> <option value="1910">1910</option> <option value="1909">1909</option> <option value="1908">1908</option> <option value="1907">1907</option> <option value="1906">1906</option> <option value="1905">1905</option> <option value="1904">1904</option> <option value="1903">1903</option> <option value="1902">1902</option> <option value="1901">1901</option> <option value="1900">1900</option> </select>--> </td></tr><tr> <td width="104">&nbsp;</td><td width="14">&nbsp;</td><td colspan="3">&nbsp;</td><td width="14">&nbsp;</td><td width="189">&nbsp;</td></tr><tr> <td width="104"><i><font style="font-size: 9pt">Check in Time</font><span style="font-size: 9pt"></span></i></td><td width="14"><font style="font-weight:bold;">:</font></td><td width="181"> <select name="Accompany_Check_inh' + i + '" id="Accompany_Check_inh' + i + '" style="width:50px;background-color: whitesmoke;border: 1px solid #c5c5c5;height: 30px;padding: 1px;"> <option value="00" selected="">Hrs</option> <option value="01" class="highlight">01</option> <option value="02" class="highlight">02</option> <option value="03" class="highlight">03</option> <option value="04" class="highlight">04</option> <option value="05" class="highlight">05</option> <option value="06" class="highlight">06</option> <option value="07" class="highlight">07</option> <option value="08" class="highlight">08</option> <option value="09" class="highlight">09</option> <option value="10" class="highlight">10</option> <option value="11" class="highlight">11</option> <option value="12" class="highlight">12</option> </select> <select name="Accompany_Check_inm' + i + '" id="Accompany_Check_inm' + i + '" style="width:65px;background-color: whitesmoke;border: 1px solid #c5c5c5;height: 30px;padding: 1px;"> <option value="00" selected="">Mins</option> <option value="01" class="highlight">01</option> <option value="02">02</option> <option value="03">03</option> <option value="04">04</option> <option value="05">05</option> <option value="06">06</option> <option value="07">07</option> <option value="08">08</option> <option value="09">09</option> <option value="10">10</option> <option value="11">11</option> <option value="12">12</option> <option value="13">13</option> <option value="14">14</option> <option value="15">15</option> <option value="16">16</option> <option value="17">17</option> <option value="18">18</option> <option value="19">19</option> <option value="20">20</option> <option value="21">21</option> <option value="22">22</option> <option value="23">23</option> <option value="24">24</option> <option value="25">25</option> <option value="26">26</option> <option value="27">27</option> <option value="28">28</option> <option value="29">29</option> <option value="30">30</option> <option value="31">31</option> <option value="32">32</option> <option value="33">33</option> <option value="34">34</option> <option value="35">35</option> <option value="36">36</option> <option value="37">37</option> <option value="38">38</option> <option value="39">39</option> <option value="40">40</option> <option value="41">41</option> <option value="42">42</option> <option value="43">43</option> <option value="44">44</option> <option value="45">45</option> <option value="46">46</option> <option value="47">47</option> <option value="48">48</option> <option value="49">49</option> <option value="50">50</option> <option value="51">51</option> <option value="52">52</option> <option value="53">53</option> <option value="54">54</option> <option value="55">55</option> <option value="56">56</option> <option value="57">57</option> <option value="58">58</option> <option value="59">59</option> <option value="60">60</option> </select> <select name="Accompany_Check_inMeridian' + i + '" id="Accompany_Check_inMeridian' + i + '" style="width:57px;background-color: whitesmoke;border: 1px solid #c5c5c5;height: 30px;padding: 1px;" name="Time_Meridian"> <option class="highlight" value="am" selected="">AM</option> <option class="highlight" value="pm">PM</option> </select> </td><td width="7">&nbsp;</td><td width="98"><i><font style="font-size: 9pt">Check out Time</font></i></td><td width="14"><font style="font-weight:bold;">:</font></td><td width="189"> <select style="width:50px;background-color: whitesmoke;border: 1px solid #c5c5c5;height: 30px;padding: 1px;" name="Accompany_Check_outh' + i + '" id="Accompany_Check_outh' + i + '"> <option value="00" selected="">Hrs</option> <option value="01" class="highlight">01</option> <option value="02" class="highlight">02</option> <option value="03" class="highlight">03</option> <option value="04" class="highlight">04</option> <option value="05" class="highlight">05</option> <option value="06" class="highlight">06</option> <option value="07" class="highlight">07</option> <option value="08" class="highlight">08</option> <option value="09" class="highlight">09</option> <option value="10" class="highlight">10</option> <option value="11" class="highlight">11</option> <option value="12" class="highlight">12</option> </select> <select style="width:65px;background-color: whitesmoke;border: 1px solid #c5c5c5;height: 30px;padding: 1px;"name="Accompany_Check_outm' + i + '" id="Accompany_Check_outm' + i + '"> <option value="00" selected="">Mins</option> <option value="01" class="highlight">01</option> <option value="02">02</option> <option value="03">03</option> <option value="04">04</option> <option value="05">05</option> <option value="06">06</option> <option value="07">07</option> <option value="08">08</option> <option value="09">09</option> <option value="10">10</option> <option value="11">11</option> <option value="12">12</option> <option value="13">13</option> <option value="14">14</option> <option value="15">15</option> <option value="16">16</option> <option value="17">17</option> <option value="18">18</option> <option value="19">19</option> <option value="20">20</option> <option value="21">21</option> <option value="22">22</option> <option value="23">23</option> <option value="24">24</option> <option value="25">25</option> <option value="26">26</option> <option value="27">27</option> <option value="28">28</option> <option value="29">29</option> <option value="30">30</option> <option value="31">31</option> <option value="32">32</option> <option value="33">33</option> <option value="34">34</option> <option value="35">35</option> <option value="36">36</option> <option value="37">37</option> <option value="38">38</option> <option value="39">39</option> <option value="40">40</option> <option value="41">41</option> <option value="42">42</option> <option value="43">43</option> <option value="44">44</option> <option value="45">45</option> <option value="46">46</option> <option value="47">47</option> <option value="48">48</option> <option value="49">49</option> <option value="50">50</option> <option value="51">51</option> <option value="52">52</option> <option value="53">53</option> <option value="54">54</option> <option value="55">55</option> <option value="56">56</option> <option value="57">57</option> <option value="58">58</option> <option value="59">59</option> <option value="60">60</option> </select> <select style="width:57px;background-color: whitesmoke;border: 1px solid #c5c5c5;height: 30px;padding: 1px;" name="Accompany_Check_outMeridian' + i + '" id="Accompany_Check_outMeridian' + i + '"> <option class="highlight" value="am" selected="">AM</option> <option class="highlight" value="pm">PM</option> </select> </td></tr><tr> <td width="104">&nbsp;</td><td width="14">&nbsp;</td><td colspan="4">&nbsp;</td><td width="189">&nbsp;</td></tr></tbody> </table> </div></div><div class="col-lg-12"> <div class="frm"> <h3>Conference Registration</h3> <p style="margin:0;"> <div class="radio"> <input type="radio" name="radio7' + i + '" id="AccompanyConferenceRegistrationY' + i + '" value="reg1"> <label for="AccompanyConferenceRegistrationY' + i + '">Yes</label> </div><div class="radio"> <input type="radio" name="radio7' + i + '" id="AccompanyConferenceRegistrationN' + i + '" value="reg2"> <label for="AccompanyConferenceRegistrationN' + i + '">No</label> </div></p></div></div></div><div class="clearfix"></div></div>');
+                //'<div class="accp "><div class=col-lg-6><input id="Accompany_Pertion_Name' + i + '"name="Accompany_Pertion_Name' + i + '"placeholder="Full Name"></div><div class=col-lg-2><input id="Accompany_Pertion_Age' + i + '"name="Accompany_Pertion_Age' + i + '"placeholder=Age></div><div class=col-lg-3><select name="Accompany_Pertion_sex' + i + '"id="Accompany_Pertion_sex' + i + '" style="width:100%;background-color:#f5f5f5;border:2px solid #c5c5c5;height:40px;padding:9px"class=dropdown><option value=0 selected>--Sex--<option value=1>Male<option value=2>Female</select></div><div class=col-lg-4 style=margin-top:10px><select name="Accompany_Pertion_meal' + i + '"id="Accompany_Pertion_meal' + i + '"style="width:100%;background-color:#f5f5f5;border:2px solid #c5c5c5;height:40px;padding:9px"class=dropdown><option value=0 selected>--Meal Preference--<option value=1>Veg<option value=2>Non-Veg</select></div><div class=col-lg-7 style=margin-top:10px><select name="Accompany_Pertion_Accommodation' + i + '"id="Accompany_Pertion_Accommodation' + i + '"style="width:100%;background-color:#f5f5f5;border:2px solid #c5c5c5;height:40px;padding:9px"class=dropdown><option value=0 selected>--Accommodation Facility Required--<option value=1>Yes<option value=2>No</select></div><div class=col-lg-1><img class=img-responsive src=~/Images//right.png style=margin-top:5px;width:auto></div><div class=col-lg-11 style=margin-top:10px><div style="display:block;position:relative;border:2px solid #c5c5c5;width:100%;overflow-x:auto;background:#f5f5f5;padding:10px;height:auto"><table border=0 cellpadding=0 cellspacing=0 width=607><tr><td width=104><i><font style=font-size:9pt>From Date</font><span style=font-size:9pt></span></i><td width=14><font style=font-weight:700>:</font><td width=181><select name="Accompany_frmday' + i + '" id="Accompany_frmday' + i + '" style="width:50px;background-color:#f5f5f5;border:1px solid #c5c5c5;height:30px;padding:1px"><option>Day<option value=1>1<option value=2>2<option value=3>3<option value=4>4<option value=5>5<option value=6>6<option value=7>7<option value=8>8<option value=9>9<option value=10>10<option value=11>11<option value=12>12<option value=13>13<option value=14>14<option value=15>15<option value=16>16<option value=17>17<option value=18>18<option value=19>19<option value=20>20<option value=21>21<option value=22>22<option value=23>23<option value=24>24<option value=25>25<option value=26>26<option value=27>27<option value=28>28<option value=29>29<option value=30>30<option value=31>31</select><select name="Accompany_frmmonth' + i + '"id="Accompany_frmmonth' + i + '"style="width:65px;background-color:#f5f5f5;border:1px solid #c5c5c5;height:30px;padding:1px"><option>Month<option value=1>January<option value=2>February<option value=3>March<option value=4>April<option value=5>May<option value=6>June<option value=7>July<option value=8>August<option value=9>September<option value=10>October<option value=11>November<option value=12>December</select><select name="Accompany_frmYear' + i + '"name=DateOfBirth_Year id="Accompany_frmYear' + i + '"style="width:57px;background-color:#f5f5f5;border:1px solid #c5c5c5;height:30px;padding:1px"><option>Year<option value=2011>2011<option value=2010>2010<option value=2009>2009<option value=2008>2008<option value=2007>2007<option value=2006>2006<option value=2005>2005<option value=2004>2004<option value=2003>2003<option value=2002>2002<option value=2001>2001<option value=2000>2000<option value=1999>1999<option value=1998>1998<option value=1997>1997<option value=1996>1996<option value=1995>1995<option value=1994>1994<option value=1993>1993<option value=1992>1992<option value=1991>1991<option value=1990>1990<option value=1989>1989<option value=1988>1988<option value=1987>1987<option value=1986>1986<option value=1985>1985<option value=1984>1984<option value=1983>1983<option value=1982>1982<option value=1981>1981<option value=1980>1980<option value=1979>1979<option value=1978>1978<option value=1977>1977<option value=1976>1976<option value=1975>1975<option value=1974>1974<option value=1973>1973<option value=1972>1972<option value=1971>1971<option value=1970>1970<option value=1969>1969<option value=1968>1968<option value=1967>1967<option value=1966>1966<option value=1965>1965<option value=1964>1964<option value=1963>1963<option value=1962>1962<option value=1961>1961<option value=1960>1960<option value=1959>1959<option value=1958>1958<option value=1957>1957<option value=1956>1956<option value=1955>1955<option value=1954>1954<option value=1953>1953<option value=1952>1952<option value=1951>1951<option value=1950>1950<option value=1949>1949<option value=1948>1948<option value=1947>1947<option value=1946>1946<option value=1945>1945<option value=1944>1944<option value=1943>1943<option value=1942>1942<option value=1941>1941<option value=1940>1940<option value=1939>1939<option value=1938>1938<option value=1937>1937<option value=1936>1936<option value=1935>1935<option value=1934>1934<option value=1933>1933<option value=1932>1932<option value=1931>1931<option value=1930>1930<option value=1929>1929<option value=1928>1928<option value=1927>1927<option value=1926>1926<option value=1925>1925<option value=1924>1924<option value=1923>1923<option value=1922>1922<option value=1921>1921<option value=1920>1920<option value=1919>1919<option value=1918>1918<option value=1917>1917<option value=1916>1916<option value=1915>1915<option value=1914>1914<option value=1913>1913<option value=1912>1912<option value=1911>1911<option value=1910>1910<option value=1909>1909<option value=1908>1908<option value=1907>1907<option value=1906>1906<option value=1905>1905<option value=1904>1904<option value=1903>1903<option value=1902>1902<option value=1901>1901<option value=1900>1900</select><td width=7><td width=98><font style=font-size:9pt><i>To</i></font><i><font style=font-size:9pt> Date</font></i><span style=font-size:9pt></span><td width=14><font style=font-weight:700>:</font><td width=189><select name="Accompany_today' + i + '"name=DateOfBirth_Day id="Accompany_today' + i + '"style="width:50px;background-color:#f5f5f5;border:1px solid #c5c5c5;height:30px;padding:1px"><option>Day<option value=1>1<option value=2>2<option value=3>3<option value=4>4<option value=5>5<option value=6>6<option value=7>7<option value=8>8<option value=9>9<option value=10>10<option value=11>11<option value=12>12<option value=13>13<option value=14>14<option value=15>15<option value=16>16<option value=17>17<option value=18>18<option value=19>19<option value=20>20<option value=21>21<option value=22>22<option value=23>23<option value=24>24<option value=25>25<option value=26>26<option value=27>27<option value=28>28<option value=29>29<option value=30>30<option value=31>31</select><select name="Accompany_tomonth' + i + '"name=DateOfBirth_Month id="Accompany_tomonth' + i + '"style="width:65px;background-color:#f5f5f5;border:1px solid #c5c5c5;height:30px;padding:1px"><option>Month<option value=1>January<option value=2>February<option value=3>March<option value=4>April<option value=5>May<option value=6>June<option value=7>July<option value=8>August<option value=9>September<option value=10>October<option value=11>November<option value=12>December</select><select name="Accompany_toYear' + i + '"name=DateOfBirth_Year id="Accompany_toYear' + i + '"style="width:57px;background-color:#f5f5f5;border:1px solid #c5c5c5;height:30px;padding:1px"><option>Year<option value=2011>2011<option value=2010>2010<option value=2009>2009<option value=2008>2008<option value=2007>2007<option value=2006>2006<option value=2005>2005<option value=2004>2004<option value=2003>2003<option value=2002>2002<option value=2001>2001<option value=2000>2000<option value=1999>1999<option value=1998>1998<option value=1997>1997<option value=1996>1996<option value=1995>1995<option value=1994>1994<option value=1993>1993<option value=1992>1992<option value=1991>1991<option value=1990>1990<option value=1989>1989<option value=1988>1988<option value=1987>1987<option value=1986>1986<option value=1985>1985<option value=1984>1984<option value=1983>1983<option value=1982>1982<option value=1981>1981<option value=1980>1980<option value=1979>1979<option value=1978>1978<option value=1977>1977<option value=1976>1976<option value=1975>1975<option value=1974>1974<option value=1973>1973<option value=1972>1972<option value=1971>1971<option value=1970>1970<option value=1969>1969<option value=1968>1968<option value=1967>1967<option value=1966>1966<option value=1965>1965<option value=1964>1964<option value=1963>1963<option value=1962>1962<option value=1961>1961<option value=1960>1960<option value=1959>1959<option value=1958>1958<option value=1957>1957<option value=1956>1956<option value=1955>1955<option value=1954>1954<option value=1953>1953<option value=1952>1952<option value=1951>1951<option value=1950>1950<option value=1949>1949<option value=1948>1948<option value=1947>1947<option value=1946>1946<option value=1945>1945<option value=1944>1944<option value=1943>1943<option value=1942>1942<option value=1941>1941<option value=1940>1940<option value=1939>1939<option value=1938>1938<option value=1937>1937<option value=1936>1936<option value=1935>1935<option value=1934>1934<option value=1933>1933<option value=1932>1932<option value=1931>1931<option value=1930>1930<option value=1929>1929<option value=1928>1928<option value=1927>1927<option value=1926>1926<option value=1925>1925<option value=1924>1924<option value=1923>1923<option value=1922>1922<option value=1921>1921<option value=1920>1920<option value=1919>1919<option value=1918>1918<option value=1917>1917<option value=1916>1916<option value=1915>1915<option value=1914>1914<option value=1913>1913<option value=1912>1912<option value=1911>1911<option value=1910>1910<option value=1909>1909<option value=1908>1908<option value=1907>1907<option value=1906>1906<option value=1905>1905<option value=1904>1904<option value=1903>1903<option value=1902>1902<option value=1901>1901<option value=1900>1900</select><tr><td width=104><td width=14><td colspan=3><td width=14><td width=189><tr><td width=104><i><font style=font-size:9pt>Check in Time</font><span style=font-size:9pt></span></i><td width=14><font style=font-weight:700>:</font><td width=181><select name="Accompany_Check_inh' + i + '" id="Accompany_Check_inh' + i + '"style="width:50px;background-color:#f5f5f5;border:1px solid #c5c5c5;height:30px;padding:1px"><option value=00 selected>Hrs<option value=01 class=highlight>01<option value=02 class=highlight>02<option value=03 class=highlight>03<option value=04 class=highlight>04<option value=05 class=highlight>05<option value=06 class=highlight>06<option value=07 class=highlight>07<option value=08 class=highlight>08<option value=09 class=highlight>09<option value=10 class=highlight>10<option value=11 class=highlight>11<option value=12 class=highlight>12</select><select name="Accompany_Check_inm' + i + '"name=Time_Minute id="Accompany_Check_inm' + i + '"style="width:65px;background-color:#f5f5f5;border:1px solid #c5c5c5;height:30px;padding:1px"><option value=00 selected>Mins<option value=01 class=highlight>01<option value=02>02<option value=03>03<option value=04>04<option value=05>05<option value=06>06<option value=07>07<option value=08>08<option value=09>09<option value=10>10<option value=11>11<option value=12>12<option value=13>13<option value=14>14<option value=15>15<option value=16>16<option value=17>17<option value=18>18<option value=19>19<option value=20>20<option value=21>21<option value=22>22<option value=23>23<option value=24>24<option value=25>25<option value=26>26<option value=27>27<option value=28>28<option value=29>29<option value=30>30<option value=31>31<option value=32>32<option value=33>33<option value=34>34<option value=35>35<option value=36>36<option value=37>37<option value=38>38<option value=39>39<option value=40>40<option value=41>41<option value=42>42<option value=43>43<option value=44>44<option value=45>45<option value=46>46<option value=47>47<option value=48>48<option value=49>49<option value=50>50<option value=51>51<option value=52>52<option value=53>53<option value=54>54<option value=55>55<option value=56>56<option value=57>57<option value=58>58<option value=59>59<option value=60>60</select><select name="Accompany_Check_inAM' + i + '"name=Time_Meridian id="Accompany_Check_inAM' + i + '"style="width:57px;background-color:#f5f5f5;border:1px solid #c5c5c5;height:30px;padding:1px"><option value=am class=highlight selected>AM<option value=pm class=highlight>PM</select><td width=7><td width=98><i><font style=font-size:9pt>Check out Time</font></i><td width=14><font style=font-weight:700>:</font><td width=189><select name="Accompany_Check_outh' + i + '"name=Time_Hour id="Accompany_Check_outh' + i + '"style="width:50px;background-color:#f5f5f5;border:1px solid #c5c5c5;height:30px;padding:1px"><option value=00 selected>Hrs<option value=01 class=highlight>01<option value=02 class=highlight>02<option value=03 class=highlight>03<option value=04 class=highlight>04<option value=05 class=highlight>05<option value=06 class=highlight>06<option value=07 class=highlight>07<option value=08 class=highlight>08<option value=09 class=highlight>09<option value=10 class=highlight>10<option value=11 class=highlight>11<option value=12 class=highlight>12</select><select name="Accompany_Check_outm' + i + '"name=Time_Minute id="Accompany_Check_outm' + i + '"style="width:65px;background-color:#f5f5f5;border:1px solid #c5c5c5;height:30px;padding:1px"><option value=00 selected>Mins<option value=01 class=highlight>01<option value=02>02<option value=03>03<option value=04>04<option value=05>05<option value=06>06<option value=07>07<option value=08>08<option value=09>09<option value=10>10<option value=11>11<option value=12>12<option value=13>13<option value=14>14<option value=15>15<option value=16>16<option value=17>17<option value=18>18<option value=19>19<option value=20>20<option value=21>21<option value=22>22<option value=23>23<option value=24>24<option value=25>25<option value=26>26<option value=27>27<option value=28>28<option value=29>29<option value=30>30<option value=31>31<option value=32>32<option value=33>33<option value=34>34<option value=35>35<option value=36>36<option value=37>37<option value=38>38<option value=39>39<option value=40>40<option value=41>41<option value=42>42<option value=43>43<option value=44>44<option value=45>45<option value=46>46<option value=47>47<option value=48>48<option value=49>49<option value=50>50<option value=51>51<option value=52>52<option value=53>53<option value=54>54<option value=55>55<option value=56>56<option value=57>57<option value=58>58<option value=59>59<option value=60>60</select><select name="Accompany_Check_outAM' + i + '"name=Time_Meridian id="Accompany_Check_outAM' + i + '"style="width:57px;background-color:#f5f5f5;border:1px solid #c5c5c5;height:30px;padding:1px"><option value=am class=highlight selected>AM<option value=pm class=highlight>PM</select><tr><td width=104><td width=14><td colspan=4><td width=189></table></div></div><div class=col-lg-12><div class=frm><h3>Conference Registration</h3><p style=margin:0><div class=radio><input id=reg1 name=radio7 type=radio value=reg1><label for=reg1>Yes</label></div><div class=radio><input id=reg2 name=radio7 type=radio value=reg2><label for=reg2>No</label></div><p></div></div></div>');
+                document.getElementById('hdnid').value = i;
+                alert(document.getElementById('hdnid').value)
+               // alert('hi')
+                var type = $("#ddlcsiCategory option:selected").val();
+                var d = new Date();
+                var price = 000;
+                var usd = 000;
+                var curr_date = d.getDate();
+                var curr_month = d.getMonth();
+                var curr_year = d.getFullYear();
+                curr_month = curr_month + 1;
+                if (curr_month == 1) {
+                    if (type == "1") { price = 8000 + 14000 * i; }
+                    if (type == "2") { price = 14000 + 14000 * i; }
+                    if (type == "3") { price = 14000 + 14000 * i; }
+                    if (type == "4") { price = 4500 + 14000 * i; }
+                    if (type == "5") { price = 14000 + 14000 * i; }
+                    if (type == "6") { price = 4500; +14000 * i; }
+                    if (type == "7") { price = 14000 + 14000 * i; }
+                    if (type == "8") { price = 750 * exret + 750 * exret * i; usd = 750 * (i + 1); }
+                }
+                if (curr_month >= 2 && curr_month <= 4) {
+                    if (type == "1") { price = 13000 + 15500 * i; }
+                    if (type == "2") { price = 15500 + 15500 * i; }
+                    if (type == "3") { price = 15500 + 15500 * i; }
+                    if (type == "4") { price = 5500 + 15500 * i; }
+                    if (type == "5") { price = 16500 + 15500 * i; }
+                    if (type == "6") { price = 6500 + 15500 * i; }
+                    if (type == "7") { price = 15500 + 15500 * i; }
+                    if (type == "8") { price = 800 * exret + 800 * exret * i; usd = 800 * (i + 1); }
+                    //alert(price + "- -" + curr_month);
+                }
+                if (curr_month >= 5 && curr_month <= 7) {
+                    if (type == "1") { price = 14000 + 16500 * i; }
+                    if (type == "2") { price = 16500 + 16500 * i; }
+                    if (type == "3") { price = 16500 + 16500 * i; }
+                    if (type == "4") { price = 7000 + 16500 * i; }
+                    if (type == "5") { price = 18000 + 16500 * i; }
+                    if (type == "6") { price = 7500 + 16500 * i; }
+                    if (type == "7") { price = 16500 + 16500 * i; }
+                    if (type == "8") { price = 1000 * exret + 1000 * exret * i; usd = 1000 * (i + 1); }
+                   // alert(price + "- -" + curr_month);
+                }
+                if (curr_month >= 8 && curr_month <= 11) {
+                    if (type == "1") { price = 18000 + 23000 * i; }
+                    if (type == "2") { price = 23000 + 23000 * i; }
+                    if (type == "3") { price = 23000 + 23000 * i; }
+                    if (type == "4") { price = 9500 + 23000 * i; }
+                    if (type == "5") { price = 26000 + 23000 * i; }
+                    if (type == "6") { price = 9500 + 23000 * i; }
+                    if (type == "7") { price = 23000 + 23000 * i; }
+                    if (type == "8") { price = 1100 * exret + 1100 * exret * i; usd = 1100 * (i + 1); }
+                    alert(price + "- -" + curr_month);
+                }
+                if (curr_month == 12) {
+                    if (type == "1") { price = 8000 + 14000 *i; }
+                    if (type == "2") { price = 14000 + 14000 *i; }
+                    if (type == "3") { price = 14000 + 14000 *i; }
+                    if (type == "4") { price = 4500 + 14000 *i; }
+                    if (type == "5") { price = 14000 + 14000 *i; }
+                    if (type == "6") { price = 4500; +14000 *i; }
+                    if (type == "7") { price = 14000 + 14000 *i; }
+                    if (type == "8") { price = 750 * exret + 750 * exret * i; usd = 750 * (i + 1); }
+                }
+
+                var to_date = curr_date + '-' + curr_month + '-' + curr_year;
+                // alert(to_date)
+
+                $('#frm1').empty();
+                if (type == "8") { $('#frm1').append('<h3>Total Amount</h3> <h2 style="margin:0;">INR ' + price.toFixed(0) + '--->USD ' + usd.toFixed(0) + '</h2><div class="clearfix"></div>'); }
+                else { $('#frm1').append('<h3>Total Amount</h3> <h2 style="margin:0;">INR ' + price.toFixed(0) + '</h2><div class="clearfix"></div>'); }
+
+                $("#price-table").show();
+
+            });
+            $('.optionBox').on('click', '.remove', function () {
+                $(this).parent().remove();
+                i = i - 1;
+                document.getElementById('hdnid').value = i;
+                var type = $("#ddlcsiCategory option:selected").val();
+                var d = new Date();
+                var price = 000;
+                var usd = 000;
+                var curr_date = d.getDate();
+                var curr_month = d.getMonth();
+                var curr_year = d.getFullYear();
+                alert(document.getElementById('hdnid').value)
+                curr_month = curr_month + 1;
+                if (curr_month == 1) {
+                    if (type == "1") { price = 8000 + 14000 * i; }
+                    if (type == "2") { price = 14000 + 14000 * i; }
+                    if (type == "3") { price = 14000 + 14000 * i; }
+                    if (type == "4") { price = 4500 + 14000 * i; }
+                    if (type == "5") { price = 14000 + 14000 * i; }
+                    if (type == "6") { price = 4500; +14000 * i; }
+                    if (type == "7") { price = 14000 + 14000 * i; }
+                    if (type == "8") { price = 750 * exret + 750 * exret * i; usd = 750 * (i + 1); }
+                }
+                if (curr_month >= 2 && curr_month <= 4) {
+                    if (type == "1") { price = 13000 + 15500 * i; }
+                    if (type == "2") { price = 15500 + 15500 * i; }
+                    if (type == "3") { price = 15500 + 15500 * i; }
+                    if (type == "4") { price = 5500 + 15500 * i; }
+                    if (type == "5") { price = 16500 + 15500 * i; }
+                    if (type == "6") { price = 6500 + 15500 * i; }
+                    if (type == "7") { price = 15500 + 15500 * i; }
+                    if (type == "8") { price = 800 * exret + 800 * exret * i; usd = 800 * (i + 1); }
+                    //alert(price + "- -" + curr_month);
+                }
+                if (curr_month >= 5 && curr_month <= 7) {
+                    if (type == "1") { price = 14000 + 16500 * i; }
+                    if (type == "2") { price = 16500 + 16500 * i; }
+                    if (type == "3") { price = 16500 + 16500 * i; }
+                    if (type == "4") { price = 7000 + 16500 * i; }
+                    if (type == "5") { price = 18000 + 16500 * i; }
+                    if (type == "6") { price = 7500 + 16500 * i; }
+                    if (type == "7") { price = 16500 + 16500 * i; }
+                    if (type == "8") { price = 1000 * exret + 1000 * exret * i; usd = 1000 * (i + 1); }
+                    // alert(price + "- -" + curr_month);
+                }
+                if (curr_month >= 8 && curr_month <= 11) {
+                    if (type == "1") { price = 18000 + 23000 * i; }
+                    if (type == "2") { price = 23000 + 23000 * i; }
+                    if (type == "3") { price = 23000 + 23000 * i; }
+                    if (type == "4") { price = 9500 + 23000 * i; }
+                    if (type == "5") { price = 26000 + 23000 * i; }
+                    if (type == "6") { price = 9500 + 23000 * i; }
+                    if (type == "7") { price = 23000 + 23000 * i; }
+                    if (type == "8") { price = 1100 * exret + 1100 * exret * i; usd = 1100 * (i + 1); }
+                    alert(price + "- -" + curr_month);
+                }
+                if (curr_month == 12) {
+                    if (type == "1") { price = 8000 + 14000 * i; }
+                    if (type == "2") { price = 14000 + 14000 * i; }
+                    if (type == "3") { price = 14000 + 14000 * i; }
+                    if (type == "4") { price = 4500 + 14000 * i; }
+                    if (type == "5") { price = 14000 + 14000 * i; }
+                    if (type == "6") { price = 4500; +14000 * i; }
+                    if (type == "7") { price = 14000 + 14000 * i; }
+                    if (type == "8") { price = 750 * exret + 750 * exret * i; usd = 750 * (i + 1); }
+                }
+
+                var to_date = curr_date + '-' + curr_month + '-' + curr_year;
+                // alert(to_date)
+
+                $('#frm1').empty();
+                if (type == "8") { $('#frm1').append('<h3>Total Amount</h3> <h2 style="margin:0;">INR ' + price.toFixed(0) + '--->USD ' + usd.toFixed(0) + '</h2><div class="clearfix"></div>'); }
+                else { $('#frm1').append('<h3>Total Amount</h3> <h2 style="margin:0;">INR ' + price.toFixed(0) + '</h2><div class="clearfix"></div>'); }
+
+                $("#price-table").show();
+
+
+
+
+                // alert(document.getElementById('hdnid').value)
+            });
+        });//]]>
+
+    </script>
+
+    @using (Html.BeginForm())
+    {
+        @*@Html.AntiForgeryToken()*@
+        @Html.ValidationSummary(true)
+        <input type="hidden" id="hdnid" name="hdnid" value="0" />
+       <input type="hidden" id="hdntypemember" name="hdntypemember" value="0" />
+    <input type="hidden" id="hdexret" name="hdexret" value="@ViewBag.exrate" />
+        <fieldset>
+            <!-- Wrapper -->
+            <div class="wrapper">
+                <!-- Header -->
+                <div class="navigation-wrapper">
+                    <div class="secondary-navigation-wrapper">
+                        <div class="container">
+                            <div class="navigation-contact pull-left">Call Us:  <span class="opacity-70">+91 33 2355 6308 / 1500</span></div>
+
+                            <ul class="secondary-navigation list-unstyled">
+                                <li><a href="">Travel Guidelines</a></li>
+                                <li><a href="contact.htm">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div><!-- /.secondary-navigation -->
+                    <div class="primary-navigation-wrapper">
+                        <header class="navbar" id="top" role="banner">
+                            <div class="container">
+                                <div class="navbar-header">
+                                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <div class="navbar-brand nav" id="brand">
+                                        <a href="#"><img src="~/Images//logo0000.png" alt="brand"></a>
+                                    </div>
+                                </div>
+                                <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+                                    <ul class="nav navbar-nav">
+                                        <li><a href="index.htm">Home</a></li>
+                                        <li>
+                                            <a href="javascript:void(0)" class=" has-child no-link">CSI 2017</a>
+                                            <ul class="list-unstyled child-navigation">
+                                                <li><a href="welcome.htm">Welcome Messages</a></li>
+                                                <li><a href="#">Conference Highlights</a></li>
+                                                <li><a href="core_committee.htm">Core Committee</a></li>
+                                                <li><a href="advisory_committee.htm">Advisory Committee</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="active">
+                                            <a href="javascript:void(0)" class="has-child no-link">Venue</a>
+                                            <ul class="list-unstyled child-navigation">
+                                                <li><a href="about-kolkata.htm">About Kolkata</a></li>
+                                                <li><a href="about-venue.htm">About the Venue</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)" class="has-child no-link">Scientific Programme</a>
+                                            <ul class="list-unstyled child-navigation">
+                                                <li><a href="#">Main Session</a></li>
+                                                <li><a href="#">Student / Fellow Session</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)" class="has-child no-link">Faculty</a>
+                                            <ul class="list-unstyled child-navigation">
+                                                <li><a href="#">International</a></li>
+                                                <li><a href="#">Domestic</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)" class="has-child no-link">Accommodation</a>
+                                            <ul class="list-unstyled child-navigation">
+                                                <li><a href="airport-connectivity.htm">Airport &amp; Connectivity</a></li>
+                                                <li><a href="hotels.htm">Hotels</a></li>
+                                                <li><a href="weather.htm">Weather</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav><!-- /.navbar collapse-->
+                            </div><!-- /.container -->
+                        </header><!-- /.navbar -->
+                    </div><!-- /.primary-navigation -->
+                    <div class="background">
+                        <img src="~/Images//backgrou.png" alt="background">
+
+                    </div>
+                </div>
+                <!-- end Header -->
+                <!-- Page Content -->
+                <div id="page-content">
+                    <!-- Slider -->
+                    <div id="homepage-carousel">
+                        <div class="container">
+                            <div class="homepage-carousel-wrapper">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <img src="~/Images//registration.jpg" class="img-responsive">
+                                    </div><!-- /.col-md-6 -->
+
+                                </div><!-- /.row -->
+                                <div class="background"></div>
+                            </div><!-- /.slider-wrapper -->
+                            <div class="slider-inner"></div>
+                        </div><!-- /.container -->
+                    </div>
+                    <!-- end Slider -->
+                  
+
+                  
+
+                    <!-- News, Events, About -->
+                   
+                    <div class="block">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12">
+                                    <section class="news-small" id="news-small">
+                                        <header>
+                                            <h2>Registration</h2>
+                                        </header>
+                                        <div class="section-content">
+                                            <div class="col-lg-8">
+                                                <div class="frm" id="rediocln" >
+                                                    <h4>Are you a member of CSI?</h4><div id="rediocln1"></div>
+                                                    <p style="margin:0;">
+                                                        <div class="radio">
+                                                            <input type="radio" name="radio2" id="radio1" value="step">
+                                                            <label for="radio1">
+                                                                Yes
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <input type="radio" name="radio2" id="radio2" value="step">
+                                                            <label for="radio2">
+                                                                No
+                                                            </label>
+                                                        </div>
+                                                    </p>
+                                                </div>
+                                                <div id="show-me" style="display:none;">
+                                                    <div class="frm">
+                                                        <h4 style="color:red;">Membership Number (format 'L-1345'):</h4>
+                                                        <p style="margin:0;">
+                                                        @Html.TextBoxFor(model=>model.Membership_Number,new{@onchange="Setvalue()"})
+                                                            @*<input name="Membership_Number" class="tbox pull-left" style="width:65%" value="" maxlength="100" type="text" id="Membership_Number" @*required="required" onchange="Setvalue()">*@
+                                                            @*<button type="submit" style="width:30%" id="slider-submit" class="btn btn-framed pull-right">Check</button>*@
+                                                        </p>
+                                                        <div style="display:inline-block;">
+                                                            <div class="radio">
+                                                                <input type="radio" name="radio3" id="EC_Member" value="member">
+                                                                <label for="EC_Member">
+                                                                    EC Member
+                                                                </label>
+                                                            </div>
+                                                            <div class="radio">
+                                                                <input type="radio" name="radio3" id="Ex_President" value="member">
+                                                                <label for="Ex_President">
+                                                                    Ex President
+                                                                </label>
+                                                            </div>
+                                                            <div class="radio">
+                                                                <input type="radio" name="radio3" id="Ex_Secretary" value="member">
+                                                                <label for="Ex_Secretary">
+                                                                    Ex Secretary
+                                                                </label>
+                                                            </div>
+                                                            <div class="radio">
+                                                                <input type="radio" name="radio3" id="others" value="member">
+                                                                <label for="others">
+                                                                    Others
+                                                                </label>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Category*</h4>
+                                                    <p style="margin:0;">
+                                                        @Html.DropDownListFor(model => model.Category, ViewBag.catgrylist as SelectList, "Please Select", new { @name = "ddlcsiCategory", @id = "ddlcsiCategory", @class = "dropdown", @required = "required", @onchange = "setRegistration(this.value)", @style = "width:100%;background-color: whitesmoke;border: 2px solid #c5c5c5;height: 40px;padding: 9px;" })
+                                                       
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm" id="dvPassport" style="display:none;">
+                                                    <h4>Letter From HOD(doc,pdf)</h4>
+                                                    <input type="file" class="filestyle" data-buttontext="Select a File" id="filestyle-0" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);">
+
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Full Name*</h4>
+                                                    <p style="margin:0;">
+                                                        @Html.DropDownListFor(model => model.Prefix, ViewBag.pfx as SelectList, new { @id = "RegisterPrif", @style = "width:20%;background-color: whitesmoke;border: 2px solid #c5c5c5;height: 40px;padding: 9px;", @name = "RegisterPrif", @class = "dropdown pull-left", @required = "required" })
+                                                         @Html.TextBoxFor(model => model.Name, new { @name="register_fullname", @class="tbox pull-right", @style="width:75%" ,@value="",@maxlength="100" ,@type="text" ,@id="register_fullname" ,@required="required"})
+                                                     </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Date of Birth</h4>
+                                                    <p style="margin:0;">
+                                                        <div class="input-group two_input">
+                                                            <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                                           
+                                                            <input name="first_name" placeholder="Date" class="form-control" id="example1" type="text">
+                                                        </div>
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Institution</h4>
+                                                    <p style="margin:0;">
+                                                        @*<input type="text" id="txt_institution">*@
+                                                        @Html.TextBoxFor(model => model.Institution, new { @type = "text", @id = "txt_institution" })
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Department</h4>
+                                                    <p style="margin:0;">@*<input type="text" id="txt_Department">*@
+                                                        @Html.TextBoxFor(model => model.Department, new { @type = "text", @id = "txt_Department" })
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Designation</h4>
+                                                    <p style="margin:0;">@*<input type="text" id="txt_Designation">*@
+                                                        @Html.TextBoxFor(model => model.Designation, new { @type = "text", @id = "txt_Designation" })
+                                                    </p>
+
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Degree</h4>
+                                                    <p style="margin:0;">@*<input type="text" id="txt_Degree">*@
+                                                    @Html.TextBoxFor(model => model.Degree, new { @type = "text", @id = "txt_Degree" })</p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Nationality</h4>
+                                                    <p style="margin:0;">@*<input type="text" id="txt_Nationality">*@
+                                                      @Html.TextBoxFor(model => model.Nationality, new { @type = "text", @id = "txt_Nationality" })</p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Name to appear on the badge</h4>
+                                                    <p style="margin:0;">@*<input type="text" id="txt_badge">*@
+                                                        @Html.TextBoxFor(model => model.Badge_Name, new { @type = "text", @id = "txt_badge" })
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Address*</h4>
+                                                    <p style="margin:0;">@*<textarea id="txt_Address"></textarea>*@
+                                                        @Html.TextAreaFor(model => model.Address, new { @id = "txt_Address" })
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>City*</h4>
+                                                    <p style="margin:0;">@*<input type="text" id="txt_City">*@
+                                                        @Html.TextBoxFor(model => model.City, new { @type = "text", @id = "txt_City" })
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Pin*</h4>
+                                                    <p style="margin:0;">@*<input type="text" id="txt_Pin">*@
+                                                        @Html.TextBoxFor(model => model.Pin, new { @type = "text", @id = "txt_Pin" })
+                                                    </p>
+
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>State*</h4>
+                                                    <p style="margin:0;">
+                                                        @Html.DropDownList("State", ViewBag.ststlst as SelectList, new { @style = "width:100%;background-color: whitesmoke;border: 2px solid #c5c5c5;height: 40px;padding: 9px;", @class = "dropdown", @name = "register_state", @id = "register_state" })
+                                                    
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Country*</h4>
+                                                    <p style="margin:0;">
+                                                        @Html.DropDownList("Country", ViewBag.cntlist as SelectList, new { @style = "width:100%;background-color: whitesmoke;border: 2px solid #c5c5c5;height: 40px;padding: 9px;", @class = "dropdown", @name = "register_state", @id = "register_state" })
+                                                         </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+
+                                                <div class="frm">
+
+                                                    <h4>Work Phone</h4>
+                                                    <p style="margin:0;">
+                                                        @*<input type="text" id="txt_Work_Phone" class="pull-left" style="width:100%">*@
+                                                        @Html.TextBoxFor(model => model.WorkPhone, new { @type = "text", @id = "txt_Work_Phone" })
+                                                        @*<input type="text" class="pull-right" style="width:75%">*@
+                                                    </p>
+
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Mobile*</h4>
+                                                    <p style="margin:0;">
+                                                        @*<input type="text" id="txt_Mobile">*@
+                                                        @Html.TextBoxFor(model => model.Mobile, new { @type = "text", @id = "txt_Mobile", @required = "required" })
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Fax</h4>
+                                                    <p style="margin:0;">
+                                                        @*<input type="text" id="txt_Fax" class="pull-left" style="width:100%">*@
+                                                        @Html.TextBoxFor(model => model.Fax, new { @id = "txt_Fax", @class = "pull-left", @style = "width:100%" })
+                                                        @*<input type="text" class="pull-right" style="width:75%">*@
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Email*</h4>
+                                                    <p style="margin:0;">@*<input type="text" id="txt_Email">*@
+                                                        @Html.TextBoxFor(model => model.Email, new { @type = "text", @id = "txt_Email" })
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+
+
+                                                <div class="accompany optionBox">
+                                                    <div class="frm">
+                                                        <h2>Accompanying Person</h2>
+                                                        <p style="margin:0;">
+                                                            <div class="radio">
+                                                                <input type="radio" name="accompany1" id="accompanys" value="accompanyperson">
+                                                                <label for="accompanys">
+                                                                    Yes
+                                                                </label>
+                                                            </div>
+                                                            <div class="radio">
+                                                                <input type="radio" name="accompany1" id="accompanyt" value="accompanyperson" checked>
+                                                                <label for="accompanyt">
+                                                                    No
+                                                                </label>
+                                                            </div>
+                                                        </p>
+                                                    </div>
+                                                    <div id="accomp-per" style="display:none;">
+                                                        <div class="row accp">
+                                                            <div class="col-lg-6"><input type="text" id="Accompany_Pertion_Name1" name="Accompany_Pertion_Name1" ></div>
+                                                            <div class="col-lg-2"><input type="text" id="Accompany_Pertion_Age1" name="Accompany_Pertion_Age1" placeholder="Age"></div>
+                                                            <div class="col-lg-3"><select id="Accompany_Pertion_sex1" name="Accompany_Pertion_sex1" style="width:100%;background-color: whitesmoke;border: 2px solid #c5c5c5;height: 40px;padding: 9px;" class="dropdown"><option value="0" selected="">--Sex--</option><option value="M">Male</option><option value="F">Female</option></select></div>
+                                                            <div class="col-lg-4" style="margin-top:10px;"><select id="Accompany_Pertion_meal1" name="Accompany_Pertion_meal1" style="width:100%;background-color: whitesmoke;border: 2px solid #c5c5c5;height: 40px;padding: 9px;" class="dropdown"><option value="0" selected="">--Meal Preference--</option><option value="Veg">Veg</option><option value="Non-Veg">Non-Veg</option></select></div>
+                                                            <div class="col-lg-7" style="margin-top:10px;"><select id="Accompany_Pertion_Accommodation1" name="Accompany_Pertion_Accommodation1" style="width:100%;background-color: whitesmoke;border: 2px solid #c5c5c5;height: 40px;padding: 9px;" class="dropdown"><option value="0" selected="">--Accommodation Facility Required--</option><option value="Y">Yes</option><option value="N">No</option></select></div>
+                                                            <div class="col-lg-1">
+                                                                <img src="~/Images//right.png" class="img-responsive" style="margin-top:5px;width:auto;">
+                                                            </div>
+                                                            <div class="col-lg-11" style="margin-top:10px;">
+                                                                <div style="display: block; position: relative;border: 2px solid #c5c5c5; width: 100%;overflow-x:auto; background: whitesmoke; padding: 10px; height: auto;">
+                                                                    <table width="607" cellpadding="0" cellspacing="0" border="0">
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td width="104"><i><font style="font-size: 9pt">From Date</font><span style="font-size: 9pt"></span></i></td>
+                                                                                <td width="14"><font style="font-weight:bold;">:</font></td>
+                                                                                <td width="181">
+                                                                                    <select id="Accompany_frmday1" name="Accompany_frmday1" style="width:50px;background-color: whitesmoke;border: 1px solid #c5c5c5;height: 30px;padding: 1px;">
+                                                                                        <option>Day</option>
+                                                                                        <option value="1">1</option>
+                                                                                        <option value="2">2</option>
+                                                                                        <option value="3">3</option>
+                                                                                        <option value="4">4</option>
+                                                                                        <option value="5">5</option>
+                                                                                        <option value="6">6</option>
+                                                                                        <option value="7">7</option>
+                                                                                        <option value="8">8</option>
+                                                                                        <option value="9">9</option>
+                                                                                        <option value="10">10</option>
+                                                                                        <option value="11">11</option>
+                                                                                        <option value="12">12</option>
+                                                                                        <option value="13">13</option>
+                                                                                        <option value="14">14</option>
+                                                                                        <option value="15">15</option>
+                                                                                        <option value="16">16</option>
+                                                                                        <option value="17">17</option>
+                                                                                        <option value="18">18</option>
+                                                                                        <option value="19">19</option>
+                                                                                        <option value="20">20</option>
+                                                                                        <option value="21">21</option>
+                                                                                        <option value="22">22</option>
+                                                                                        <option value="23">23</option>
+                                                                                        <option value="24">24</option>
+                                                                                        <option value="25">25</option>
+                                                                                        <option value="26">26</option>
+                                                                                        <option value="27">27</option>
+                                                                                        <option value="28">28</option>
+                                                                                        <option value="29">29</option>
+                                                                                        <option value="30">30</option>
+                                                                                        <option value="31">31</option>
+                                                                                    </select>
+                                                                                    <select id="Accompany_frmmonth1" name="Accompany_frmmonth1" style="width:65px;background-color: whitesmoke;border: 1px solid #c5c5c5;height: 30px;padding: 1px;" >
+                                                                                        <option>Month</option>
+                                                                                        <option value="1">January</option>
+                                                                                        <option value="2">February</option>
+                                                                                        <option value="3">March</option>
+                                                                                        <option value="4">April</option>
+                                                                                        <option value="5">May</option>
+                                                                                        <option value="6">June</option>
+                                                                                        <option value="7">July</option>
+                                                                                        <option value="8">August</option>
+                                                                                        <option value="9">September</option>
+                                                                                        <option value="10">October</option>
+                                                                                        <option value="11">November</option>
+                                                                                        <option value="12">December</option>
+                                                                                    </select> 2017
+                                                                                   
+                                                                                </td>
+                                                                                <td width="7">&nbsp;</td>
+                                                                                <td width="98"><font style="font-size: 9pt"><i>To</i></font><i><font style="font-size: 9pt"> Date</font></i><span style="font-size: 9pt"></span></td>
+                                                                                <td width="14"><font style="font-weight:bold;">:</font></td>
+                                                                                <td width="189">
+                                                                                    <select id="Accompany_today1" name="Accompany_today1" style="width:50px;background-color: whitesmoke;border: 1px solid #c5c5c5;height: 30px;padding: 1px;" >
+                                                                                        <option>Day</option>
+                                                                                        <option value="1">1</option>
+                                                                                        <option value="2">2</option>
+                                                                                        <option value="3">3</option>
+                                                                                        <option value="4">4</option>
+                                                                                        <option value="5">5</option>
+                                                                                        <option value="6">6</option>
+                                                                                        <option value="7">7</option>
+                                                                                        <option value="8">8</option>
+                                                                                        <option value="9">9</option>
+                                                                                        <option value="10">10</option>
+                                                                                        <option value="11">11</option>
+                                                                                        <option value="12">12</option>
+                                                                                        <option value="13">13</option>
+                                                                                        <option value="14">14</option>
+                                                                                        <option value="15">15</option>
+                                                                                        <option value="16">16</option>
+                                                                                        <option value="17">17</option>
+                                                                                        <option value="18">18</option>
+                                                                                        <option value="19">19</option>
+                                                                                        <option value="20">20</option>
+                                                                                        <option value="21">21</option>
+                                                                                        <option value="22">22</option>
+                                                                                        <option value="23">23</option>
+                                                                                        <option value="24">24</option>
+                                                                                        <option value="25">25</option>
+                                                                                        <option value="26">26</option>
+                                                                                        <option value="27">27</option>
+                                                                                        <option value="28">28</option>
+                                                                                        <option value="29">29</option>
+                                                                                        <option value="30">30</option>
+                                                                                        <option value="31">31</option>
+                                                                                    </select>
+                                                                                    <select id="Accompany_tomonth1" name="Accompany_tomonth1" style="width:65px;background-color: whitesmoke;border: 1px solid #c5c5c5;height: 30px;padding: 1px;" name="DateOfBirth_Month">
+                                                                                        <option>Month</option>
+                                                                                        <option value="1">January</option>
+                                                                                        <option value="2">February</option>
+                                                                                        <option value="3">March</option>
+                                                                                        <option value="4">April</option>
+                                                                                        <option value="5">May</option>
+                                                                                        <option value="6">June</option>
+                                                                                        <option value="7">July</option>
+                                                                                        <option value="8">August</option>
+                                                                                        <option value="9">September</option>
+                                                                                        <option value="10">October</option>
+                                                                                        <option value="11">November</option>
+                                                                                        <option value="12">December</option>
+                                                                                    </select>2017
+                                                                                  
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td width="104">&nbsp;</td>
+                                                                                <td width="14">&nbsp;</td>
+                                                                                <td colspan="3">&nbsp;</td>
+                                                                                <td width="14">&nbsp;</td>
+                                                                                <td width="189">&nbsp;</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td width="104"><i><font style="font-size: 9pt">Check in Time</font><span style="font-size: 9pt"></span></i></td>
+                                                                                <td width="14"><font style="font-weight:bold;">:</font></td>
+                                                                                <td width="181">
+                                                                                    <select id="Accompany_Check_inh1" name="Accompany_Check_inh1" style="width:50px;background-color: whitesmoke;border: 1px solid #c5c5c5;height: 30px;padding: 1px;" name="Time_Hour">
+                                                                                        <option value="00" selected="">Hrs</option>                                                                                        
+                                                                                        <option value="01" class="highlight">01</option>
+                                                                                        <option value="02" class="highlight">02</option>
+                                                                                        <option value="03" class="highlight">03</option>
+                                                                                        <option value="04" class="highlight">04</option>
+                                                                                        <option value="05" class="highlight">05</option>
+                                                                                        <option value="06" class="highlight">06</option>
+                                                                                        <option value="07" class="highlight">07</option>
+                                                                                        <option value="08" class="highlight">08</option>
+                                                                                        <option value="09" class="highlight">09</option>
+                                                                                        <option value="10" class="highlight">10</option>
+                                                                                        <option value="11" class="highlight">11</option>
+                                                                                        <option value="12" class="highlight">12</option>
+                                                                                    </select>
+                                                                                    <select id="Accompany_Check_inm1" name="Accompany_Check_inm1" style="width:65px;background-color: whitesmoke;border: 1px solid #c5c5c5;height: 30px;padding: 1px;" name="Time_Minute">
+                                                                                        <option value="00" selected="">Mins</option>
+                                                                                        <option value="00" class="highlight">00</option>
+                                                                                        <option value="01">01</option>
+                                                                                        <option value="02">02</option>
+                                                                                        <option value="03">03</option>
+                                                                                        <option value="04">04</option>
+                                                                                        <option value="05">05</option>
+                                                                                        <option value="06">06</option>
+                                                                                        <option value="07">07</option>
+                                                                                        <option value="08">08</option>
+                                                                                        <option value="09">09</option>
+                                                                                        <option value="10">10</option>
+                                                                                        <option value="11">11</option>
+                                                                                        <option value="12">12</option>
+                                                                                        <option value="13">13</option>
+                                                                                        <option value="14">14</option>
+                                                                                        <option value="15">15</option>
+                                                                                        <option value="16">16</option>
+                                                                                        <option value="17">17</option>
+                                                                                        <option value="18">18</option>
+                                                                                        <option value="19">19</option>
+                                                                                        <option value="20">20</option>
+                                                                                        <option value="21">21</option>
+                                                                                        <option value="22">22</option>
+                                                                                        <option value="23">23</option>
+                                                                                        <option value="24">24</option>
+                                                                                        <option value="25">25</option>
+                                                                                        <option value="26">26</option>
+                                                                                        <option value="27">27</option>
+                                                                                        <option value="28">28</option>
+                                                                                        <option value="29">29</option>
+                                                                                        <option value="30">30</option>
+                                                                                        <option value="31">31</option>
+                                                                                        <option value="32">32</option>
+                                                                                        <option value="33">33</option>
+                                                                                        <option value="34">34</option>
+                                                                                        <option value="35">35</option>
+                                                                                        <option value="36">36</option>
+                                                                                        <option value="37">37</option>
+                                                                                        <option value="38">38</option>
+                                                                                        <option value="39">39</option>
+                                                                                        <option value="40">40</option>
+                                                                                        <option value="41">41</option>
+                                                                                        <option value="42">42</option>
+                                                                                        <option value="43">43</option>
+                                                                                        <option value="44">44</option>
+                                                                                        <option value="45">45</option>
+                                                                                        <option value="46">46</option>
+                                                                                        <option value="47">47</option>
+                                                                                        <option value="48">48</option>
+                                                                                        <option value="49">49</option>
+                                                                                        <option value="50">50</option>
+                                                                                        <option value="51">51</option>
+                                                                                        <option value="52">52</option>
+                                                                                        <option value="53">53</option>
+                                                                                        <option value="54">54</option>
+                                                                                        <option value="55">55</option>
+                                                                                        <option value="56">56</option>
+                                                                                        <option value="57">57</option>
+                                                                                        <option value="58">58</option>
+                                                                                        <option value="59">59</option>
+                                                                                       
+                                                                                    </select>
+                                                                                    <select id="Accompany_Check_inMeridian1" name="Accompany_Check_inMeridian1" style="width:57px;background-color: whitesmoke;border: 1px solid #c5c5c5;height: 30px;padding: 1px;" name="Time_Meridian">
+                                                                                        <option class="highlight" value="am" selected="">AM</option>
+                                                                                        <option class="highlight" value="pm">PM</option>
+                                                                                    </select>
+                                                                                </td>
+                                                                                <td width="7">&nbsp;</td>
+                                                                                <td width="98"><i><font style="font-size: 9pt">Check out Time</font></i></td>
+                                                                                <td width="14"><font style="font-weight:bold;">:</font></td>
+                                                                                <td width="189">
+                                                                                    <select id="Accompany_Check_outh1" name="Accompany_Check_outh1" style="width:50px;background-color: whitesmoke;border: 1px solid #c5c5c5;height: 30px;padding: 1px;" name="Time_Hour">
+                                                                                        <option value="00" selected="">Hrs</option>
+                                                                                        <option value="01" class="highlight">01</option>
+                                                                                        <option value="02" class="highlight">02</option>
+                                                                                        <option value="03" class="highlight">03</option>
+                                                                                        <option value="04" class="highlight">04</option>
+                                                                                        <option value="05" class="highlight">05</option>
+                                                                                        <option value="06" class="highlight">06</option>
+                                                                                        <option value="07" class="highlight">07</option>
+                                                                                        <option value="08" class="highlight">08</option>
+                                                                                        <option value="09" class="highlight">09</option>
+                                                                                        <option value="10" class="highlight">10</option>
+                                                                                        <option value="11" class="highlight">11</option>
+                                                                                        <option value="12" class="highlight">12</option>
+                                                                                    </select>
+                                                                                    <select id="Accompany_Check_outm1" name="Accompany_Check_outm1" style="width:65px;background-color: whitesmoke;border: 1px solid #c5c5c5;height: 30px;padding: 1px;" name="Time_Minute">
+                                                                                        <option value="00" selected="">Mins</option>
+                                                                                        <option value="00" class="highlight">00</option>
+                                                                                        <option value="01">01</option>
+                                                                                        <option value="02">02</option>
+                                                                                        <option value="03">03</option>
+                                                                                        <option value="04">04</option>
+                                                                                        <option value="05">05</option>
+                                                                                        <option value="06">06</option>
+                                                                                        <option value="07">07</option>
+                                                                                        <option value="08">08</option>
+                                                                                        <option value="09">09</option>
+                                                                                        <option value="10">10</option>
+                                                                                        <option value="11">11</option>
+                                                                                        <option value="12">12</option>
+                                                                                        <option value="13">13</option>
+                                                                                        <option value="14">14</option>
+                                                                                        <option value="15">15</option>
+                                                                                        <option value="16">16</option>
+                                                                                        <option value="17">17</option>
+                                                                                        <option value="18">18</option>
+                                                                                        <option value="19">19</option>
+                                                                                        <option value="20">20</option>
+                                                                                        <option value="21">21</option>
+                                                                                        <option value="22">22</option>
+                                                                                        <option value="23">23</option>
+                                                                                        <option value="24">24</option>
+                                                                                        <option value="25">25</option>
+                                                                                        <option value="26">26</option>
+                                                                                        <option value="27">27</option>
+                                                                                        <option value="28">28</option>
+                                                                                        <option value="29">29</option>
+                                                                                        <option value="30">30</option>
+                                                                                        <option value="31">31</option>
+                                                                                        <option value="32">32</option>
+                                                                                        <option value="33">33</option>
+                                                                                        <option value="34">34</option>
+                                                                                        <option value="35">35</option>
+                                                                                        <option value="36">36</option>
+                                                                                        <option value="37">37</option>
+                                                                                        <option value="38">38</option>
+                                                                                        <option value="39">39</option>
+                                                                                        <option value="40">40</option>
+                                                                                        <option value="41">41</option>
+                                                                                        <option value="42">42</option>
+                                                                                        <option value="43">43</option>
+                                                                                        <option value="44">44</option>
+                                                                                        <option value="45">45</option>
+                                                                                        <option value="46">46</option>
+                                                                                        <option value="47">47</option>
+                                                                                        <option value="48">48</option>
+                                                                                        <option value="49">49</option>
+                                                                                        <option value="50">50</option>
+                                                                                        <option value="51">51</option>
+                                                                                        <option value="52">52</option>
+                                                                                        <option value="53">53</option>
+                                                                                        <option value="54">54</option>
+                                                                                        <option value="55">55</option>
+                                                                                        <option value="56">56</option>
+                                                                                        <option value="57">57</option>
+                                                                                        <option value="58">58</option>
+                                                                                        <option value="59">59</option>
+                                                                                        <option value="60">60</option>
+                                                                                    </select>
+                                                                                    <select id="Accompany_Check_outMeridian1" name="Accompany_Check_outMeridian1" style="width:57px;background-color: whitesmoke;border: 1px solid #c5c5c5;height: 30px;padding: 1px;" name="Time_Meridian">
+                                                                                        <option class="highlight" value="am" selected="">AM</option>
+                                                                                        <option class="highlight" value="pm">PM</option>
+                                                                                    </select>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td width="104">&nbsp;</td>
+                                                                                <td width="14">&nbsp;</td>
+                                                                                <td colspan="4">&nbsp;</td>
+                                                                                <td width="189">&nbsp;</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-12">
+                                                                <div class="frm">
+                                                                    <h3>Conference Registration</h3>
+                                                                    <p style="margin:0;"></p>
+                                                                    <div class="radio">
+                                                                        <input type="radio" name="radio7" id="AccompanyConferenceRegistrationY1" value="AccompanyConferenceRegistrationY1">
+                                                                        <label for="AccompanyConferenceRegistrationY1">Yes</label>
+                                                                    </div>
+                                                                    <div class="radio">
+                                                                        <input type="radio" name="radio7" id="AccompanyConferenceRegistrationN1" value="AccompanyConferenceRegistrationN1">
+                                                                        <label for="AccompanyConferenceRegistrationN1">No</label>
+                                                                    </div>
+                                                                    <p></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="accp">
+                                                                <div class="col-lg-5" style="margin-top:10px;">
+                                                                    <span class="add btn btn-framed">Add More</span>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <h3 style="margin-top:40px;">Login Details</h3>
+                                                <hr>
+                                                <div class="frm">
+                                                    <h4>Username*</h4>
+                                                    <p style="margin:0;">@*<input type="text" id="txt_Username">*@
+                                                        @Html.TextBoxFor(model => model.Username, new { @id = "txt_Username", @required = "required" })
+                                                       
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Password*</h4>
+                                                    <p style="margin:0;">@*<input type="password" id="txt_password">*@
+                                                        @Html.PasswordFor(model => model.Password, new { @id = "txt_password", @required = "required" })
+                                                    </p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="frm">
+                                                    <h4>Confirm Password*</h4>
+                                                    <p style="margin:0;"><input type="password"></p>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="foodchoice">
+                                                    <h3>Choice of Food</h3>
+                                                    @Html.RadioButtonFor(model => model.Foodtype, "vegetarian") Vegetarian
+                                                    @Html.RadioButtonFor(model => model.Foodtype, "nonvegetarian") Non-Vegetarian                              
+                                                 
+
+                                                </div>
+                                                @*<div class="foodchoice">
+                                                        <h3>Choice of Food</h3>
+                                                        <div class="radio">
+                                                          
+                                                            <input type="radio" name="radio1" id="vegetarian" value="vegetarian">
+                                                            <label for="vegetarian">
+                                                                Vegetarian
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <input type="radio" name="radio1" id="nonvegetarian" value="nonvegetarian">
+                                                            <label for="nonvegetarian">
+                                                                Non-Vegetarian
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <input type="radio" name="radio1" id="jain" value="jain">
+                                                            <label for="jain">
+                                                                Jain
+                                                            </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                            <input type="radio" name="radio1" id="Healthy" value="Healthy">
+                                                            <label for="Healthy">
+                                                                Healthy Alternative
+                                                            </label>
+                                                        </div>
+                                                    </div>*@
+
+                                                </div>
+                                            <!--div id="price-table" style="display:none;"-->
+                                                <div id="">
+                                                    <div class="col-lg-12">
+                                                        <div class="category-table table-responsive">
+                                                            <table class="table table-bordered">
+                                                                <thead>
+                                                                    <tr class="success">
+                                                                        <th>Category</th>
+                                                                        <th>From 12 Dec 2016 to 31 Jan 2017</th>
+                                                                        <th>1st Feb 2017 to 30 April 2017</th>
+                                                                        <th>1st May 2017 to 31st July 2017</th>
+                                                                        <th>1st Aug 2017 to 15th Nov 2017</th>
+                                                                        <th>Spot</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            @*<input type="radio" name="radio2" id="CSI Member" value="CSI Member" style="width:10%;vertical-align: top;margin-top: 8px;">*@
+                                                                            <label for="CSI Member">
+                                                                                CSI Member
+                                                                            </label>
+                                                                        </td>
+                                                                        <td>INR 8000</td>
+                                                                        <td>INR 13000</td>
+                                                                        <td>INR 14000</td>
+                                                                        <td>INR 18000</td>
+                                                                        <td>INR 23000</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            @*<input type="radio" name="radio2" id="Non-CSI Member" value="Non-CSI Member" style="width:10%;vertical-align: top;margin-top: 8px;">*@
+                                                                            <label for="Non-CSI Member">
+                                                                                Non-CSI Member
+                                                                            </label>
+                                                                        </td>
+                                                                        <td>INR 14000</td>
+                                                                        <td>INR 15500</td>
+                                                                        <td>INR 16500</td>
+                                                                        <td>INR 23000</td>
+                                                                        <td>INR 28500</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            @*<input type="radio" name="radio2" id="Accompanying Person" value="Accompanying Person" style="width:10%;vertical-align: top;margin-top: 8px;">*@
+                                                                            <label for="Accompanying Person">
+                                                                                Accompanying <br>Person
+                                                                            </label>
+                                                                        </td>
+                                                                        <td>INR 14000</td>
+                                                                        <td>INR 15500</td>
+                                                                        <td>INR 16500</td>
+                                                                        <td>INR 23000</td>
+                                                                        <td>INR 28500</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            @*<input type="radio" name="radio2" id="PG Students" value="PG Students" style="width:10%;vertical-align: top;margin-top: 8px;">*@
+                                                                            <label for="PG Students">
+                                                                                PG Students
+                                                                            </label>
+                                                                        </td>
+                                                                        <td>INR 4500</td>
+                                                                        <td>INR 5500</td>
+                                                                        <td>INR 7000</td>
+                                                                        <td>INR 9500</td>
+                                                                        <td>INR 10000</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            @*<input type="radio" name="radio2" id="Industry Professional" value="Industry Professional" style="width:10%;vertical-align: top;margin-top: 8px;">*@
+                                                                            <label for="Industry Professional">
+                                                                                Industry <br>Professional
+                                                                            </label>
+                                                                        </td>
+                                                                        <td>INR 14000</td>
+                                                                        <td>INR 16500</td>
+                                                                        <td>INR 18000</td>
+                                                                        <td>INR 26000</td>
+                                                                        <td>INR 30000</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            @*<input type="radio" name="radio2" id="Nurse/Technicians" value="Nurse/Technicians" style="width:10%;vertical-align: top;margin-top: 8px;">*@
+                                                                            <label for="Nurse/Technicians">
+                                                                                Nurse/Technicians
+                                                                            </label>
+                                                                        </td>
+                                                                        <td>INR 4500</td>
+                                                                        <td>INR 6500</td>
+                                                                        <td>INR 7500</td>
+                                                                        <td>INR 9500</td>
+                                                                        <td>INR 10000</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            @*<input type="radio" name="radio2" id="SAARC Countries Non-CSI Member" value="SAARC Countries Non-CSI Member" style="width:10%;vertical-align: top;margin-top: 8px;">*@
+                                                                            <label for="SAARC Countries Non-CSI Member">
+                                                                                SAARC <br>Non-CSI Member
+                                                                            </label>
+                                                                        </td>
+                                                                        <td>INR 14000</td>
+                                                                        <td>INR 15500</td>
+                                                                        <td>INR 16500</td>
+                                                                        <td>INR 23000</td>
+                                                                        <td>INR 28500</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            @*<input type="radio" name="radio2" id="Non-SAARC Foreign Nationals" value="Non-SAARC Foreign Nationals" style="width:10%;vertical-align: top;margin-top: 8px;">*@
+                                                                            <label for="Non-SAARC Foreign Nationals">
+                                                                                Non-SAARC <br>Foreign Nationals
+                                                                            </label>
+                                                                        </td>
+                                                                        <td>USD 750</td>
+                                                                        <td>USD 800</td>
+                                                                        <td>USD 1000</td>
+                                                                        <td>USD 1100</td>
+                                                                        <td>USD 1200</td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-12"><h3>Payment Mode*</h3>
+                                                        @Html.RadioButtonFor(model => model.PaymentMode, "Online") Online
+                                                        @Html.RadioButtonFor(model => model.PaymentMode, "Neft") Neft
+                                                        @Html.RadioButtonFor(model => model.PaymentMode, "Cheque") Cheque
+                                                        @Html.RadioButtonFor(model => model.PaymentMode, "DD") DD
+                                                    </div>
+
+                                                        @*<div class="col-lg-12">
+                                                            <h3>Payment Mode*</h3>
+                                                            <div class="radio">
+                                                                <input type="radio" name="radio4" id="Online" value="Online">
+                                                                <label for="Online">
+                                                                    Online
+                                                                </label>
+                                                            </div>
+
+                                                            <div class="radio">
+                                                                <input type="radio" name="radio4" id="Neft" value="Neft">
+                                                                <label for="Neft">
+                                                                    Neft
+                                                                </label>
+                                                            </div>
+                                                            <div class="radio">
+                                                                <input type="radio" name="radio4" id="Cheque" value="Cheque">
+                                                                <label for="Cheque">
+                                                                    Cheque
+                                                                </label>
+                                                            </div>
+                                                            <div class="radio">
+                                                                <input type="radio" name="radio4" id="DD" value="DD">
+                                                                <label for="DD">
+                                                                    DD
+                                                                </label>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                        </div>*@
+                                                        <div class="col-lg-12">
+                                                            @*<h5 style="color:red;">* An Additional amount of 15% to be added towards Service tax</h5>*@
+                                                            <h3>PG (MD) in training and Post Doctoral (DNB/DM) in training will have to submit a certificate from their HOD.</h3>
+                                                        </div>
+                                                        <div class="col-lg-7">
+                                                            <div class="frm" id="frm1">
+                                                                <h3>Total Amount</h3>
+                                                                <label id="Total_Amount" value="INR 23000"></label>
+                                                                <h2 style="margin:0;">INR  0.00</h2>
+                                                                <div class="clearfix"></div>
+                                                                <div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-lg-12">
+
+                                                                @*<input type="submit" value="submit" style="margin-top:30px;" id="slider-submit" class="btn btn-framed pull-right" onclick="Setsubmit()" />*@
+
+                                                                @*<input type="submit" value="submit" style="margin-top:30px;" id="slider-submit" class="btn btn-framed pull-right" />*@
+                                                                @*//<button type="submit" style="margin-top:30px;" id="slider-submit" class="btn btn-framed pull-right">Submit</button>*@
+                                                                <div class="clearfix"></div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.section-content -->
+
+</section><!-- /.news-small -->
+                                    <input type="submit" value="submit" style="margin-top:30px;" id="slider-submit" class="btn btn-framed pull-right" />
+                                </div>
+                            <!-- /.col-md-4 -->
+
+
+                            </div><!-- /.row -->
+                        </div><!-- /.container -->
+                    </div>
+
+                    @*<input type="submit" value="submit" style="margin-top:30px;" id="slider-submit" class="btn btn-framed pull-right" />*@
+                    <!-- end News, Events, About -->
+                    <!-- end Partners, Make a Donation -->
+                </div>
+                <!-- end Page Content -->
+                <!-- Footer -->
+                <footer id="page-footer">
+
+                    <section id="footer-content">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4">
+                                    <aside>
+                                        <header><h4>Contact Us</h4></header>
+                                        <address>
+                                            <strong style="color:#fff;">Dr. Mrinal Kanti Das, Organizing Secretary</strong>
+                                            <br>
+                                            <span>Indian Heart House, P-60, C.I.T Road, <br>Scheme - VII-M, Kankurgachi,</span>
+                                            <br><br>
+                                            <span>Kolkata - 700054, India</span>
+                                            <br>
+                                            <abbr title="Telephone">Telephone:</abbr> +91 33 2355 7837, 2355 6308, 2355 1500
+                                            <br>
+                                            <abbr title="Email">Email:</abbr> <a href="">secretary@csicon2017.org</a>
+                                        </address>
+                                    </aside>
+                                </div><!-- /.col-md-3 -->
+                                <div class="col-md-4 col-sm-4">
+                                    <aside>
+                                        <header><h4>Important Links</h4></header>
+                                        <ul class="list-links">
+                                            <li><a href="hotels.htm">Accommodation</a></li>
+                                            <li><a href="">Privacy Policy</a></li>
+                                            <li><a href="">Terms & Conditions</a></li>
+                                            <li><a href="">Cancellation &amp; Refund Policy</a></li>
+                                            <li><a href="contact.htm">Contact us</a></li>
+                                        </ul>
+                                    </aside>
+                                </div><!-- /.col-md-3 -->
+                                <div class="col-md-4 col-sm-4">
+                                    <aside>
+                                        <header><h4>About CSICON 2017</h4></header>
+                                        <p>
+                                            All roads lead to Kolkata, India, the city of joy, city of palaces, a palpable mosaic of the old and new cultures and landscapes mutating with time. Mark the dates 7 th to 10<sup>th</sup> December, 2017 on your calendar.
+                                        </p>
+                                        <div>
+                                            <a href="about-csi.htm" class="read-more">More</a>
+                                        </div>
+                                    </aside>
+                                </div><!-- /.col-md-3 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.container -->
+                        <div class="background"><img src="~/Images//backgrou.png" class="" alt=""></div>
+                    </section><!-- /#footer-content -->
+
+                    <section id="footer-bottom">
+                        <div class="container">
+                            <div class="footer-inner">
+                                <div class="copyright">© 69th Annual Conference of Cardiological Society of India, All rights reserved</div><!-- /.copyright -->
+                            </div><!-- /.footer-inner -->
+                        </div><!-- /.container -->
+                    </section><!-- /#footer-bottom -->
+
+                </footer>
+                <!-- end Footer -->
+
+            </div>
+            <!-- end Wrapper -->
+        </fieldset>
+    }
+    <script type="text/javascript" src="~/Scripts/jquery-2.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-m.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+    <script type="text/javascript" src="~/Scripts/selectiz.js"></script>
+    <script type="text/javascript" src="~/Scripts/owl.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery00.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery01.js"></script>
+    <script type="text/javascript" src="~/Scripts/jQuery02.js"></script>
+    <script type="text/javascript" src="~/Scripts/icheck00.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery03.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap-filestyle.min.js"></script>
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+    <link href="~/Content/datepicker.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+        // When the document is ready
+        $(document).ready(function () {
+
+            $('#example1').datepicker({
+                format: "dd/mm/yyyy",
+                todayBtn: "linked",
+                autoclose: true
+            });
+
+        });
+    </script>
+
+    <script type="text/javascript" src="~/Scripts/jquery.downCount.js"></script>
+    <script type="text/javascript">
+        $('.countdown').downCount({
+            date: '12/07/2017 12:00:00',
+            offset: +10
+        }, function () {
+            alert('WOOT WOOT, done!');
+        });
+    </script>
+
+    <style type="text/css">
+        /* Set a size for our map container, the Google Map will take up 100% of this container */
+        #map {
+            width: 100%;
+            height: 50vh;
+        }
+
+        .mp-head {
+            color: #555;
+        }
+
+        #firstHeading {
+            font-size: 20pt !important;
+            padding-bottom: 0 !important;
+            color: #555;
+        }
+    </style>
+
+
+</body>
+</html>
+@*function Setsubmit() {
+       // alert("h1");
+        var _Prefix = document.getElementById("RegisterPrif").value;
+        var _Name = document.getElementById("register_fullname").value;
+        var _DOB = document.getElementById("example1").value;
+        var _Membership_Number = document.getElementById("Membership_Number").value;
+        var _Category = document.getElementById("ddlcsiCategory").value;
+        var _Institution = document.getElementById("txt_institution").value;
+        var _Department = document.getElementById("txt_Department").value;
+        var _Designation = document.getElementById("txt_Designation").value;
+        var _Degree = document.getElementById("txt_Degree").value;
+        var _Nationality = document.getElementById("txt_Nationality").value;
+        var _Address = document.getElementById("txt_Address").value;
+        var _City = document.getElementById("txt_City").value;
+        var _Pin = document.getElementById("txt_Pin").value;
+        var _State = document.getElementById("register_state").value;
+        var _Country = document.getElementById("home_country").value;
+        var _WorkPhone = document.getElementById("txt_Work_Phone").value;
+        var _Mobile = document.getElementById("txt_Mobile").value;
+        var _Fax = document.getElementById("txt_Fax").value;
+        var _Email = document.getElementById("txt_Email").value;
+        var _badge = document.getElementById("txt_badge").value;
+        var _Username = document.getElementById("txt_Username").value;
+        var _Password = document.getElementById("txt_password").value;
+        var _hdid = document.getElementById("hdnid").value;
+       // alert("h2");
+        //var fileUpload = $("#FileUpload1").get(0);
+        //var files = fileUpload.files;
+        //var _file = files.length;
+       // alert(_hdid);
+        //for Accompany_Pertion set value {
+        var x = "";var y = ""; var z = ""; var z1 = "";var z2 = ""; var x1 = ""; var x2 = "";var y1 = ""; var y2 = ""; var chkinh = ""; var chkinm = "";var chkinam = ""; var chkY = "";var chkN = "";
+        //var _acname = new Array(_hdid);
+        var _acname = ""; var _acage = ""; var _acsex = ""; var _acmeal = ""; var _acaccom = ""; var _acfdate = "";var _actdate = ""; var _acchk = "";
+        //alert(_acname);
+        for (i = 1; i <= _hdid; i++) {
+            // alert(_acname);
+            x = "Accompany_Pertion_Name" + i;
+            y = "Accompany_Pertion_Age" + i;
+            z = "Accompany_Pertion_sex" + i;
+            z1 = "Accompany_Pertion_meal" + i;
+            z2 = "Accompany_Pertion_Accommodation" + i;
+            x1 = "Accompany_frmday" + i;
+            x2 = "Accompany_frmmonth" + i;
+            y1 = "Accompany_today" + i;
+            y2 = "Accompany_frmmonth" + i;
+            chkinh = "Accompany_Check_inh" + i;
+            chkinm = "Accompany_Check_inm" + i;
+            chkinam = "Accompany_Check_inMeridian" + i;
+            chkouth = "Accompany_Check_outh" + i;
+            chkoutm = "Accompany_Check_outm" + i;
+            chkoutam = "Accompany_Check_outMeridian" + i;
+            chkY = "AccompanyConferenceRegistrationY" + i;
+            chkN = "AccompanyConferenceRegistrationN" + i;
+            if (document.getElementById(chkY).checked == true)
+            {
+                _acchk = + "," +"Y";
+            }
+            else if (document.getElementById(chkN).checked == true) {
+                _acchk = + "," + "N";
+            }
+
+            _acname = _acname + "," + document.getElementById(x).value;
+            _acage = _acage + "," + document.getElementById(y).value;
+            _acsex = _acsex + "," + document.getElementById(z).value;
+            _acmeal = _acmeal + "," + document.getElementById(z1).value;
+            _acaccom = _acaccom + "," + document.getElementById(z2).value;
+            //-- 2016-12-13 18:52:13.477
+            _acfdate = _acfdate + ",2017/" + document.getElementById(x2).value + "/" + document.getElementById(x1).value + " " + document.getElementById(chkinh).value + ":" + document.getElementById(chkinm).value + ":00" + document.getElementById(chkinam).value;
+
+            _actdate = _actdate + ",2017/" + document.getElementById(y2).value + "/" + document.getElementById(y1).value + " " + document.getElementById(chkouth).value + ":" + document.getElementById(chkoutm).value + ":00" + document.getElementById(chkoutam).value;
+
+        }
+
+
+
+        //end of  Accompany_Pertion set value {
+       // var fileData = new FormData();
+
+        //var _Sponsorship = document.getElementById("Membership_Number").value;
+        //var _Status = document.getElementById("Membership_Number").value;
+        //var _Payment_Amount = document.getElementById("Membership_Number").value;
+        //alert(_Prefix + "<br> " +_Name + " "+ _DOB + " " + _Membership_Number + " " + _Institution + " " + _Department + " " + _Designation + " " + _Degree + " " + _Nationality + " " + _Address + " " + _City + " " + _Pin+" "+ _Category + " " + _State + " " + _Country + " " + _WorkPhone + " " + _Mobile + " " + _Fax + " " + _Email);
+        //alert(_Name + " " + _DOB + " " + _Membership_Number + " " + _Institution + " " + _Department + " " + _Designation + " " + _Degree + " " + _Nationality + " " + _Address + " " + _City + " " + _Pin);
+        var MyAppUrl = { Url: '@Url.Action("Registar", "Registration")' }
+        $.ajax({
+            url: MyAppUrl.Url,
+            data: {
+                Prefix: _Prefix,
+                Name: _Name,
+                DOB: _DOB,
+                Membership_Number: _Membership_Number,
+                Institution: _Institution,
+                Department: _Department,
+                Designation: _Designation,
+                Degree: _Degree,
+                Nationality: _Nationality,
+                Address: _Address,
+                City: _City,
+                Pin: _Pin,
+                Category: _Category,
+                State: _State,
+                Country: _Country,
+                WorkPhone: _WorkPhone,
+                Mobile: _Mobile,
+                Fax: _Fax,
+                Email: _Email,
+                Badge: _badge,
+                Username: _Username,
+                Password: _Password,
+                Hdnid: _hdid,
+                Acname: _acname,
+                Acage: _acage,
+                Acsex: _acsex,
+                Acmeal: _acmeal,
+                Acaccom: _acaccom,
+                Acfdate: _acfdate,
+                Actdate: _actdate,
+                Acchk: _acchk
+
+            },
+            cache: false,
+            type: "POST",
+            //success: function (data) { },
+            //error: function (reponse) {  }
+        });
+
+        if (window.FormData !== undefined) {
+            var fileUpload = $("#filestyle-0").get(0);
+            var files = fileUpload.files;
+            // Create FormData object
+            var fileData = new FormData();
+            // Looping over all files and add it to FormData object
+            for (var i = 0; i < files.length; i++) {
+                fileData.append(files[i].name, files[i]);
+            }
+            // Adding one more key to FormData object
+            //fileData.append("user");
+
+            $.ajax({
+                url: '/Registration/UploadFiles',
+                type: "POST",
+                contentType: false, // Not to set any content header
+                processData: false, // Not to process data
+                data: fileData,
+                success: function (result) {
+                    alert(result);
+                },
+                error: function (err) {
+                    alert(err.statusText);
+                }
+            });
+        }
+        else
+        {
+            alert("FormData is not supported.");
+        }
+    }*@

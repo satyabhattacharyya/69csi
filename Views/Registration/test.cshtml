@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "test";
+}
+
+<h2>test</h2>
+@using (Html.BeginForm())
+    {
+<input type="file" id="FileUpload1" />
+<input type="button" id="btnUpload" value="Upload Files" />
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+
+    $(document).ready(function(){
+        $('#btnUpload').click(function () {
+            var id=1;
+            alert(" Checking whether FormData is available in browser");
+            if (window.FormData !== undefined) {
+
+                var fileUpload = $("#FileUpload1").get(0);
+                var files = fileUpload.files;
+
+                // Create FormData object
+                var fileData = new FormData();
+
+                // Looping over all files and add it to FormData object
+                for (var i = 0; i < files.length; i++) {
+                    fileData.append(files[i].name, files[i]);
+                }
+
+                // Adding one more key to FormData object
+                fileData.append("user" );
+
+                $.ajax({
+                    url: '/Registration/UploadFiles',
+                    type: "POST",
+                    contentType: false, // Not to set any content header
+                    processData: false, // Not to process data
+                    data: fileData,
+                    success: function (result) {
+                        alert(result);
+                    },
+                    error: function (err) {
+                        alert(err.statusText);
+                    }
+                });
+            } else {
+                alert("FormData is not supported.");
+            }
+        });
+    });
+</script>  
